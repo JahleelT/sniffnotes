@@ -10,7 +10,16 @@ export default function MoodTags() {
         "Woody",
         "Bright",
         "Effervescent",
-        "Boozy"
+        "Boozy",
+        "Tropical",
+        "Floral",
+        "Spicy",
+        "Clean",
+        "Fresh",
+        "Soapy",
+        "Ancient",
+        "Rainy",
+        "Solar"
     ];
 
     return (
