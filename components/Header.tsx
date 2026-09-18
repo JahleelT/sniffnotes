@@ -1,4 +1,4 @@
-import {Search, CircleUserRound, Calendar, UsersRound, Bookmark} from "lucide-react";
+import {Search, CircleUserRound, Calendar, Users, Bookmark} from "lucide-react";
 
 export default function Header() {
 
@@ -10,7 +10,7 @@ export default function Header() {
             <nav className="flex gap-8 items-center">
                 <Calendar/> {/*This will become the Daily Fragrance tab*/}
                 <Search/> 
-                <UsersRound/> 
+                <Users/> 
                 <Bookmark/>
                 <CircleUserRound/> {/*This will be the profile tab */}
             </nav>

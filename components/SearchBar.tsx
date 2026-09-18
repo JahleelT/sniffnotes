@@ -23,8 +23,8 @@ export default function SearchBar() {
                 }
             }}
             type="text" 
-            placeholder="What are you in the mood to sniff today?"
-            className="w-full px-6 py-4 rounded-full border" 
+            placeholder="Follow your nose..."
+            className="w-full px-6 py-4 rounded-full border justify-center" 
         />
     )
 }
