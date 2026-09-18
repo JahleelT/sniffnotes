@@ -24,7 +24,7 @@ export default function SearchBar() {
             }}
             type="text" 
             placeholder="Follow your nose..."
-            className="w-full px-6 py-4 rounded-full border justify-center" 
+            className="w-full px-6 py-4 rounded-full border" 
         />
     )
 }
