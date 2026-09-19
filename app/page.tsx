@@ -1,16 +1,26 @@
-import Image from "next/image";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   return (
-    <>
-      <Header/>
+    <div 
+      className="min-h-screen bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/dewy_grass.jpg')",
+      }}
+    >
+      <div className="min-h-screen bg-black/30">
 
-      <main>
-        <HeroSection/>
-      </main>
-      
-    </>
+        <Header/>
+
+        <main className="flex justify-center pt-32">
+
+          <HeroSection/>
+
+        </main>
+
+      </div>
+
+    </div>
   );
 }
