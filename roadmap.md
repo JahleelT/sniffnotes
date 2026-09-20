@@ -27,6 +27,7 @@
 ### User Accounts 
 - [ ] User sign up, sign in, sign out
 - [ ] Account deletion (TBD)
+  - [ ] Using fragrance color themes to apply to the site
 - [ ] Account Personalization (TBD)
 
 ### Saved Fragrances
@@ -73,3 +74,8 @@
   - [ ] User is notified when their favorite brands or lines release a new fragrance
 - [ ] User messaging
 - [ ] Shop page that will redirect to several other websites showing potential fragrance matches with disclaimer about authenticity of product 
+
+### Fragrance Exploration
+- [ ] NYC Fragrance Guide
+  - [ ] Breaks down locations by selection (designer, niche, indie, compound selection)
+  - [ ] briefly covers reputation of each place
