@@ -3,11 +3,11 @@
 ## Phase 1: UI + Search (in Active Development)
 
 ### Homepage
-- [ ] Header
-- [ ] Hero Section
-- [ ] Search Bar
-- [ ] Mood Tags
-- [ ] Background Image
+- [X] Header
+- [X] Hero Section
+- [X] Search Bar
+- [X] Mood Tags
+- [X] Background Image
 
 ### Fragrance Pages
 - [ ] SniffNotes Summary
