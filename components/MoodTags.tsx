@@ -16,7 +16,7 @@ export default function MoodTags() {
     return (
         <div className="flex flex-wrap justify-center gap-3 mt-6 w-full">
             {moods.map((mood) => (
-                <button key={mood} className="px-4 py-2 rounded-full border border-gray-300 backdrop-blur-sm hover:bg-white/20 hover:scale-105 transition-all duration-200 cursor-pointer">
+                <button key={mood} className="px-6 py-3 rounded-full border border-gray-300 backdrop-blur-sm hover:bg-white/20 hover:scale-105 transition-all duration-200 cursor-pointer">
                     {mood}
                 </button>
             ))}
