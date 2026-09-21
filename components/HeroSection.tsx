@@ -14,6 +14,6 @@ export default function HeroSection() {
 
                 <MoodTags/>
             </div>
-        </section>
+        </section> 
     )
 }
