@@ -2,16 +2,19 @@ import FragranceHeader from "@/components/FragranceHeader";
 import FragrancePhoto from "@/components/FragrancePhoto";
 import BreakdownNTags from "@/components/BreakdownNTags";
 import Description from "@/components/Description";
+import Header from "@/components/Header";
 
 export default function FragrancePage() {
 
     return (
         <div
-            className="min-h-screen bg-cover bg-center"
+            className="min-h-screen bg-cover bg-center bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 via-blue-900 via-blue-800"
             style={{
-                backgroundImage: "url('/AswanBackground.jpg')",
+                backgroundImage: "url('/possible_bg.jpg')",
             }}
         >
+            {/*bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 via-blue-900 via-blue-800*/}
+            <Header/>
             <div className="min-h-screen bg-black/30">
                 <FragranceHeader/>
 
