@@ -5,7 +5,7 @@ export default function Header() {
 
 
     return (
-        <header className="flex justify-between items-center cursor-pointer max-w-full p-6">
+        <header className="sticky top-0 z-50 flex justify-between items-center  bg-white/5 backdrop-blur-md border border-white/10 cursor-pointer max-w-full p-6">
             <h1 className="text-4xl font-semibold">SniffNotes</h1>
             <nav className="flex gap-8 items-center ">
 
