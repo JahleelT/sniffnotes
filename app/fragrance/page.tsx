@@ -18,7 +18,7 @@ export default function FragrancePage() {
             <div className="min-h-screen bg-black/30">
                 <FragranceHeader/>
 
-                <div className="grid grid-cols-3 gap-8 p-8">
+                <div className="grid grid-cols-[1fr_0.9fr_1fr] gap-8 p-8">
                     <BreakdownNTags/>
                     <FragrancePhoto/>
                     <Description/>

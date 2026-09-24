@@ -14,7 +14,7 @@ export default function BreakdownNTags() {
                     <li className="font-semibold text-xl">Raspberry</li>
                 </ul>
                 */}
-                <p className="flex justify-center text-xl">Bergamot, Pink Peppercorn, Raspberry</p>
+                <p className="flex justify-center text-xl">Bergamot, <b className="ml-1">Pink Peppercorn</b>, <b className="ml-1">Raspberry</b></p>
 
                 <hr className="my-6 border-gray-500"/>
 
@@ -40,7 +40,7 @@ export default function BreakdownNTags() {
                     <li className="font-semibold text-xl">Leather</li>
                 </ul>
                 */}
-                <p className="flex justify-center text-xl">Patchouli, Vanilla, Tobacco, Musk, Leather</p>
+                <p className="flex justify-center text-xl">Patchouli, Vanilla, <b className="ml-1">Tobacco</b>, Musk, <b className="ml-1 mb-2">Leather</b></p>
             </section>
 
             <hr className="my-6 border-gray-500 mb-1 mt-4"/>
