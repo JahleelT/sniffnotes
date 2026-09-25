@@ -4,7 +4,7 @@ export default function FragrancePhoto() {
 
 
     return (
-        <div className="flex justify-center p-4 items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-blue-900/30 from-slate-900 via bg-gradient-to-r from-slate-950 via to-blue-950/70 via-blue-900">
+        <div className="flex justify-center p-4 items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-xl  ">
             <Image
                 src="/AswanWidian.jpg"
                 alt="Widian Aswan bottle"
