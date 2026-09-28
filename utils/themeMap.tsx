@@ -3,67 +3,67 @@
 export const themeMap = {
 
     Fruity: {
-        accent: "text-",
-        border: "border-",
-        card: "bg-"
+        text: "text-rose-300",
+        border: "border-black/40",
+        card: "bg-rose-300/20"
     },
 
     Woodsy: {
-        accent: "text-",
-        border: "border-",
-        card: "bg-"
+        text: "text-green-300",
+        border: "border-amber-300/20",
+        card: "bg-stone-950/60"
     },
 
     Tropical: {
-        accent: "text-",
-        border: "border-rose-300/40",
-        card: "bg-black/40"
+        text: "text-teal-300",
+        border: "border-slate-950/60",
+        card: "bg-teal-300/20"
     },
 
     Tea: {
-        accent: "text-",
-        border: "border-",
-        card: "bg-"
+        text: "text-green-300",
+        border: "border-sky-300/20",
+        card: "bg-slate-950/50"
     },
 
     Spicy: {
-        accent: "text-",
-        border: "border-",
-        card: "bg-"
+        text: "text-orange-300",
+        border: "border-orange-300/20",
+        card: "bg-stone-950/70"
     },
 
     Solar: {
-        accent: "text-",
-        border: "border-",
-        card: "bg-"
+        text: "text-amber-200",
+        border: "border-amber-200/20",
+        card: "bg-slate-950/50"
     },
 
     Smoky: {
-        accent: "text-amber-300",
+        text: "text-amber-300",
         border: "border-slate-300/15",
         card: "bg-black/50"
     },
 
     Floral: {
-        accent: "text-",
-        border: "border-",
-        card: "bg-"
+        text: "text-orange-200",
+        border: "border-green-300/20",
+        card: "bg-slate-950/50"
     },
 
     Dark: {
-        accent: "text-zinc-400",
+        text: "text-zinc-400",
         border: "border-slate-200/20",
         card: "bg-zinc-950/80"
     },
 
     Clean: {
-        accent: "text-black",
+        text: "text-black",
         border: "border-slate-200/30",
         card: "bg-black/20"
     },
 
     Boozy: {
-        accent: "text-amber-300",
+        text: "text-amber-300",
         border: "border-amber-300/20",
         card: "bg-stone-950/75"
     },

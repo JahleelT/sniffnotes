@@ -9,7 +9,7 @@ export default function FragrancePage() {
         <div
             className="min-h-screen bg-cover bg-center"
             style={{
-                backgroundImage: "url('/fruityBG.jpg')",
+                backgroundImage: "url('/teaBG.jpg')",
             }}
         >
             {/*bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 via-blue-900 via-blue-800*/}
