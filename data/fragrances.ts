@@ -1,0 +1,40 @@
+export const fragrances = [
+    {
+        id: "aswan",
+        name: "Aswan",
+        brand: "Widian",
+        collection: "Sapphire Collection",
+
+        image: "/AswanWidian.jpg",
+
+        tags: [
+            "Fruity",
+            "Smoky",
+            "Dark"
+        ],
+
+        description: "Embark on a timeless journey through Egypt’s ancient wonders, where the crisp citrus of bergamot and the sweet allure of raspberry intertwine with rich cedarwood and delicate violet. A fragrance that captures the essence of desert winds and eternal memories, evoking the spirit of history in every drop.",
+
+        notes: {
+            top: [
+                "Bergamot",
+                "Pink Pepper",
+                "Raspberry",
+            ],
+
+            mid: [
+                "Violet Leaves",
+                "Cedarwood",
+                "Grey Amber",
+            ],
+
+            base: [
+                "Patchouli",
+                "Vanilla",
+                "Tobacco",
+                "Musk",
+                "Leather",
+            ],
+        },
+    },
+];

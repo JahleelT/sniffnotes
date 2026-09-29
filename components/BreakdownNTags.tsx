@@ -1,4 +1,11 @@
+import { fragrances } from "@/data/fragrances";
+
 export default function BreakdownNTags() {
+
+    const tags = fragrances[0].tags;
+    const topNotes = fragrances[0].notes["top"];
+    const midNotes = fragrances[0].notes["mid"];
+    const baseNotes = fragrances[0].notes["base"];
 
     return (
         <div className="flex flex-col justify-center px-4 bg-slate-950/60 backdrop-blur-sm border border-white/10 rounded-xl mb-6">
@@ -14,7 +21,14 @@ export default function BreakdownNTags() {
                     <li className="font-semibold text-xl">Raspberry</li>
                 </ul>
                 */}
-                <p className="flex justify-center text-2xl">Bergamot, <b className="ml-1">Pink Peppercorn</b>, <b className="ml-1">Raspberry</b></p>
+                <ul className="flex flex-wrap justify-center gap-4 text-2xl">
+                    {topNotes.map((note) => (
+                        <li key={note}>
+                            {note}
+                        </li>
+                    ))}
+                </ul>
+
 
                 <hr className="my-6 border-gray-500"/>
 
@@ -26,7 +40,13 @@ export default function BreakdownNTags() {
                     <li className="text-xl">Grey Amber</li>
                 </ul>
                 */}
-                <p className="flex justify-center text-2xl">Violet Leaves, Cedarwood, Grey Amber</p>
+                    <ul className="flex flex-wrap justify-center gap-4 text-2xl">
+                        {midNotes.map((note) => (
+                            <li key={note}>
+                                {note}
+                            </li>
+                        ))}
+                    </ul>
 
                 <hr className="my-6 border-gray-500"/>
 
@@ -40,7 +60,13 @@ export default function BreakdownNTags() {
                     <li className="font-semibold text-xl">Leather</li>
                 </ul>
                 */}
-                <p className="flex justify-center text-2xl">Patchouli, Vanilla, <b className="ml-1">Tobacco</b>, Musk, <b className="ml-1 mb-2">Leather</b></p>
+                <ul className="flex flex-wrap justify-center gap-4 text-2xl">
+                    {baseNotes.map((note) => (
+                        <li key={note}>
+                            {note}
+                        </li>
+                    ))}
+                </ul>
             </section>
 
             <hr className="my-6 border-gray-500 mb-1 mt-4"/>
