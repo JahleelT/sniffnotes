@@ -10,10 +10,10 @@
 - [X] Background Image
 
 ### Fragrance Pages
-- [ ] SniffNotes Summary
-- [ ] Fragrance Detail Page
-- [ ] Mood Profile
-- [ ] Note Pyramid
+- [X] SniffNotes Summary
+- [X] Fragrance Detail Page
+- [X] Mood Profile
+- [X] Note Pyramid
 
 ### Data 
 - [ ] Integrate PerfumAPI
