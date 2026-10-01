@@ -3,6 +3,7 @@ import { fragrances } from "@/data/fragrances";
 export default function BreakdownNTags() {
 
     const tags = fragrances[0].tags;
+
     const topNotes = fragrances[0].notes["top"];
     const midNotes = fragrances[0].notes["mid"];
     const baseNotes = fragrances[0].notes["base"];
@@ -11,9 +12,9 @@ export default function BreakdownNTags() {
         <div className="flex flex-col justify-center px-4 bg-slate-950/60 backdrop-blur-sm border border-white/10 rounded-xl mb-6">
             <section id="notes">
 
-                <h2 className="text-4xl mt-3 px-2 font-semibold">Notes</h2>
+                <h2 className="text-2xl mt-3 px-2 font-semibold">Notes</h2>
 
-                <h3 className="flex text-3xl mt-4 font-semibold mb-1 justify-center">Top Notes</h3>
+                <h3 className="flex text-2xl mt-4 font-semibold mb-1 justify-center">Top Notes</h3>
                 {/*
                 <ul className="mb-4">
                     <li className="text-xl">Bergamot</li>
@@ -21,7 +22,7 @@ export default function BreakdownNTags() {
                     <li className="font-semibold text-xl">Raspberry</li>
                 </ul>
                 */}
-                <ul className="flex flex-wrap justify-center gap-4 text-2xl">
+                <ul className="flex flex-wrap justify-center gap-4 text-xl">
                     {topNotes.map((note) => (
                         <li key={note}>
                             {note}
@@ -32,7 +33,7 @@ export default function BreakdownNTags() {
 
                 <hr className="my-6 border-gray-500"/>
 
-                <h3 className="flex justify-center text-3xl mt-4 mb-1 font-semibold">Heart Notes</h3>
+                <h3 className="flex justify-center text-2xl mt-4 mb-1 font-semibold">Heart Notes</h3>
                 {/*
                 <ul className="mb-4">
                     <li className="text-xl">Violet Leaves</li>
@@ -40,7 +41,7 @@ export default function BreakdownNTags() {
                     <li className="text-xl">Grey Amber</li>
                 </ul>
                 */}
-                    <ul className="flex flex-wrap justify-center gap-4 text-2xl">
+                    <ul className="flex flex-wrap justify-center gap-4 text-xl">
                         {midNotes.map((note) => (
                             <li key={note}>
                                 {note}
@@ -50,7 +51,7 @@ export default function BreakdownNTags() {
 
                 <hr className="my-6 border-gray-500"/>
 
-                <h3 className="flex justify-center text-3xl mt-4 font-semibold mb-1">Base Notes</h3>
+                <h3 className="flex justify-center text-2xl mt-4 font-semibold mb-1">Base Notes</h3>
                 {/*
                 <ul>
                     <li className="text-xl">Patchouli</li>
@@ -60,7 +61,7 @@ export default function BreakdownNTags() {
                     <li className="font-semibold text-xl">Leather</li>
                 </ul>
                 */}
-                <ul className="flex flex-wrap justify-center gap-4 text-2xl">
+                <ul className="flex flex-wrap justify-center gap-4 text-xl">
                     {baseNotes.map((note) => (
                         <li key={note}>
                             {note}
@@ -71,11 +72,16 @@ export default function BreakdownNTags() {
 
             <hr className="my-6 border-gray-500 mb-1 mt-4"/>
 
-            <h2 className="flex justify-center py-2 mb-2 text-3xl font-semibold">Fragrance Attributes</h2>
+            <h2 className="flex justify-center py-2 mb-2 text-2xl font-semibold">Fragrance Attributes</h2>
             <section id="tags" className="flex flex-wrap justify-center gap-2 mb-7">
-                <button className="px-4 py-2 border rounded-full text-xl border-gray-300 backdrop-blur-sm hover:bg-white/20 hover:scale-105 transition-all duration-200 cursor-pointer">Fruity</button>
-                <button className="px-4 py-2 border rounded-full text-xl border-gray-300 backdrop-blur-sm hover:bg-white/20 hover:scale-105 transition-all duration-200 cursor-pointer">Smoky</button>
-                <button className="px-4 py-2 border rounded-full text-xl border-gray-300 backdrop-blur-sm hover:bg-white/20 hover:scale-105 transition-all duration-200 cursor-pointer">Leathery</button>
+                {tags.map((tag) => (
+                    <button
+                        key={tag}
+                        className="px-6 py-3 border rounded-full border-gray-300 backdrop-blur-sm hover:bg-white/20 hover:scale-100 transition-all duration-200 cursor-pointer"
+                    >
+                        {tag}
+                    </button>
+                ))}
             </section>
         </div>
     )
