@@ -1,15 +1,17 @@
 import Header from "@/components/Header";
 
-/*
-type FragranceHeaderProps = {
-    name: string,
-    brand: string,
-    collection?: string,
+
+type FragranceProps = {
+    fragrance: {
+        name: string,
+        brand: string,
+        collection?: string,
+    };
 };
-*/
 
-export default function FragranceHeader() {
 
+export default function FragranceHeader({ fragrance }: FragranceProps) {
+    const { name, brand, collection } = fragrance;
 
     return (
         <div className=" w-full">
@@ -18,8 +20,12 @@ export default function FragranceHeader() {
             </div>
 
             <div className="mb-2">
-                <h1 className="text-5xl font-semibold text-center text-white">Aswan</h1>
-                <h2 className=" mt-1 text-xl font-medium text-center text-white">Widian • Sapphire Collection</h2>
+                <h1 className="text-5xl font-semibold text-center text-white">{name}</h1>
+                <h2 className=" mt-1 text-xl font-medium text-center text-white">
+                    {collection
+                        ? `${brand} • ${collection}` 
+                        : brand}
+                </h2>
             </div>
             
         </div>
