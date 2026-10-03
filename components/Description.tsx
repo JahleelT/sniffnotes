@@ -1,7 +1,14 @@
 import { fragrances } from "@/data/fragrances";
 
-export default function Description() {
-    const description = fragrances[0].description;
+
+type descriptionProps = {
+    fragrance: {
+        description: string;
+    };
+};
+
+export default function Description({fragrance}: descriptionProps) {
+    const description = fragrance.description;
 
     return (
         <div className="border border-white/10 rounded-xl bg-slate-950/60 backdrop-blur-sm px-5">
