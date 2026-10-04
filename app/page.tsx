@@ -1,15 +1,11 @@
+import Backdrop from "@/components/Backdrop";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import { defaultTheme } from "@/utils/themeMap";
 
 export default function Home() {
   return (
-    <div 
-      className="min-h-screen bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/dewy_grass.jpg')",
-      }}
-    >
-      <div className="min-h-screen bg-black/30">
+    <Backdrop theme={defaultTheme}>
 
         <Header/>
 
@@ -19,8 +15,6 @@ export default function Home() {
 
         </main>
 
-      </div>
-
-    </div>
+    </Backdrop>
   );
 }

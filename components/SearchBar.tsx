@@ -1,20 +1,26 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-export default function SearchBar() {
-    const [query, setQuery] = useState("");
+type SearchBarProps = {
+    initialQuery?: string;
+};
+
+export default function SearchBar({ initialQuery = "" }: SearchBarProps) {
+    const [query, setQuery] = useState(initialQuery);
+    const router = useRouter();
 
     const handleSearch = () => {
         const trimmedQuery = query.trim();
 
         if (!trimmedQuery) return;
 
-        console.log(trimmedQuery);
+        router.push(`/search?q=${encodeURIComponent(trimmedQuery)}`);
     };
 
 
     return (
-        <input 
+        <input
             value = {query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={(e) => {
@@ -22,9 +28,9 @@ export default function SearchBar() {
                     handleSearch();
                 }
             }}
-            type="text" 
+            type="text"
             placeholder="Follow your nose..."
-            className="w-full text-l px-8 py-4 rounded-full border" 
+            className="w-full text-l px-8 py-4 rounded-full border"
         />
     )
 }

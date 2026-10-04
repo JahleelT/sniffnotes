@@ -1,5 +1,6 @@
 import SearchBar from "@/components/SearchBar";
 import MoodTags from "@/components/MoodTags";
+import { moods } from "@/utils/themeMap";
 
 
 export default function HeroSection() {
@@ -12,7 +13,7 @@ export default function HeroSection() {
             <div className="w-full max-w-3xl">
                 <SearchBar/>
 
-                <MoodTags/>
+                <MoodTags moods={moods}/>
             </div>
         </section> 
     )
