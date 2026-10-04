@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "import:fragrances": "node --no-warnings scripts/import-fragrances.mts"
   },
   "dependencies": {
     "lucide-react": "^1.47.0",
