@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SniffNotes
+
+Discover fragrances by note, brand, and mood. Each fragrance page is themed by its first mood tag.
+
+See [roadmap.md](roadmap.md) for what's planned.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Layout
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Path | What it holds |
+| --- | --- |
+| `app/` | Routes: home (`/`), search (`/search`), fragrance pages (`/fragrance/[id]`) |
+| `components/` | UI pieces shared by the routes |
+| `lib/fragrances.ts` | Lookup and search helpers over the dataset |
+| `data/fragrances.ts` | The `Fragrance` type and typed dataset export |
+| `data/fragrances.json` | Generated dataset (don't edit by hand) |
+| `data/import/fragrances.csv` | The source you edit to add fragrances |
+| `utils/themeMap.ts` | Mood list and each mood's background and colors |
 
-## Learn More
+## Adding Fragrances
 
-To learn more about Next.js, take a look at the following resources:
+1. Add a row to `data/import/fragrances.csv` (a spreadsheet app works fine).
+2. Put the bottle photo at `public/fragrances/<id>.jpg`.
+3. Run `npm run import:fragrances`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The importer checks every row, prints each problem with its row number, and only writes `data/fragrances.json` when everything is valid. A missing photo is reported as a warning.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Column | Required | Notes |
+| --- | --- | --- |
+| `id` | no | URL slug. Defaults to the name, e.g. `Aswan` → `aswan` |
+| `name` | yes | |
+| `brand` | yes | |
+| `collection` | no | |
+| `tags` | yes | Moods separated by `;`. The first one sets the page theme. Valid: Tea, Fruity, Dark, Smoky, Woody, Boozy, Tropical, Floral, Spicy, Clean, Solar |
+| `top`, `mid`, `base` | at least one | Notes separated by `;` |
+| `image` | no | Defaults to `/fragrances/<id>.jpg` |
+| `description` | yes | Wrap in double quotes if it contains commas |
 
-## Deploy on Vercel
+A JSON array with the same fields also works: `npm run import:fragrances -- path/to/file.json`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The importer runs TypeScript directly, so it needs Node 22.18+ or 23.6+.
