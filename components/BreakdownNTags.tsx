@@ -1,87 +1,47 @@
-import { fragrances } from "@/data/fragrances";
+import MoodTags from "@/components/MoodTags";
+import type { Fragrance } from "@/data/fragrances";
+import type { Theme } from "@/utils/themeMap";
 
-export default function BreakdownNTags() {
+type BreakdownNTagsProps = {
+    fragrance: Fragrance;
+    theme: Theme;
+};
 
-    const tags = fragrances[0].tags;
+export default function BreakdownNTags({ fragrance, theme }: BreakdownNTagsProps) {
 
-    const topNotes = fragrances[0].notes["top"];
-    const midNotes = fragrances[0].notes["mid"];
-    const baseNotes = fragrances[0].notes["base"];
+    const tiers = [
+        { title: "Top Notes", notes: fragrance.notes.top },
+        { title: "Heart Notes", notes: fragrance.notes.mid },
+        { title: "Base Notes", notes: fragrance.notes.base },
+    ].filter((tier) => tier.notes.length > 0);
 
     return (
-        <div className="flex flex-col justify-center px-4 bg-slate-950/60 backdrop-blur-sm border border-white/10 rounded-xl mb-6">
+        <div className={`flex flex-col justify-center px-4 backdrop-blur-sm border rounded-xl mb-6 ${theme.card} ${theme.border}`}>
             <section id="notes">
 
-                <h2 className="text-2xl mt-3 px-2 font-semibold">Notes</h2>
+                <h2 className={`text-2xl mt-3 px-2 font-semibold ${theme.accent}`}>Notes</h2>
 
-                <h3 className="flex text-2xl mt-4 font-semibold mb-1 justify-center">Top Notes</h3>
-                {/*
-                <ul className="mb-4">
-                    <li className="text-xl">Bergamot</li>
-                    <li className="font-semibold text-xl">Pink Peppercorn</li>
-                    <li className="font-semibold text-xl">Raspberry</li>
-                </ul>
-                */}
-                <ul className="flex flex-wrap justify-center gap-4 text-xl">
-                    {topNotes.map((note) => (
-                        <li key={note}>
-                            {note}
-                        </li>
-                    ))}
-                </ul>
+                {tiers.map((tier, index) => (
+                    <div key={tier.title}>
+                        {index > 0 && <hr className="my-6 border-gray-500"/>}
 
-
-                <hr className="my-6 border-gray-500"/>
-
-                <h3 className="flex justify-center text-2xl mt-4 mb-1 font-semibold">Heart Notes</h3>
-                {/*
-                <ul className="mb-4">
-                    <li className="text-xl">Violet Leaves</li>
-                    <li className="font-semibold text-xl">Cedarwood</li>
-                    <li className="text-xl">Grey Amber</li>
-                </ul>
-                */}
-                    <ul className="flex flex-wrap justify-center gap-4 text-xl">
-                        {midNotes.map((note) => (
-                            <li key={note}>
-                                {note}
-                            </li>
-                        ))}
-                    </ul>
-
-                <hr className="my-6 border-gray-500"/>
-
-                <h3 className="flex justify-center text-2xl mt-4 font-semibold mb-1">Base Notes</h3>
-                {/*
-                <ul>
-                    <li className="text-xl">Patchouli</li>
-                    <li className="text-xl">Vanilla</li>
-                    <li className="font-semibold text-xl">Tobacco</li>
-                    <li className="text-xl">Musk</li>
-                    <li className="font-semibold text-xl">Leather</li>
-                </ul>
-                */}
-                <ul className="flex flex-wrap justify-center gap-4 text-xl">
-                    {baseNotes.map((note) => (
-                        <li key={note}>
-                            {note}
-                        </li>
-                    ))}
-                </ul>
+                        <h3 className="flex justify-center text-2xl mt-4 mb-1 font-semibold">{tier.title}</h3>
+                        <ul className="flex flex-wrap justify-center gap-4 text-xl">
+                            {tier.notes.map((note) => (
+                                <li key={note}>
+                                    {note}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
             </section>
 
             <hr className="my-6 border-gray-500 mb-1 mt-4"/>
 
-            <h2 className="flex justify-center py-2 mb-2 text-2xl font-semibold">Fragrance Attributes</h2>
-            <section id="tags" className="flex flex-wrap justify-center gap-2 mb-7">
-                {tags.map((tag) => (
-                    <button
-                        key={tag}
-                        className="px-6 py-3 border rounded-full border-gray-300 backdrop-blur-sm hover:bg-white/20 hover:scale-100 transition-all duration-200 cursor-pointer"
-                    >
-                        {tag}
-                    </button>
-                ))}
+            <h2 className={`flex justify-center py-2 mb-2 text-2xl font-semibold ${theme.accent}`}>Fragrance Attributes</h2>
+            <section id="tags">
+                <MoodTags moods={fragrance.tags} className="mb-7"/>
             </section>
         </div>
     )
