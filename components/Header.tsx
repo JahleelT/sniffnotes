@@ -24,9 +24,9 @@ export default async function Header() {
                     <Users aria-hidden/>
                 </button>
 
-                <button aria-label="Collections (coming soon)" title="Coming soon" className={navItem}>
+                <Link href="/collections" aria-label="Collections" title="Collections" className={navItem}>
                     <Bookmark aria-hidden/>
-                </button>
+                </Link>
 
                 <Link href="/settings" aria-label="Settings" title="Settings" className={navItem}>
                     <Settings aria-hidden/>
