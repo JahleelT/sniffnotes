@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import BottleImage from "@/components/BottleImage";
 import type { Fragrance } from "@/data/fragrances";
 import { getTheme, themeMap } from "@/utils/themeMap";
 
@@ -15,12 +15,11 @@ export default function FragranceCard({ fragrance }: FragranceCardProps) {
             href={`/fragrance/${fragrance.id}`}
             className={`flex flex-col items-center gap-3 p-5 border rounded-xl backdrop-blur-sm hover:scale-[1.02] transition-all duration-200 ${theme.card} ${theme.border}`}
         >
-            <Image
-                src={fragrance.image}
-                alt={`${fragrance.brand} ${fragrance.name} bottle`}
+            <BottleImage
+                fragrance={fragrance}
                 width={200}
                 height={300}
-                className="h-56 w-auto object-contain"
+                className="h-56 w-auto"
             />
 
             <div className="text-center">

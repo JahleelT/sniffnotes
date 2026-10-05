@@ -15,7 +15,7 @@ type Fragrance = {
     name: string;
     brand: string;
     collection?: string;
-    image: string;
+    image?: string;
     tags: Mood[];
     description: string;
     notes: { top: string[]; mid: string[]; base: string[] };
@@ -129,29 +129,34 @@ entries.forEach((entry, index) => {
         base: list(entry.base ?? notesSource.base),
     };
 
+    // Tags without a theme are skipped, not rejected, so they're picked up once themeMap gains that mood.
     const tags: Mood[] = [];
+    const skippedTags: string[] = [];
     for (const tag of list(entry.tags)) {
         const mood = toMood(tag);
-        if (!mood) fail(`unknown tag "${tag}". Valid tags: ${moods.map((m) => themeMap[m].label).join(", ")}`);
+        if (!mood) skippedTags.push(tag);
         else if (!tags.includes(mood)) tags.push(mood);
     }
+    if (skippedTags.length) warnings.push(`${where}: skipped tags without a theme: ${skippedTags.join(", ")}`);
 
     if (!name) fail("missing name");
     if (!brand) fail("missing brand");
     if (!description) fail("missing description");
-    if (!tags.length) fail("needs at least one tag");
+    if (!tags.length) fail(`needs at least one themed tag. Valid tags: ${moods.map((m) => themeMap[m].label).join(", ")}`);
     if (!notes.top.length && !notes.mid.length && !notes.base.length) fail("needs at least one note");
     if (!id) fail("missing id");
     else if (seenIds.has(id)) fail(`duplicate id "${id}"`);
     seenIds.add(id);
 
-    const image = text(entry.image) || `/fragrances/${id}.jpg`;
+    // A missing photo is left out so the site shows a placeholder until the file is added.
+    let image: string | undefined = text(entry.image) || `/fragrances/${id}.jpg`;
     if (!existsSync(join(root, "public", image))) {
-        warnings.push(`${where}: image not found at public${image}`);
+        warnings.push(`${where}: image not found at public${image}; using placeholder`);
+        image = undefined;
     }
 
     const collection = text(entry.collection);
-    fragrances.push({ id, name, brand, ...(collection && { collection }), image, tags, description, notes });
+    fragrances.push({ id, name, brand, ...(collection && { collection }), ...(image && { image }), tags, description, notes });
 });
 
 if (errors.length) {

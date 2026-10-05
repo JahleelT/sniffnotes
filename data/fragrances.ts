@@ -7,11 +7,13 @@ export type Fragrance = {
     brand: string;
     collection?: string;
 
-    image: string;
+    // Missing until a photo exists at public/fragrances/<id>.jpg.
+    image?: string;
 
     // The first tag sets the fragrance page theme.
     tags: Mood[];
 
+    // Paragraphs are separated by blank lines.
     description: string;
 
     notes: {

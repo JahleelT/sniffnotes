@@ -31,7 +31,7 @@ Open [http://localhost:3000](http://localhost:3000).
 2. Put the bottle photo at `public/fragrances/<id>.jpg`.
 3. Run `npm run import:fragrances`.
 
-The importer checks every row, prints each problem with its row number, and only writes `data/fragrances.json` when everything is valid. A missing photo is reported as a warning.
+The importer checks every row, prints each problem with its row number, and only writes `data/fragrances.json` when everything is valid. Two things are only warnings: tags that don't have a theme in `utils/themeMap.ts` yet (they stay in the CSV and are picked up once that mood is added), and missing photos (the site shows a placeholder until the file exists; re-run the import after adding it).
 
 | Column | Required | Notes |
 | --- | --- | --- |
@@ -39,7 +39,7 @@ The importer checks every row, prints each problem with its row number, and only
 | `name` | yes | |
 | `brand` | yes | |
 | `collection` | no | |
-| `tags` | yes | Moods separated by `;`. The first one sets the page theme. Valid: Tea, Fruity, Dark, Smoky, Woody, Boozy, Tropical, Floral, Spicy, Clean, Solar |
+| `tags` | yes | Moods separated by `;`. The first themed one sets the page theme. At least one must be themed: Tea, Fruity, Dark, Smoky, Woody, Boozy, Tropical, Floral, Spicy, Clean, Solar |
 | `top`, `mid`, `base` | at least one | Notes separated by `;` |
 | `image` | no | Defaults to `/fragrances/<id>.jpg` |
 | `description` | yes | Wrap in double quotes if it contains commas |
