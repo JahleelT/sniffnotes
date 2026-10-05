@@ -13,13 +13,29 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+> If your shell sets `NODE_ENV=production`, npm skips dev dependencies. Use `npm install --include=dev`.
+
+## Supabase
+
+Accounts and saved data live in Supabase.
+
+1. Copy `.env.example` to `.env.local` and fill it in from the Supabase dashboard (Project Settings → API and Database).
+2. Apply the database migrations in `supabase/migrations/` with `npm run db:push`.
+3. After changing the schema, regenerate `lib/supabase/database.types.ts` with `npm run db:types`.
+
+New migrations go in `supabase/migrations/` (`npx supabase migration new <name>`). In the dashboard, Authentication → URL Configuration must list every origin the site runs on (for example `http://localhost:3000/**` and the production URL), or email links fall back to the Site URL.
+
 ## Project Layout
 
 | Path | What it holds |
 | --- | --- |
-| `app/` | Routes: home (`/`), search (`/search`), fragrance pages (`/fragrance/[id]`) |
+| `app/` | Routes: home (`/`), search (`/search`), fragrance pages (`/fragrance/[id]`), auth (`app/(auth)/`), account (`/account`) |
 | `components/` | UI pieces shared by the routes |
 | `lib/fragrances.ts` | Lookup and search helpers over the dataset |
+| `lib/auth.ts` | `getCurrentUser` / `requireUser` helpers |
+| `lib/supabase/` | Supabase clients and generated database types |
+| `supabase/` | Supabase CLI config and SQL migrations |
+| `proxy.ts` | Refreshes the auth session on each request |
 | `data/fragrances.ts` | The `Fragrance` type and typed dataset export |
 | `data/fragrances.json` | Generated dataset (don't edit by hand) |
 | `data/import/fragrances.csv` | The source you edit to add fragrances |

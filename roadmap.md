@@ -36,7 +36,9 @@
 - [ ] Integrate PerfumAPI (feed results through the import pipeline)
 
 ### User Accounts 
-- [ ] User sign up, sign in, sign out
+- [X] User sign up, sign in, sign out (Supabase Auth)
+  - [X] Email confirmation and password reset
+  - [X] Account page with editable display name
 - [ ] Account deletion (TBD)
 - [ ] Account Personalization (TBD)
 
