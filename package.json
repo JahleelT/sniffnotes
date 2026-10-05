@@ -7,9 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "import:fragrances": "node --no-warnings scripts/import-fragrances.mts"
+    "import:fragrances": "node --no-warnings scripts/import-fragrances.mts",
+    "db:push": "sh scripts/supabase-remote.sh db push",
+    "db:types": "sh scripts/supabase-remote.sh gen types typescript --schema public > lib/supabase/database.types.ts"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.117.2",
     "lucide-react": "^1.47.0",
     "next": "16.3.8",
     "react": "19.2.8",
@@ -22,6 +26,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.8",
+    "supabase": "^2.119.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
