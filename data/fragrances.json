@@ -30,5 +30,147 @@
                 "Leather"
             ]
         }
+    },
+    {
+        "id": "luminoir",
+        "name": "Luminoir",
+        "brand": "Astre",
+        "tags": [
+            "tea"
+        ],
+        "description": "An ode to life itself.\n\nThe essence of life's fleeting beauty intertwines with the enigmatic allure of shadows, akin to a delicate whisper of freshness hinting at an infinite inner journey.\n\nMuch like a beckoning sea nourishing fantasies of total freedom, LUMINOIR encapsulates a fragrant tale, inviting hearts to open wide, like wings deployed for flight, towards the mysterious harmony of light and darkness.",
+        "notes": {
+            "top": [
+                "Italian Bergamot",
+                "Japanese Green Tea",
+                "Lemon Verveine"
+            ],
+            "mid": [
+                "Fig Nectar",
+                "Night Blooming Jasmine",
+                "Black Cardamom",
+                "Tunisian Neroli"
+            ],
+            "base": [
+                "Ginger CO₂",
+                "Tree-Moss",
+                "Hawaiian Sandalwood",
+                "Tiaré Flower"
+            ]
+        }
+    },
+    {
+        "id": "santal-pao-rosa",
+        "name": "Santal Pao Rosa",
+        "brand": "Guerlain",
+        "collection": "L'Art & La Matière",
+        "tags": [
+            "spicy",
+            "woodsy"
+        ],
+        "description": "Nature becomes art as the strength of sandalwood is enveloped in tender rose petals. Between bark and blossom lies a refreshing, spicy undertone infused with cardamon and deeper notes of agarwood and myrrh.\n\nSantal Pao Rosa is a name buried deep in Guerlain’s heritage, with Pao Rosa being the name given to a fragrance by Aimé Guerlain, created in 1877, and evoking the unique encounter between wood and rose.",
+        "notes": {
+            "top": [
+                "Cardamom"
+            ],
+            "mid": [
+                "Rose"
+            ],
+            "base": [
+                "Sandalwood",
+                "Agarwood",
+                "Myrrh"
+            ]
+        }
+    },
+    {
+        "id": "midnight-hour",
+        "name": "Midnight Hour",
+        "brand": "Banana Republic",
+        "collection": "Collezione Riservata",
+        "tags": [
+            "tropical"
+        ],
+        "description": "The Banana Republic Midnight Hour perfume has a chypre leathery fragrance that transports you to an exotic beach illuminated by the midnight moon. Aromatic notes of mango skin and ginger infuse the night air amidst swaying palm trees while pink pepper entangled with the spiced floralcy of geranium elicits a subdued rush of adrenaline pulsing through your body mimicking the sounds of heart-thumping music echoing in the distance. As the night progresses and the moon recedes, the music drums up notes of earthy Indonesian patchouli woven with notes of leather and musk for a deeply tenacious and memorable experience.",
+        "notes": {
+            "top": [
+                "Mango Skin",
+                "Crushed Leaves",
+                "Ginger"
+            ],
+            "mid": [
+                "Pink Pepper",
+                "Star Anise",
+                "Geranium",
+                "Hedione"
+            ],
+            "base": [
+                "Agarwood",
+                "Leather",
+                "Musk",
+                "Patchouli Sulawesi"
+            ]
+        }
+    },
+    {
+        "id": "alto-astral",
+        "name": "Alto Astral",
+        "brand": "Byredo",
+        "tags": [
+            "tropical",
+            "clean",
+            "woodsy"
+        ],
+        "description": "Summer at its peak feels like fruit ripened to perfection, each bite offering a wave of refreshment under the heat. Alto Astral captures this same tension through scent, where the freshness of coconut water meets the warmth of salted amber and woods, evoking a sensation that feels both vibrant and enveloping. Infused with the colour, rhythm, and heat of Brazil, it draws inspiration from the joyful defiance found in everyday moments.",
+        "notes": {
+            "top": [
+                "Aldehyde",
+                "Coconut Water"
+            ],
+            "mid": [
+                "Incense",
+                "Jasmine Petals",
+                "Milky Musks"
+            ],
+            "base": [
+                "Sandalwood",
+                "Cashmere Woods",
+                "Salted Amber"
+            ]
+        }
+    },
+    {
+        "id": "ramad-earthy",
+        "name": "Ramad Earthy",
+        "brand": "Arabiyat Prestige",
+        "collection": "Ramad",
+        "tags": [
+            "woodsy"
+        ],
+        "description": "Crafted through a revolutionary double-infusion with sandalwood chips and artisanal oakwood barrels, Elsewhere reveals remarkable depth and complexity. Opening with a radiant blend of Honey, Apricot, Mango, Cardamom, Ginger and Tangerine, the fragrance evokes a luminous warmth. At its heart, Black Tea and Davana intertwine with an unexpected Cappuccino accord, creating a rich and textured sensation. In the drydown, Tonka Bean and Vanilla lend their sweet-smoky facets, while Cedarwood, Labdanum, Cypriol, Vetiver and Patchouli leave an elegant and enduring trail.",
+        "notes": {
+            "top": [
+                "Honey",
+                "Apricot",
+                "Cardamom",
+                "Tangerine",
+                "Mango",
+                "Pomegranate",
+                "Ginger"
+            ],
+            "mid": [
+                "Davana",
+                "Tea",
+                "Cappuccino"
+            ],
+            "base": [
+                "Patchouli",
+                "Vanilla",
+                "Tonka Bean",
+                "Labdanum",
+                "Cedarwood",
+                "Vetiver"
+            ]
+        }
     }
 ]
