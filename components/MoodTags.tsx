@@ -20,12 +20,12 @@ export default function MoodTags({ moods, active, query, className = "mt-6" }: M
     };
 
     return (
-        <div className={`flex flex-wrap justify-center gap-3 w-full ${className}`}>
+        <div className={`flex flex-wrap justify-center gap-2 sm:gap-3 w-full ${className}`}>
             {moods.map((mood) => (
                 <Link
                     key={mood}
                     href={hrefFor(mood)}
-                    className={`px-6 py-3 rounded-full border border-foreground/60 backdrop-blur-sm hover:bg-foreground/15 hover:scale-105 transition-all duration-200 cursor-pointer ${mood === active ? "bg-foreground/20" : ""}`}
+                    className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-foreground/60 backdrop-blur-sm hover:bg-foreground/15 hover:scale-105 transition-all duration-200 cursor-pointer ${mood === active ? "bg-foreground/20" : ""}`}
                 >
                     {themeMap[mood].label}
                 </Link>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Settings | SniffNotes",
 };
 
-const card = `p-8 border rounded-xl backdrop-blur-sm ${defaultTheme.card} ${defaultTheme.border}`;
+const card = `p-6 sm:p-8 border rounded-xl backdrop-blur-sm ${defaultTheme.card} ${defaultTheme.border}`;
 const legend = "text-xl font-semibold mb-3";
 const choice = "flex items-center gap-3 px-4 py-2 rounded-full border border-foreground/40 cursor-pointer has-[:checked]:bg-foreground/20 has-[:checked]:border-foreground has-[:focus-visible]:outline has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-[var(--focus)]";
 

@@ -15,7 +15,7 @@ export default function PageShell({ theme = defaultTheme, children }: PageShellP
                 <Header/>
             </div>
 
-            <main id="main" className="max-w-6xl mx-auto px-8 py-10">
+            <main id="main" className="max-w-6xl mx-auto px-4 sm:px-8 py-6 sm:py-10">
                 {children}
             </main>
         </Backdrop>

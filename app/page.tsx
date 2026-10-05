@@ -13,7 +13,7 @@ export default async function Home() {
 
         <Header/>
 
-        <main id="main" className="flex justify-center pt-32">
+        <main id="main" className="flex justify-center px-4 pt-12 sm:pt-32 pb-12">
 
           <HeroSection moods={orderedMoods}/>
 

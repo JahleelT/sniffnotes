@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Account | SniffNotes",
 };
 
-const card = `p-8 border rounded-xl backdrop-blur-sm ${defaultTheme.card} ${defaultTheme.border}`;
+const card = `p-6 sm:p-8 border rounded-xl backdrop-blur-sm ${defaultTheme.card} ${defaultTheme.border}`;
 
 export default async function AccountPage() {
     const user = await requireUser("/account");
@@ -20,7 +20,7 @@ export default async function AccountPage() {
     return (
         <PageShell>
             <div className="max-w-2xl mx-auto flex flex-col gap-6">
-                <h1 className="text-4xl font-semibold">Hi, {user.displayName}</h1>
+                <h1 className="text-3xl sm:text-4xl font-semibold">Hi, {user.displayName}</h1>
 
                 <section className={card} aria-labelledby="profile-heading">
                     <h2 id="profile-heading" className="text-2xl font-semibold mb-4">Profile</h2>

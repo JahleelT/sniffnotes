@@ -49,14 +49,14 @@ export default async function DailyPage() {
                 {formatDate(daily.date, { weekday: "long", month: "long", day: "numeric" })}
             </p>
 
-            <article className={`max-w-4xl mx-auto grid md:grid-cols-[1fr_1.4fr] gap-8 p-8 ${card}`} aria-labelledby="daily-name">
+            <article className={`max-w-4xl mx-auto grid md:grid-cols-[1fr_1.4fr] gap-6 sm:gap-8 p-5 sm:p-8 ${card}`} aria-labelledby="daily-name">
                 <div className="flex justify-center items-center">
-                    <BottleImage fragrance={fragrance} width={320} height={480}/>
+                    <BottleImage fragrance={fragrance} width={320} height={480} className="max-h-[50vh] md:max-h-none w-auto"/>
                 </div>
 
                 <div className="flex flex-col gap-4">
                     <div>
-                        <h1 id="daily-name" className="text-5xl font-semibold">{fragrance.name}</h1>
+                        <h1 id="daily-name" className="text-4xl sm:text-5xl font-semibold">{fragrance.name}</h1>
                         <p className="text-xl mt-1">
                             {fragrance.collection ? `${fragrance.brand} • ${fragrance.collection}` : fragrance.brand}
                         </p>

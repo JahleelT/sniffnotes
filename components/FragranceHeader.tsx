@@ -15,13 +15,13 @@ export default function FragranceHeader({ fragrance, theme, actions }: Fragrance
 
     return (
         <div className=" w-full">
-            <div className={`mb-8 backdrop-blur-sm border-b ${theme.card} ${theme.border}`}>
+            <div className={`mb-6 sm:mb-8 backdrop-blur-sm border-b ${theme.card} ${theme.border}`}>
                 <Header/>
             </div>
 
-            <div className="mb-2">
-                <h1 className="text-5xl font-semibold text-center text-foreground">{name}</h1>
-                <h2 className=" mt-1 text-xl font-medium text-center text-foreground">
+            <div className="mb-2 px-4">
+                <h1 className="text-4xl sm:text-5xl font-semibold text-center text-foreground">{name}</h1>
+                <h2 className=" mt-1 text-lg sm:text-xl font-medium text-center text-foreground">
                     {collection
                         ? `${brand} • ${collection}`
                         : brand}

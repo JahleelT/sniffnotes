@@ -10,11 +10,12 @@ type FragrancePhotoProps = {
 export default function FragrancePhoto({ fragrance, theme }: FragrancePhotoProps) {
 
     return (
-        <div className={`flex justify-center p-4 items-center backdrop-blur-sm border rounded-xl ${theme.card} ${theme.border}`}>
+        <div className={`order-first lg:order-none flex justify-center p-4 items-center backdrop-blur-sm border rounded-xl ${theme.card} ${theme.border}`}>
             <BottleImage
                 fragrance={fragrance}
                 width={400}
                 height={600}
+                className="max-h-[60vh] lg:max-h-none w-auto"
             />
         </div>
 
