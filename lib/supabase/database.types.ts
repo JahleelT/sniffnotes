@@ -5,7 +5,39 @@ export type Database = {
   
   "public": {
           Tables: {
-            "profiles": {
+            "collection_items": {
+                  Row: {
+                    "added_at": string,"collection_id": string,"fragrance_id": string
+                  }
+                  Insert: {
+                    "added_at"?: string,"collection_id": string,"fragrance_id": string
+                  }
+                  Update: {
+                    "added_at"?: string,"collection_id"?: string,"fragrance_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "collection_items_collection_id_fkey"
+      columns: ["collection_id"]
+isOneToOne: false
+      referencedRelation: "collections"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"collections": {
+                  Row: {
+                    "created_at": string,"id": string,"kind": Database["public"]['Enums']["collection_kind"],"name": string,"user_id": string
+                  }
+                  Insert: {
+                    "created_at"?: string,"id"?: string,"kind"?: Database["public"]['Enums']["collection_kind"],"name": string,"user_id": string
+                  }
+                  Update: {
+                    "created_at"?: string,"id"?: string,"kind"?: Database["public"]['Enums']["collection_kind"],"name"?: string,"user_id"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
+                },"profiles": {
                   Row: {
                     "created_at": string,"display_name": string,"id": string,"preferences": NonNullable<Json>,"updated_at": string
                   }
@@ -24,10 +56,12 @@ export type Database = {
             [_ in never]: never
           }
           Functions: {
-            [_ in never]: never
+            "create_default_collections":
+{ Args: { "target_user": string }; Returns: undefined
+                           }
           }
           Enums: {
-            [_ in never]: never
+            "collection_kind": "saved"|"wishlist"|"sampled"|"owned"|"custom"
           }
           CompositeTypes: {
             [_ in never]: never
@@ -143,7 +177,7 @@ export type CompositeTypes<
 export const Constants = {
   "public": {
           Enums: {
-            
+            "collection_kind": ["saved", "wishlist", "sampled", "owned", "custom"]
           }
         }
 } as const
