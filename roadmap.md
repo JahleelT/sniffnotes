@@ -40,7 +40,12 @@
   - [X] Email confirmation and password reset
   - [X] Account page with editable display name
 - [ ] Account deletion (TBD)
-- [ ] Account Personalization (TBD)
+- [X] Account Personalization (saved per device, synced to the account when signed in)
+  - [X] Light / dark / match-device theme
+  - [X] Text size
+  - [X] Accessibility: reduce motion, high contrast, easier-to-read font, underlined links
+  - [X] Favorite moods shown first on the homepage
+  - [X] Skip-to-content link, visible keyboard focus, labeled header icons
 
 ### Saved Fragrances
 - [ ] General Saved Fragrances
