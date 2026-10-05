@@ -29,10 +29,13 @@ New migrations go in `supabase/migrations/` (`npx supabase migration new <name>`
 
 | Path | What it holds |
 | --- | --- |
-| `app/` | Routes: home (`/`), search (`/search`), fragrance pages (`/fragrance/[id]`), auth (`app/(auth)/`), account (`/account`) |
+| `app/` | Routes: home (`/`), search (`/search`), fragrance pages (`/fragrance/[id]`), fragrance of the day (`/daily`), collections (`/collections`), settings (`/settings`), auth (`app/(auth)/`), account (`/account`) |
 | `components/` | UI pieces shared by the routes |
 | `lib/fragrances.ts` | Lookup and search helpers over the dataset |
 | `lib/auth.ts` | `getCurrentUser` / `requireUser` helpers |
+| `lib/preferences.ts` | Display and accessibility preferences (cookie + profile) |
+| `lib/collections.ts` | Saved-fragrance collection queries |
+| `lib/daily.ts`, `lib/daily-picker.ts` | Fragrance of the day: storage and the no-repeat picking rules |
 | `lib/supabase/` | Supabase clients and generated database types |
 | `supabase/` | Supabase CLI config and SQL migrations |
 | `proxy.ts` | Refreshes the auth session on each request |

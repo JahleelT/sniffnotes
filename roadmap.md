@@ -75,7 +75,10 @@
 - [ ] Peer-reviewed official descriptions
 
 ### Quality Updates
-- [ ] Daily Fragrance Page
+- [X] Daily Fragrance Page (scaffold, built during Phase 2)
+  - [X] Personal daily pick for signed-in users; no repeats until every fragrance has been shown
+  - [X] Shared daily pick for signed-out visitors
+  - [ ] Revisit once PerfumAPI expands the dataset (e.g. pick from saved/wishlisted moods)
 - [ ] Search Updates (Phase 1 covers basic text matching on notes, brands, and collections)
   - [ ] Search by Note
   - [ ] Search by Brand
