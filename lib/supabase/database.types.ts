@@ -37,6 +37,19 @@ isOneToOne: false
                   Relationships: [
                     
                   ]
+                },"daily_picks": {
+                  Row: {
+                    "created_at": string,"cycle": number,"fragrance_id": string,"pick_date": string,"user_id": string
+                  }
+                  Insert: {
+                    "created_at"?: string,"cycle"?: number,"fragrance_id": string,"pick_date": string,"user_id": string
+                  }
+                  Update: {
+                    "created_at"?: string,"cycle"?: number,"fragrance_id"?: string,"pick_date"?: string,"user_id"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
                 },"profiles": {
                   Row: {
                     "created_at": string,"display_name": string,"id": string,"preferences": NonNullable<Json>,"updated_at": string
