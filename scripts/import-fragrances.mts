@@ -7,6 +7,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, extname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { isMood, moods, themeMap, type Mood } from "../utils/themeMap.ts";
+import { readCsvRecords, slugify } from "./csv.mts";
 
 type RawEntry = Record<string, unknown>;
 
@@ -25,60 +26,16 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const inputPath = process.argv[2] ?? join(root, "data/import/fragrances.csv");
 const outputPath = join(root, "data/fragrances.json");
 
-function parseCsv(text: string): string[][] {
-    const rows: string[][] = [];
-    let row: string[] = [];
-    let field = "";
-    let inQuotes = false;
-
-    for (let i = 0; i < text.length; i++) {
-        const c = text[i];
-
-        if (inQuotes) {
-            if (c === '"' && text[i + 1] === '"') {
-                field += '"';
-                i++;
-            } else if (c === '"') {
-                inQuotes = false;
-            } else {
-                field += c;
-            }
-        } else if (c === '"') {
-            inQuotes = true;
-        } else if (c === ",") {
-            row.push(field);
-            field = "";
-        } else if (c === "\n" || c === "\r") {
-            if (c === "\r" && text[i + 1] === "\n") i++;
-            row.push(field);
-            rows.push(row);
-            row = [];
-            field = "";
-        } else {
-            field += c;
-        }
-    }
-
-    if (field || row.length) {
-        row.push(field);
-        rows.push(row);
-    }
-
-    return rows.filter((r) => r.some((f) => f.trim()));
-}
-
 function readEntries(path: string): RawEntry[] {
-    const text = readFileSync(path, "utf8").replace(/^﻿/, "");
+    const text = readFileSync(path, "utf8");
 
     if (extname(path).toLowerCase() === ".json") {
-        const parsed = JSON.parse(text);
+        const parsed = JSON.parse(text.replace(/^\uFEFF/, ""));
         if (!Array.isArray(parsed)) throw new Error("JSON import file must contain an array of fragrances.");
         return parsed;
     }
 
-    const [header, ...rows] = parseCsv(text);
-    const columns = header.map((h) => h.trim().toLowerCase());
-    return rows.map((row) => Object.fromEntries(columns.map((col, i) => [col, row[i] ?? ""])));
+    return readCsvRecords(text);
 }
 
 // Accepts either an array or a semicolon-separated string.
@@ -89,15 +46,6 @@ function list(value: unknown): string[] {
 
 function text(value: unknown): string {
     return String(value ?? "").trim();
-}
-
-function slugify(value: string): string {
-    return value
-        .normalize("NFD")
-        .replace(/[̀-ͯ]/g, "")
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-|-$/g, "");
 }
 
 // Matches a tag by key ("woodsy") or label ("Woody"), case-insensitively.
