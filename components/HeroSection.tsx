@@ -1,9 +1,13 @@
 import SearchBar from "@/components/SearchBar";
 import MoodTags from "@/components/MoodTags";
-import { moods } from "@/utils/themeMap";
+import type { Mood } from "@/utils/themeMap";
+
+type HeroSectionProps = {
+    moods: Mood[];
+};
 
 
-export default function HeroSection() {
+export default function HeroSection({ moods }: HeroSectionProps) {
 
 
     return (

@@ -3,12 +3,9 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { safeNext } from "@/lib/auth";
+import type { FormState } from "@/lib/forms";
+import { syncPreferencesOnSignIn } from "@/lib/preferences";
 import { createClient } from "@/lib/supabase/server";
-
-export type FormState = {
-    error?: string;
-    message?: string;
-};
 
 const MIN_PASSWORD_LENGTH = 8;
 
@@ -23,7 +20,7 @@ async function siteOrigin() {
 
 export async function signIn(_: FormState, formData: FormData): Promise<FormState> {
     const supabase = await createClient();
-    const { error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
         email: field(formData, "email"),
         password: String(formData.get("password") ?? ""),
     });
@@ -33,6 +30,7 @@ export async function signIn(_: FormState, formData: FormData): Promise<FormStat
     }
     if (error) return { error: "That email and password don't match." };
 
+    await syncPreferencesOnSignIn(supabase, data.user.id);
     redirect(safeNext(formData.get("next")));
 }
 
@@ -60,7 +58,10 @@ export async function signUp(_: FormState, formData: FormData): Promise<FormStat
     if (error) return { error: "We couldn't create that account. Check the email address and try again." };
 
     // With email confirmation off, Supabase signs the user in right away.
-    if (data.session) redirect(next);
+    if (data.session && data.user) {
+        await syncPreferencesOnSignIn(supabase, data.user.id);
+        redirect(next);
+    }
 
     return { message: `Almost there! We sent a confirmation link to ${email}.` };
 }

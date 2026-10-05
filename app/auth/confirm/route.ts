@@ -1,6 +1,7 @@
 import type { EmailOtpType } from "@supabase/supabase-js";
 import { NextResponse, type NextRequest } from "next/server";
 import { safeNext } from "@/lib/auth";
+import { syncPreferencesOnSignIn } from "@/lib/preferences";
 import { createClient } from "@/lib/supabase/server";
 
 // Landing point for email links (sign-up confirmation and password reset).
@@ -13,13 +14,16 @@ export async function GET(request: NextRequest) {
     const next = safeNext(searchParams.get("next"));
 
     const supabase = await createClient();
-    let verified = false;
+    let userId: string | undefined;
 
     if (code) {
-        verified = !(await supabase.auth.exchangeCodeForSession(code)).error;
+        userId = (await supabase.auth.exchangeCodeForSession(code)).data.user?.id;
     } else if (tokenHash && type) {
-        verified = !(await supabase.auth.verifyOtp({ type, token_hash: tokenHash })).error;
+        userId = (await supabase.auth.verifyOtp({ type, token_hash: tokenHash })).data.user?.id;
     }
+
+    if (userId) await syncPreferencesOnSignIn(supabase, userId);
+    const verified = Boolean(userId);
 
     return NextResponse.redirect(new URL(verified ? next : "/sign-in?error=link", origin));
 }

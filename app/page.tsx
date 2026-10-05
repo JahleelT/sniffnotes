@@ -1,17 +1,21 @@
 import Backdrop from "@/components/Backdrop";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import { defaultTheme } from "@/utils/themeMap";
+import { getPreferences } from "@/lib/preferences";
+import { defaultTheme, moods } from "@/utils/themeMap";
 
-export default function Home() {
+export default async function Home() {
+  const { favoriteMoods } = await getPreferences();
+  const orderedMoods = [...favoriteMoods, ...moods.filter((mood) => !favoriteMoods.includes(mood))];
+
   return (
     <Backdrop theme={defaultTheme}>
 
         <Header/>
 
-        <main className="flex justify-center pt-32">
+        <main id="main" className="flex justify-center pt-32">
 
-          <HeroSection/>
+          <HeroSection moods={orderedMoods}/>
 
         </main>
 
