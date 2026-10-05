@@ -39,7 +39,7 @@
 - [X] User sign up, sign in, sign out (Supabase Auth)
   - [X] Email confirmation and password reset
   - [X] Account page with editable display name
-- [ ] Account deletion (TBD)
+- [X] Account deletion (password-confirmed; removes profile, collections, and daily picks)
 - [X] Account Personalization (saved per device, synced to the account when signed in)
   - [X] Light / dark / match-device theme
   - [X] Text size

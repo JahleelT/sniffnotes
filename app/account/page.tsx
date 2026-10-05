@@ -6,7 +6,7 @@ import PageShell from "@/components/PageShell";
 import { requireUser } from "@/lib/auth";
 import { defaultTheme } from "@/utils/themeMap";
 import { signOut } from "@/app/(auth)/actions";
-import { updateDisplayName } from "./actions";
+import { deleteAccount, updateDisplayName } from "./actions";
 
 export const metadata: Metadata = {
     title: "Account | SniffNotes",
@@ -65,6 +65,27 @@ export default async function AccountPage() {
                             </button>
                         </form>
                     </div>
+                </section>
+
+                <section className={card} aria-labelledby="delete-heading">
+                    <h2 id="delete-heading" className="text-2xl font-semibold mb-2">Delete account</h2>
+                    <p className="mb-4 text-foreground/80">
+                        Permanently deletes your account, collections, and daily picks. This can&apos;t be undone.
+                    </p>
+
+                    <details>
+                        <summary className="cursor-pointer text-danger">I want to delete my account</summary>
+
+                        <div className="mt-4">
+                            <ActionForm action={deleteAccount} submitLabel="Delete my account permanently" pendingLabel="Deleting...">
+                                <Field label="Confirm your password" name="password" type="password" autoComplete="current-password" required/>
+                                <label className="flex items-start gap-3 cursor-pointer">
+                                    <input type="checkbox" name="confirm" required className="mt-1.5 size-4 accent-current"/>
+                                    <span>I understand my collections and daily picks will be deleted forever.</span>
+                                </label>
+                            </ActionForm>
+                        </div>
+                    </details>
                 </section>
             </div>
         </PageShell>
