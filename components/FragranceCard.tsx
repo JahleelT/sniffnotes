@@ -13,7 +13,7 @@ export default function FragranceCard({ fragrance }: FragranceCardProps) {
     return (
         <Link
             href={`/fragrance/${fragrance.id}`}
-            className={`flex flex-col items-center gap-3 p-5 border rounded-xl backdrop-blur-sm hover:scale-[1.02] transition-all duration-200 ${theme.card} ${theme.border}`}
+            className={`card-link flex flex-col items-center gap-3 p-5 border rounded-xl backdrop-blur-sm hover:scale-[1.02] transition-all duration-200 ${theme.card} ${theme.border}`}
         >
             <BottleImage
                 fragrance={fragrance}
@@ -23,8 +23,8 @@ export default function FragranceCard({ fragrance }: FragranceCardProps) {
             />
 
             <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white">{fragrance.name}</h3>
-                <p className="text-lg text-white/80">{fragrance.brand}</p>
+                <h3 className="text-2xl font-semibold text-foreground">{fragrance.name}</h3>
+                <p className="text-lg text-foreground/80">{fragrance.brand}</p>
             </div>
 
             <p className={`text-sm ${theme.accent}`}>

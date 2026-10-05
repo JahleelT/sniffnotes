@@ -44,7 +44,7 @@ export default async function SearchPage(props: PageProps<"/search">) {
                     ))}
                 </div>
             ) : (
-                <p className="text-center text-lg text-white/80">
+                <p className="text-center text-lg text-foreground/80">
                     Nothing matched. Try a note like “vanilla”, a brand, or another mood.
                 </p>
             )}

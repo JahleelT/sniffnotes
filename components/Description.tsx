@@ -17,7 +17,7 @@ export default function Description({ fragrance, theme }: descriptionProps) {
             <hr className="my-6 border-gray-500 mb-2 mt-2" />
 
             {paragraphs.map((paragraph) => (
-                <p key={paragraph} className="flex leading-relaxed text-white text-xl py-3 px-2">
+                <p key={paragraph} className="flex leading-relaxed text-foreground text-xl py-3 px-2">
                 {paragraph}
                 </p>
             ))}

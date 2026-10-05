@@ -25,7 +25,7 @@ export default function MoodTags({ moods, active, query, className = "mt-6" }: M
                 <Link
                     key={mood}
                     href={hrefFor(mood)}
-                    className={`px-6 py-3 rounded-full border border-gray-300 backdrop-blur-sm hover:bg-white/20 hover:scale-105 transition-all duration-200 cursor-pointer ${mood === active ? "bg-white/25" : ""}`}
+                    className={`px-6 py-3 rounded-full border border-foreground/60 backdrop-blur-sm hover:bg-foreground/15 hover:scale-105 transition-all duration-200 cursor-pointer ${mood === active ? "bg-foreground/20" : ""}`}
                 >
                     {themeMap[mood].label}
                 </Link>

@@ -30,7 +30,7 @@ export default async function SignInPage(props: PageProps<"/sign-in">) {
             }
         >
             {error === "link" && (
-                <p role="alert" className="mb-4 text-red-300">That link is invalid or has expired. Try again below.</p>
+                <p role="alert" className="mb-4 text-danger">That link is invalid or has expired. Try again below.</p>
             )}
 
             <ActionForm action={signIn} submitLabel="Sign in" pendingLabel="Signing in...">

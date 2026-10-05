@@ -14,7 +14,7 @@ export default function BottleImage({ fragrance, width, height, className = "" }
     if (!fragrance.image) {
         return (
             <div
-                className={`flex flex-col items-center justify-center gap-3 max-w-full text-white/60 ${className}`}
+                className={`flex flex-col items-center justify-center gap-3 max-w-full text-foreground/60 ${className}`}
                 style={{ width, aspectRatio: `${width} / ${height}` }}
             >
                 <FlaskConical size={width / 4} strokeWidth={1.25}/>

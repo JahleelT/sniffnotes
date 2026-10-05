@@ -13,7 +13,7 @@ export default function Backdrop({ theme, children }: BackdropProps) {
                 backgroundImage: `url('${theme.image}')`,
             }}
         >
-            <div className={`min-h-screen ${theme.overlay}`}>
+            <div className={`theme-overlay min-h-screen ${theme.overlay}`}>
                 {children}
             </div>
         </div>

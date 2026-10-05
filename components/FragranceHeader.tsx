@@ -19,8 +19,8 @@ export default function FragranceHeader({ fragrance, theme }: FragranceProps) {
             </div>
 
             <div className="mb-2">
-                <h1 className="text-5xl font-semibold text-center text-white">{name}</h1>
-                <h2 className=" mt-1 text-xl font-medium text-center text-white">
+                <h1 className="text-5xl font-semibold text-center text-foreground">{name}</h1>
+                <h2 className=" mt-1 text-xl font-medium text-center text-foreground">
                     {collection
                         ? `${brand} • ${collection}`
                         : brand}

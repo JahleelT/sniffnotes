@@ -1,7 +1,7 @@
 "use client";
 
 import { startTransition, useActionState } from "react";
-import type { FormState } from "@/app/(auth)/actions";
+import type { FormState } from "@/lib/forms";
 
 type ActionFormProps = {
     action: (state: FormState, formData: FormData) => Promise<FormState>;
@@ -26,13 +26,13 @@ export default function ActionForm({ action, submitLabel, pendingLabel, children
         >
             {children}
 
-            {state.error && <p role="alert" className="text-red-300">{state.error}</p>}
-            {state.message && <p role="status" className="text-emerald-300">{state.message}</p>}
+            {state.error && <p role="alert" className="text-danger">{state.error}</p>}
+            {state.message && <p role="status" className="text-success">{state.message}</p>}
 
             <button
                 type="submit"
                 disabled={pending}
-                className="mt-2 px-6 py-3 rounded-full border border-gray-300 font-semibold hover:bg-white/20 transition-all duration-200 cursor-pointer disabled:opacity-60 disabled:cursor-wait"
+                className="mt-2 px-6 py-3 rounded-full border border-foreground/60 font-semibold hover:bg-foreground/15 transition-all duration-200 cursor-pointer disabled:opacity-60 disabled:cursor-wait"
             >
                 {pending ? pendingLabel : submitLabel}
             </button>

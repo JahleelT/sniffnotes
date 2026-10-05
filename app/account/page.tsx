@@ -43,8 +43,15 @@ export default async function AccountPage() {
 
                     <div className="flex flex-wrap gap-3">
                         <Link
+                            href="/settings"
+                            className="px-6 py-3 rounded-full border border-foreground/60 hover:bg-foreground/15 transition-all duration-200"
+                        >
+                            Display &amp; accessibility settings
+                        </Link>
+
+                        <Link
                             href="/account/update-password"
-                            className="px-6 py-3 rounded-full border border-gray-300 hover:bg-white/20 transition-all duration-200"
+                            className="px-6 py-3 rounded-full border border-foreground/60 hover:bg-foreground/15 transition-all duration-200"
                         >
                             Change password
                         </Link>
@@ -52,7 +59,7 @@ export default async function AccountPage() {
                         <form action={signOut}>
                             <button
                                 type="submit"
-                                className="px-6 py-3 rounded-full border border-gray-300 hover:bg-white/20 transition-all duration-200 cursor-pointer"
+                                className="px-6 py-3 rounded-full border border-foreground/60 hover:bg-foreground/15 transition-all duration-200 cursor-pointer"
                             >
                                 Sign out
                             </button>

@@ -1,31 +1,128 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  Preferences are applied through data attributes on <html> (see lib/preferences.ts):
+  data-theme, data-text-size, data-motion, data-contrast, data-font, data-links.
+*/
+
+/* `light:` utilities apply in light mode, and in system mode when the device prefers light. */
+@custom-variant light {
+  &:where([data-theme="light"], [data-theme="light"] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: light) {
+    &:where([data-theme="system"], [data-theme="system"] *) {
+      @slot;
+    }
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-/*@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}*/
-
 :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --danger: #fca5a5;
+  --success: #6ee7b7;
+  --focus: #fde68a;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --background: #f5f5f4;
+  --foreground: #1c1917;
+  --danger: #b91c1c;
+  --success: #047857;
+  --focus: #1d4ed8;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: light) {
+  :root[data-theme="system"] {
+    --background: #f5f5f4;
+    --foreground: #1c1917;
+    --danger: #b91c1c;
+    --success: #047857;
+    --focus: #1d4ed8;
+    color-scheme: light;
   }
+}
 
 body {
   min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Keyboard focus is always visible. */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Text size scales every rem-based size on the site. */
+html[data-text-size="sm"] { font-size: 87.5%; }
+html[data-text-size="lg"] { font-size: 112.5%; }
+html[data-text-size="xl"] { font-size: 125%; }
+
+/* Easier-to-read font. */
+html[data-font="legible"] {
+  font-family: var(--font-legible), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Underline links in page content (fragrance cards opt out). */
+html[data-links="underline"] main a:not(.card-link) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* High contrast: solid surfaces, stronger borders and overlays, pure text color. */
+html[data-contrast="more"] {
+  --foreground: #ffffff;
+}
+html[data-contrast="more"][data-theme="light"] {
+  --foreground: #000000;
+}
+@media (prefers-color-scheme: light) {
+  html[data-contrast="more"][data-theme="system"] {
+    --foreground: #000000;
+  }
+}
+html[data-contrast="more"] .theme-surface {
+  background-color: var(--background) !important;
+  border-color: var(--foreground) !important;
+  backdrop-filter: none !important;
+}
+html[data-contrast="more"] .theme-overlay {
+  background-color: color-mix(in srgb, var(--background) 60%, transparent) !important;
+}
+
+/* Reduced motion, from the preference or the device setting. */
+html[data-motion="reduce"] *,
+html[data-motion="reduce"] *::before,
+html[data-motion="reduce"] *::after {
+  transition-duration: 0.01ms !important;
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  scale: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    scale: none !important;
+  }
 }
