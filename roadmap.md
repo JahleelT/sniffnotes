@@ -56,6 +56,10 @@
 - [X] Save menu on every fragrance page
 
 ### UI Improvement
+- [X] Phone-friendly layouts (stacked fragrance page, compact header, no sideways scrolling)
+- [X] Header marks the current page
+- [X] Search bar is a proper search form with a submit button
+- [X] Rounded, shadowed bottle photos
 - [ ] Using fragrance color themes to apply to the site
 - [ ] Background for Search/Home page cycles through high-res photos that have to do with notes, experiences, and vibes in a 3x4 slideshow format constantly cycling through photos
 - [ ] More TBD...
