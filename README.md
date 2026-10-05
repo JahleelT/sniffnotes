@@ -65,4 +65,14 @@ The importer checks every row, prints each problem with its row number, and only
 
 A JSON array with the same fields also works: `npm run import:fragrances -- path/to/file.json`.
 
+### From PerfumAPI
+
+With a [PerfumAPI](https://perfumapi-frontend.onrender.com/) server running and `PERFUMAPI_URL` set in `.env.local`:
+
+1. `npm run fetch:perfumapi` appends every perfume not already in the CSV, downloads bottle photos to `public/fragrances/`, and suggests up to 3 moods from each perfume's notes and fragrance family.
+2. Review the suggested `tags` (the first one sets the page theme).
+3. `npm run import:fragrances`.
+
+Rows from PerfumAPI keep their Fragrantica link in `source_url`, which is also how re-runs skip perfumes that were already fetched.
+
 The importer runs TypeScript directly, so it needs Node 22.18+ or 23.6+.
