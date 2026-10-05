@@ -35,6 +35,7 @@
         "id": "luminoir",
         "name": "Luminoir",
         "brand": "Astre",
+        "image": "/fragrances/luminoir.jpg",
         "tags": [
             "tea"
         ],
@@ -64,6 +65,7 @@
         "name": "Santal Pao Rosa",
         "brand": "Guerlain",
         "collection": "L'Art & La Matière",
+        "image": "/fragrances/santal-pao-rosa.jpg",
         "tags": [
             "spicy",
             "woodsy"
@@ -88,6 +90,7 @@
         "name": "Midnight Hour",
         "brand": "Banana Republic",
         "collection": "Collezione Riservata",
+        "image": "/fragrances/midnight-hour.jpg",
         "tags": [
             "tropical"
         ],
@@ -116,6 +119,7 @@
         "id": "alto-astral",
         "name": "Alto Astral",
         "brand": "Byredo",
+        "image": "/fragrances/alto-astral.jpg",
         "tags": [
             "tropical",
             "clean",
@@ -144,6 +148,7 @@
         "name": "Ramad Earthy",
         "brand": "Arabiyat Prestige",
         "collection": "Ramad",
+        "image": "/fragrances/ramad-earthy.jpg",
         "tags": [
             "woodsy"
         ],
