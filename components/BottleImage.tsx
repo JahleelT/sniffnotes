@@ -29,7 +29,7 @@ export default function BottleImage({ fragrance, width, height, className = "" }
             alt={`${fragrance.brand} ${fragrance.name} bottle`}
             width={width}
             height={height}
-            className={`object-contain ${className}`}
+            className={`object-contain rounded-xl shadow-lg ${className}`}
         />
     );
 }
