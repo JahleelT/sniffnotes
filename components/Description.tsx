@@ -8,7 +8,7 @@ type descriptionProps = {
 };
 
 export default function Description({ fragrance, theme }: descriptionProps) {
-    const description = fragrance.description;
+    const paragraphs = fragrance.description.split(/\n\s*\n/);
 
     return (
         <div className={`border rounded-xl backdrop-blur-sm px-5 ${theme.card} ${theme.border}`}>
@@ -16,9 +16,11 @@ export default function Description({ fragrance, theme }: descriptionProps) {
 
             <hr className="my-6 border-gray-500 mb-2 mt-2" />
 
-            <p className="flex leading-relaxed text-white text-xl py-3 px-2">
-            {description}
-            </p>
+            {paragraphs.map((paragraph) => (
+                <p key={paragraph} className="flex leading-relaxed text-white text-xl py-3 px-2">
+                {paragraph}
+                </p>
+            ))}
         </div>
 
     )
