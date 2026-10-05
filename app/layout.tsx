@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible, Geist, Geist_Mono } from "next/font/google";
+import { cookies } from "next/headers";
+import TimezoneSync from "@/components/TimezoneSync";
+import { TIMEZONE_COOKIE } from "@/lib/daily";
 import { getPreferences, preferenceAttributes } from "@/lib/preferences";
 import "./globals.css";
 
@@ -28,6 +31,7 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   const preferences = await getPreferences();
+  const timeZone = (await cookies()).get(TIMEZONE_COOKIE)?.value;
 
   return (
     <html
@@ -43,6 +47,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         {children}
+        <TimezoneSync current={timeZone}/>
       </body>
     </html>
   );

@@ -12,9 +12,9 @@ export default async function Header() {
             <Link href="/" className="text-4xl font-semibold">SniffNotes</Link>
             <nav aria-label="Main" className="flex gap-8 items-center ">
 
-                <button aria-label="Daily fragrance (coming soon)" title="Coming soon" className={navItem}>
+                <Link href="/daily" aria-label="Fragrance of the day" title="Fragrance of the day" className={navItem}>
                     <Calendar aria-hidden/>
-                </button>
+                </Link>
 
                 <Link href="/search" aria-label="Search" title="Search" className={navItem}>
                     <Search aria-hidden/>
