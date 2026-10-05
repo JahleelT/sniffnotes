@@ -48,11 +48,12 @@
   - [X] Skip-to-content link, visible keyboard focus, labeled header icons
 
 ### Saved Fragrances
-- [ ] General Saved Fragrances
-- [ ] Wishlist Fragrances Collection
-- [ ] Sampled Collection
-- [ ] Owned Collection
-- [ ] Other Customizable Collections
+- [X] General Saved Fragrances ("Sniff List")
+- [X] Wishlist Fragrances Collection
+- [X] Sampled Collection
+- [X] Owned Collection
+- [X] Other Customizable Collections (create, rename, delete)
+- [X] Save menu on every fragrance page
 
 ### UI Improvement
 - [ ] Using fragrance color themes to apply to the site
