@@ -1,20 +1,35 @@
 "use client";
 
-import { startTransition, useActionState } from "react";
+import { startTransition, useActionState, useEffect, useRef } from "react";
 import type { FormState } from "@/lib/forms";
 
 type ActionFormProps = {
     action: (state: FormState, formData: FormData) => Promise<FormState>;
     submitLabel: string;
     pendingLabel: string;
+    resetOnSuccess?: boolean;
+    className?: string;
     children: React.ReactNode;
 };
 
-export default function ActionForm({ action, submitLabel, pendingLabel, children }: ActionFormProps) {
+export default function ActionForm({
+    action,
+    submitLabel,
+    pendingLabel,
+    resetOnSuccess = false,
+    className = "flex flex-col gap-4",
+    children,
+}: ActionFormProps) {
     const [state, formAction, pending] = useActionState(action, {});
+    const formRef = useRef<HTMLFormElement>(null);
+
+    useEffect(() => {
+        if (resetOnSuccess && state.message) formRef.current?.reset();
+    }, [resetOnSuccess, state]);
 
     return (
         <form
+            ref={formRef}
             action={formAction}
             onSubmit={(e) => {
                 // Submitting manually keeps the inputs filled in when the server returns an error.
@@ -22,7 +37,7 @@ export default function ActionForm({ action, submitLabel, pendingLabel, children
                 const formData = new FormData(e.currentTarget);
                 startTransition(() => formAction(formData));
             }}
-            className="flex flex-col gap-4"
+            className={className}
         >
             {children}
 

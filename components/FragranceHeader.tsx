@@ -6,10 +6,11 @@ import type { Theme } from "@/utils/themeMap";
 type FragranceProps = {
     fragrance: Fragrance;
     theme: Theme;
+    actions?: React.ReactNode;
 };
 
 
-export default function FragranceHeader({ fragrance, theme }: FragranceProps) {
+export default function FragranceHeader({ fragrance, theme, actions }: FragranceProps) {
     const { name, brand, collection } = fragrance;
 
     return (
@@ -25,6 +26,7 @@ export default function FragranceHeader({ fragrance, theme }: FragranceProps) {
                         ? `${brand} • ${collection}`
                         : brand}
                 </h2>
+                {actions && <div className="mt-4 flex justify-center">{actions}</div>}
             </div>
 
         </div>
