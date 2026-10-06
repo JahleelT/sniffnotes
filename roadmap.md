@@ -69,9 +69,12 @@
 ## Phase 3: Recommendation system
 
 ### Recommendation System / User Preferences
-- [ ] Continuation of the background slideshow concept, but now the vibes/notes/experiences will align with the interest the user has shown after arbitrary number of saved/owned fragrances
-- [ ] Fragrances are recommended based on the one being currently viewed
-- [ ] Fragrances recommendations will be shown to the user (maybe on the home page)
+- [X] Continuation of the background slideshow concept, but now the vibes/notes/experiences will align with the interest the user has shown (home mosaic leads with favorite moods, then the moods of saved fragrances)
+- [X] Fragrances are recommended based on the one being currently viewed ("You might also like" on every fragrance page)
+- [X] Fragrances recommendations will be shown to the user (own "For you" page in the header; the home page links to it when there are picks)
+  - [X] Scored from notes (base notes weigh most, rare notes count more) and moods; picks say why ("Because you saved …", "Shares …")
+  - [X] Taste comes from collections (Owned and Wishlist weigh most, Sampled least) plus favorite moods; saved fragrances are never recommended back
+- [ ] Revisit weighting once the PerfumAPI batch is imported and there's more data
 
 ## Phase 4: Social features + Quality of Experience Updates
 
