@@ -1,3 +1,4 @@
+import { LONGEVITY_LEVELS, SEASONS, SILLAGE_LEVELS, type LongevityLevel, type Season, type SillageLevel } from "@/lib/review-scales";
 import { isMood, type Mood } from "@/utils/themeMap";
 
 // Everything the search page can filter by, as it appears in the URL.
@@ -7,6 +8,10 @@ export type SearchFilters = {
     brand?: string;
     line?: string;
     note?: string;
+    // These three come from community reviews.
+    longevity?: LongevityLevel;
+    sillage?: SillageLevel;
+    season?: Season;
 };
 
 type RawParams = Record<string, string | string[] | undefined>;
@@ -18,12 +23,18 @@ function text(value: string | string[] | undefined) {
 
 export function parseSearchParams(params: RawParams): SearchFilters {
     const mood = text(params.mood);
+    const longevity = text(params.longevity);
+    const sillage = text(params.sillage);
+    const season = text(params.season);
     return {
         query: text(params.q) ?? "",
         mood: mood && isMood(mood) ? mood : undefined,
         brand: text(params.brand),
         line: text(params.line),
         note: text(params.note),
+        longevity: longevity && Object.hasOwn(LONGEVITY_LEVELS, longevity) ? (longevity as LongevityLevel) : undefined,
+        sillage: sillage && Object.hasOwn(SILLAGE_LEVELS, sillage) ? (sillage as SillageLevel) : undefined,
+        season: SEASONS.find((s) => s.value === season)?.value,
     };
 }
 
@@ -35,6 +46,9 @@ export function filterParams(filters: Partial<SearchFilters>): Record<string, st
         brand: filters.brand,
         line: filters.line,
         note: filters.note,
+        longevity: filters.longevity,
+        sillage: filters.sillage,
+        season: filters.season,
     };
     return Object.fromEntries(Object.entries(entries).filter((entry): entry is [string, string] => Boolean(entry[1])));
 }

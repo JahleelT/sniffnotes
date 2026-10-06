@@ -5,6 +5,7 @@ import MoodTags from "@/components/MoodTags";
 import FragranceCard from "@/components/FragranceCard";
 import SearchFiltersForm, { ActiveFilterChips } from "@/components/SearchFiltersForm";
 import { searchFragrances } from "@/lib/fragrances";
+import { getReviewStats, matchesCommunityFilters } from "@/lib/reviews";
 import { filterParams, hasFilters, parseSearchParams } from "@/lib/search-params";
 import { moods, pickTheme } from "@/utils/themeMap";
 
@@ -14,7 +15,9 @@ export const metadata: Metadata = {
 
 export default async function SearchPage(props: PageProps<"/search">) {
     const filters = parseSearchParams(await props.searchParams);
-    const results = searchFragrances(filters);
+    const needsStats = Boolean(filters.longevity || filters.sillage || filters.season);
+    const stats = needsStats ? await getReviewStats() : null;
+    const results = searchFragrances(filters).filter((f) => !stats || matchesCommunityFilters(stats.get(f.id), filters));
     const theme = pickTheme(filters.mood);
 
     return (
@@ -43,7 +46,9 @@ export default async function SearchPage(props: PageProps<"/search">) {
                 </div>
             ) : (
                 <p className="text-center text-lg text-foreground/80">
-                    Nothing matched. Try removing a filter, a note like “vanilla”, or another mood.
+                    {needsStats
+                        ? "Nothing matched. Performance and season come from community reviews, so they fill in as people review fragrances."
+                        : "Nothing matched. Try removing a filter, a note like “vanilla”, or another mood."}
                 </p>
             )}
         </PageShell>
