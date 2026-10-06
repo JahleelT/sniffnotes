@@ -34,7 +34,7 @@
 
 ### Data
 - [X] Integrate PerfumAPI (`npm run fetch:perfumapi` feeds the import pipeline, with photos and suggested moods)
-  - [ ] Import the first scraped batch (35 perfumes) and review suggested moods
+  - [X] Import the first scraped batch (35 perfumes; 41 fragrances total)
 
 ### User Accounts 
 - [X] User sign up, sign in, sign out (Supabase Auth)
