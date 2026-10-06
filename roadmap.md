@@ -80,7 +80,7 @@
 
 ### Social Aspect
 - [ ] Friends
-- [ ] Reviews
+- [X] Reviews (star rating, longevity, sillage, best seasons, optional text; one per person, editable)
 - [ ] Peer-reviewed official descriptions
 
 ### Quality Updates
@@ -92,8 +92,8 @@
   - [X] Search by Note (filter, plus every note on a fragrance page links to its search)
   - [X] Search by Brand (filter, plus the brand on a fragrance page links to it)
   - [X] Search by Line (filter, plus the line on a fragrance page links to it)
-  - [ ] Search by Performance
-  - [ ] Search by Season
+  - [X] Search by Performance (longevity and sillage, from community review averages)
+  - [X] Search by Season (a season counts when at least half of reviewers picked it)
 
 
 ## 🚨 BELOW PHASE(S) ARE UNLIKELY TO BE DEVELOPED, BUT CONTINGENTLY NAMED 🚨
