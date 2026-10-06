@@ -9,9 +9,14 @@ export function getFragranceById(id: string) {
     return fragrances.find((fragrance) => fragrance.id === id);
 }
 
+// Lowercase without accents, so "hermes" matches "Hermès" and "arpege" matches "Arpège".
+function fold(text: string) {
+    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
 // Every word in the query must appear in the name, brand, collection, tags, or notes.
 export function searchFragrances({ query = "", mood }: { query?: string; mood?: Mood }) {
-    const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+    const terms = fold(query).split(/\s+/).filter(Boolean);
 
     return fragrances.filter((fragrance) => {
         if (mood && !fragrance.tags.includes(mood)) return false;
@@ -24,8 +29,9 @@ export function searchFragrances({ query = "", mood }: { query?: string; mood?: 
             ...fragrance.notes.top,
             ...fragrance.notes.mid,
             ...fragrance.notes.base,
-        ].join(" ").toLowerCase();
+        ].join(" ");
 
-        return terms.every((term) => searchable.includes(term));
+        const folded = fold(searchable);
+        return terms.every((term) => folded.includes(term));
     });
 }
