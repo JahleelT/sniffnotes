@@ -11,8 +11,8 @@ export default async function Header() {
 
     return (
         <header className="sticky top-0 z-50 flex justify-between items-center gap-4 cursor-pointer max-w-full p-4 sm:p-6">
-            <Link href="/" className="text-2xl sm:text-4xl font-semibold">SniffNotes</Link>
-            <nav aria-label="Main" className="flex gap-3 sm:gap-8 items-center">
+            <Link href="/" className="text-xl min-[400px]:text-2xl sm:text-4xl font-semibold">SniffNotes</Link>
+            <nav aria-label="Main" className="flex gap-2.5 min-[400px]:gap-3 sm:gap-8 items-center">
 
                 <NavLink href="/daily" label="Fragrance of the day" className={navItem}>
                     <Calendar aria-hidden className={icon}/>
@@ -26,10 +26,9 @@ export default async function Header() {
                     <Sparkles aria-hidden className={icon}/>
                 </NavLink>
 
-                {/* Not built yet, so it's hidden where header space is tight. */}
-                <button aria-label="Friends (coming soon)" title="Coming soon" className={`${navItem} hidden sm:block`}>
+                <NavLink href="/friends" label="Friends" className={navItem}>
                     <Users aria-hidden className={icon}/>
-                </button>
+                </NavLink>
 
                 <NavLink href="/collections" label="Collections" className={navItem}>
                     <Bookmark aria-hidden className={icon}/>

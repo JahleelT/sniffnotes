@@ -25,6 +25,8 @@ export type Review = {
     id: string;
     userId: string;
     author: string;
+    // For linking to the author's profile; null until they pick a username.
+    authorUsername: string | null;
     rating: number;
     longevity: number | null;
     sillage: number | null;
@@ -43,15 +45,16 @@ export async function getReviews(fragranceId: string): Promise<Review[]> {
         .order("updated_at", { ascending: false });
 
     const rows = data ?? [];
-    const { data: names } = rows.length
-        ? await supabase.rpc("display_names", { user_ids: [...new Set(rows.map((r) => r.user_id))] })
+    const { data: profiles } = rows.length
+        ? await supabase.rpc("public_profiles", { user_ids: [...new Set(rows.map((r) => r.user_id))] })
         : { data: [] };
-    const nameById = new Map((names ?? []).map((n) => [n.id, n.display_name]));
+    const profileById = new Map((profiles ?? []).map((p) => [p.id, p]));
 
     return rows.map((row) => ({
         id: row.id,
         userId: row.user_id,
-        author: nameById.get(row.user_id) || "A SniffNotes member",
+        author: profileById.get(row.user_id)?.display_name || "A SniffNotes member",
+        authorUsername: profileById.get(row.user_id)?.username ?? null,
         rating: row.rating,
         longevity: row.longevity,
         sillage: row.sillage,
@@ -59,4 +62,23 @@ export async function getReviews(fragranceId: string): Promise<Review[]> {
         body: row.body,
         updatedAt: row.updated_at,
     }));
+}
+
+export type UserReview = {
+    fragranceId: string;
+    rating: number;
+    body: string;
+    updatedAt: string;
+};
+
+// Someone's reviews (public), newest first, for their profile page.
+export async function getReviewsByUser(userId: string): Promise<UserReview[]> {
+    const supabase = await createClient();
+    const { data } = await supabase
+        .from("reviews")
+        .select("fragrance_id, rating, body, updated_at")
+        .eq("user_id", userId)
+        .order("updated_at", { ascending: false });
+
+    return (data ?? []).map((row) => ({ fragranceId: row.fragrance_id, rating: row.rating, body: row.body, updatedAt: row.updated_at }));
 }
