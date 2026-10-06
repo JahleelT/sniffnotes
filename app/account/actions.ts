@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import type { FormState } from "@/lib/forms";
 import { getCurrentUser } from "@/lib/auth";
+import { USERNAME_PATTERN } from "@/lib/friends";
 import { createAdminClient, createStatelessClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 
@@ -47,4 +48,23 @@ export async function deleteAccount(_: FormState, formData: FormData): Promise<F
     await (await createClient()).auth.signOut({ scope: "local" });
 
     redirect("/account-deleted");
+}
+
+export async function updateUsername(_: FormState, formData: FormData): Promise<FormState> {
+    const user = await getCurrentUser();
+    if (!user) return { error: "Your session ended. Sign in again." };
+
+    const username = String(formData.get("username") ?? "").trim().toLowerCase().replace(/^@/, "");
+    if (!USERNAME_PATTERN.test(username)) {
+        return { error: "Use 3–20 lowercase letters, numbers, or underscores." };
+    }
+
+    const supabase = await createClient();
+    const { error } = await supabase.from("profiles").update({ username }).eq("id", user.id);
+
+    if (error?.code === "23505") return { error: `@${username} is taken. Try another.` };
+    if (error) return { error: "We couldn't save your username. Try again." };
+
+    revalidatePath("/", "layout");
+    return { message: `You're @${username}. Friends can find you by that name.` };
 }

@@ -6,7 +6,7 @@ import PageShell from "@/components/PageShell";
 import { requireUser } from "@/lib/auth";
 import { defaultTheme } from "@/utils/themeMap";
 import { signOut } from "@/app/(auth)/actions";
-import { deleteAccount, updateDisplayName } from "./actions";
+import { deleteAccount, updateDisplayName, updateUsername } from "./actions";
 
 export const metadata: Metadata = {
     title: "Account | SniffNotes",
@@ -36,6 +36,24 @@ export default async function AccountPage() {
                             required
                         />
                     </ActionForm>
+
+                    <div className="mt-6">
+                        <ActionForm action={updateUsername} submitLabel="Save username" pendingLabel="Saving...">
+                            <Field
+                                label="Username"
+                                name="username"
+                                defaultValue={user.username ?? ""}
+                                autoComplete="username"
+                                pattern="@?[a-z0-9_]{3,20}"
+                                maxLength={21}
+                                hint="Public. Friends find you by it, and your profile lives at /people/username. 3–20 lowercase letters, numbers, or underscores."
+                                required
+                            />
+                        </ActionForm>
+                        {user.username && (
+                            <Link href={`/people/${user.username}`} className="inline-block mt-3 underline text-foreground/80">View your public profile</Link>
+                        )}
+                    </div>
                 </section>
 
                 <section className={card} aria-labelledby="security-heading">
