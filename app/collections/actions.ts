@@ -70,8 +70,8 @@ export async function renameCollection(_: FormState, formData: FormData): Promis
     if (!name) return { error: "Give your collection a name." };
 
     const supabase = await createClient();
-    // RLS only lets custom collections be updated, so presets match zero rows.
-    const { data, error } = await supabase.from("collections").update({ name }).eq("id", id).select("id");
+    // Presets can't be renamed (a database trigger rejects it), so this only succeeds for custom ones.
+    const { data, error } = await supabase.from("collections").update({ name }).eq("id", id).eq("user_id", user.id).select("id");
 
     if (error?.code === DUPLICATE_KEY) return { error: `You already have a collection called “${name}”.` };
     if (error || !data?.length) return { error: "We couldn't rename that collection." };
@@ -95,4 +95,18 @@ export async function removeFromCollection(formData: FormData) {
     const collectionId = String(formData.get("collectionId") ?? "");
     const fragranceId = String(formData.get("fragranceId") ?? "");
     await setFragranceSaved(collectionId, fragranceId, false);
+}
+
+export async function setCollectionShared(formData: FormData) {
+    const user = await getCurrentUser();
+    if (!user) return;
+
+    const supabase = await createClient();
+    await supabase
+        .from("collections")
+        .update({ shared_with_friends: formData.get("shared") === "true" })
+        .match({ id: String(formData.get("collectionId") ?? ""), user_id: user.id });
+
+    refresh();
+    revalidatePath("/people", "layout");
 }

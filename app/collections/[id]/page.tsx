@@ -7,8 +7,9 @@ import FragranceCard from "@/components/FragranceCard";
 import PageShell from "@/components/PageShell";
 import { requireUser } from "@/lib/auth";
 import { getCollection } from "@/lib/collections";
+import { getPublicProfiles } from "@/lib/friends";
 import { defaultTheme } from "@/utils/themeMap";
-import { deleteCollection, removeFromCollection, renameCollection } from "../actions";
+import { deleteCollection, removeFromCollection, renameCollection, setCollectionShared } from "../actions";
 
 export const metadata: Metadata = {
     title: "Collection | SniffNotes",
@@ -19,18 +20,26 @@ const pill = "px-5 py-2 rounded-full border border-foreground/60 hover:bg-foregr
 
 export default async function CollectionPage(props: PageProps<"/collections/[id]">) {
     const { id } = await props.params;
-    await requireUser(`/collections/${id}`);
+    const user = await requireUser(`/collections/${id}`);
 
+    // Row-level security returns your own collections and friends' shared ones; anything else is "not found".
     const collection = await getCollection(id);
     if (!collection) notFound();
 
+    const isOwner = collection.userId === user.id;
     const isCustom = collection.kind === "custom";
+    const owner = isOwner ? null : (await getPublicProfiles([collection.userId])).get(collection.userId);
 
     return (
         <PageShell>
-            <Link href="/collections" className="underline text-foreground/80">← All collections</Link>
+            {isOwner ? (
+                <Link href="/collections" className="underline text-foreground/80">← All collections</Link>
+            ) : (
+                owner?.username && <Link href={`/people/${owner.username}`} className="underline text-foreground/80">← {owner.displayName}&apos;s profile</Link>
+            )}
 
             <h1 className="text-4xl font-semibold mt-4">{collection.name}</h1>
+            {!isOwner && owner && <p className="text-foreground/80">Shared by {owner.displayName}</p>}
             <p className="mb-8 text-foreground/80">
                 {collection.fragrances.length} {collection.fragrances.length === 1 ? "fragrance" : "fragrances"}
             </p>
@@ -40,32 +49,43 @@ export default async function CollectionPage(props: PageProps<"/collections/[id]
                     {collection.fragrances.map((fragrance) => (
                         <li key={fragrance.id} className="flex flex-col gap-3">
                             <FragranceCard fragrance={fragrance}/>
-                            <form action={removeFromCollection} className="flex justify-center">
+                            {isOwner && <form action={removeFromCollection} className="flex justify-center">
                                 <input type="hidden" name="collectionId" value={collection.id}/>
                                 <input type="hidden" name="fragranceId" value={fragrance.id}/>
                                 <button type="submit" className={`${pill} backdrop-blur-sm`} aria-label={`Remove ${fragrance.name} from ${collection.name}`}>
                                     Remove
                                 </button>
-                            </form>
+                            </form>}
                         </li>
                     ))}
                 </ul>
             ) : (
                 <p className="mb-10 text-lg">
-                    Nothing saved here yet. <Link href="/search" className="underline">Browse fragrances</Link> and use the Save button on any fragrance page.
+                    {isOwner ? "Nothing saved here yet." : "Nothing here yet."}{" "} <Link href="/search" className="underline">Browse fragrances</Link> and use the Save button on any fragrance page.
                 </p>
             )}
 
-            {isCustom && (
+            {isOwner && (
                 <section aria-labelledby="manage-heading" className={`max-w-md ${card}`}>
                     <h2 id="manage-heading" className="text-2xl font-semibold mb-4">Manage collection</h2>
 
-                    <ActionForm action={renameCollection} submitLabel="Rename" pendingLabel="Renaming...">
+                    <form action={setCollectionShared} className="flex flex-wrap items-center justify-between gap-3 mb-6">
                         <input type="hidden" name="collectionId" value={collection.id}/>
-                        <Field label="Name" name="name" defaultValue={collection.name} maxLength={40} required/>
-                    </ActionForm>
+                        <input type="hidden" name="shared" value={collection.sharedWithFriends ? "false" : "true"}/>
+                        <p>{collection.sharedWithFriends ? "Your friends can see this collection." : "Only you can see this collection."}</p>
+                        <button type="submit" className={pill} aria-pressed={collection.sharedWithFriends}>
+                            {collection.sharedWithFriends ? "Stop sharing" : "Share with friends"}
+                        </button>
+                    </form>
 
-                    <details className="mt-6">
+                    {isCustom && (
+                        <ActionForm action={renameCollection} submitLabel="Rename" pendingLabel="Renaming...">
+                            <input type="hidden" name="collectionId" value={collection.id}/>
+                            <Field label="Name" name="name" defaultValue={collection.name} maxLength={40} required/>
+                        </ActionForm>
+                    )}
+
+                    {isCustom && <details className="mt-6">
                         <summary className="cursor-pointer text-danger">Delete this collection</summary>
                         <p className="my-3 text-foreground/80">This removes the collection, not the fragrances in it. It can&apos;t be undone.</p>
                         <form action={deleteCollection}>
@@ -74,7 +94,7 @@ export default async function CollectionPage(props: PageProps<"/collections/[id]
                                 Yes, delete “{collection.name}”
                             </button>
                         </form>
-                    </details>
+                    </details>}
                 </section>
             )}
         </PageShell>
