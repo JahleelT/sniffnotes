@@ -50,6 +50,38 @@ isOneToOne: false
                   Relationships: [
                     
                   ]
+                },"description_suggestions": {
+                  Row: {
+                    "body": string,"created_at": string,"fragrance_id": string,"id": string,"updated_at": string,"user_id": string
+                  }
+                  Insert: {
+                    "body": string,"created_at"?: string,"fragrance_id": string,"id"?: string,"updated_at"?: string,"user_id": string
+                  }
+                  Update: {
+                    "body"?: string,"created_at"?: string,"fragrance_id"?: string,"id"?: string,"updated_at"?: string,"user_id"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
+                },"description_votes": {
+                  Row: {
+                    "created_at": string,"suggestion_id": string,"user_id": string,"value": number
+                  }
+                  Insert: {
+                    "created_at"?: string,"suggestion_id": string,"user_id": string,"value": number
+                  }
+                  Update: {
+                    "created_at"?: string,"suggestion_id"?: string,"user_id"?: string,"value"?: number
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "description_votes_suggestion_id_fkey"
+      columns: ["suggestion_id"]
+isOneToOne: false
+      referencedRelation: "description_suggestions"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"friendships": {
                   Row: {
                     "addressee_id": string,"created_at": string,"requester_id": string,"responded_at": string | null,"status": string
