@@ -1,13 +1,16 @@
+import Link from "next/link";
+import { Sparkles } from "lucide-react";
 import SearchBar from "@/components/SearchBar";
 import MoodTags from "@/components/MoodTags";
 import { defaultTheme, type Mood } from "@/utils/themeMap";
 
 type HeroSectionProps = {
     moods: Mood[];
+    hasPicks?: boolean;
 };
 
 
-export default function HeroSection({ moods }: HeroSectionProps) {
+export default function HeroSection({ moods, hasPicks = false }: HeroSectionProps) {
 
 
     return (
@@ -19,6 +22,13 @@ export default function HeroSection({ moods }: HeroSectionProps) {
 
                 <MoodTags moods={moods}/>
             </div>
+
+            {hasPicks && (
+                <Link href="/for-you" className="inline-flex items-center gap-2 underline underline-offset-4 text-foreground/80 hover:text-foreground">
+                    <Sparkles aria-hidden className="size-4"/>
+                    See fragrances picked for you
+                </Link>
+            )}
         </section> 
     )
 }

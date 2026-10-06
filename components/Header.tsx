@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {Search, CircleUserRound, Calendar, Users, Bookmark, Settings, LogIn} from "lucide-react";
+import {Search, CircleUserRound, Calendar, Users, Bookmark, Settings, LogIn, Sparkles} from "lucide-react";
 import NavLink from "@/components/NavLink";
 import { getCurrentUser } from "@/lib/auth";
 
@@ -20,6 +20,10 @@ export default async function Header() {
 
                 <NavLink href="/search" label="Search" className={navItem}>
                     <Search aria-hidden className={icon}/>
+                </NavLink>
+
+                <NavLink href="/for-you" label="Picked for you" className={navItem}>
+                    <Sparkles aria-hidden className={icon}/>
                 </NavLink>
 
                 {/* Not built yet, so it's hidden where header space is tight. */}
