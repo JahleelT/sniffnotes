@@ -1,23 +1,19 @@
 import Link from "next/link";
+import { searchHref, type SearchFilters } from "@/lib/search-params";
 import { themeMap, type Mood } from "@/utils/themeMap";
 
 type MoodTagsProps = {
     moods: Mood[];
     active?: Mood;
-    query?: string;
+    // Other search filters to keep when a mood is toggled.
+    filters?: Partial<SearchFilters>;
     className?: string;
 };
 
 // Each tag links to the search page filtered by that mood. Clicking the active tag clears it.
-export default function MoodTags({ moods, active, query, className = "mt-6" }: MoodTagsProps) {
+export default function MoodTags({ moods, active, filters = {}, className = "mt-6" }: MoodTagsProps) {
 
-    const hrefFor = (mood: Mood) => {
-        const params = new URLSearchParams();
-        if (query) params.set("q", query);
-        if (mood !== active) params.set("mood", mood);
-        const search = params.toString();
-        return search ? `/search?${search}` : "/search";
-    };
+    const hrefFor = (mood: Mood) => searchHref({ ...filters, mood: mood === active ? undefined : mood });
 
     return (
         <div className={`flex flex-wrap justify-center gap-2 sm:gap-3 w-full ${className}`}>

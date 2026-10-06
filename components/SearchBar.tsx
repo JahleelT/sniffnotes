@@ -2,12 +2,15 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
+import { searchHref, type SearchFilters } from "@/lib/search-params";
 
 type SearchBarProps = {
     initialQuery?: string;
+    // Other search filters to keep when the text changes.
+    filters?: Partial<SearchFilters>;
 };
 
-export default function SearchBar({ initialQuery = "" }: SearchBarProps) {
+export default function SearchBar({ initialQuery = "", filters = {} }: SearchBarProps) {
     const [query, setQuery] = useState(initialQuery);
     const router = useRouter();
 
@@ -15,8 +18,8 @@ export default function SearchBar({ initialQuery = "" }: SearchBarProps) {
         e.preventDefault();
         const trimmedQuery = query.trim();
 
-        // An empty search browses everything.
-        router.push(trimmedQuery ? `/search?q=${encodeURIComponent(trimmedQuery)}` : "/search");
+        // An empty search browses everything (within any other filters).
+        router.push(searchHref({ ...filters, query: trimmedQuery }));
     };
 
 

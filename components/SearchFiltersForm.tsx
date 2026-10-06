@@ -1,0 +1,107 @@
+import Link from "next/link";
+import { X } from "lucide-react";
+import { getSearchFacets } from "@/lib/fragrances";
+import { searchHref, type SearchFilters } from "@/lib/search-params";
+import { themeMap } from "@/utils/themeMap";
+
+type SearchFiltersFormProps = {
+    filters: SearchFilters;
+    cardClass: string;
+};
+
+const control = "w-full px-4 py-3 rounded-lg border border-foreground/30 bg-background/60";
+
+// Labels for the chips above the results, with the filter each one removes.
+function activeFilters(filters: SearchFilters) {
+    return [
+        filters.query && { label: `“${filters.query}”`, without: { ...filters, query: "" } },
+        filters.mood && { label: themeMap[filters.mood].label, without: { ...filters, mood: undefined } },
+        filters.brand && { label: `Brand: ${filters.brand}`, without: { ...filters, brand: undefined } },
+        filters.line && { label: `Line: ${filters.line}`, without: { ...filters, line: undefined } },
+        filters.note && { label: `Note: ${filters.note}`, without: { ...filters, note: undefined } },
+    ].filter((chip): chip is { label: string; without: SearchFilters } => Boolean(chip));
+}
+
+export function ActiveFilterChips({ filters }: { filters: SearchFilters }) {
+    const chips = activeFilters(filters);
+    if (!chips.length) return null;
+
+    return (
+        <ul className="flex flex-wrap justify-center gap-2" aria-label="Active filters">
+            {chips.map((chip) => (
+                <li key={chip.label}>
+                    <Link
+                        href={searchHref(chip.without)}
+                        aria-label={`Remove filter ${chip.label}`}
+                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-foreground/50 bg-foreground/10 hover:bg-foreground/20 transition-all duration-200"
+                    >
+                        {chip.label}
+                        <X aria-hidden className="size-4"/>
+                    </Link>
+                </li>
+            ))}
+            {chips.length > 1 && (
+                <li>
+                    <Link href="/search" className="inline-flex px-4 py-1.5 underline text-foreground/80">Clear all</Link>
+                </li>
+            )}
+        </ul>
+    );
+}
+
+// A plain GET form, so filtering works without JavaScript and every result page has a shareable URL.
+export default function SearchFiltersForm({ filters, cardClass }: SearchFiltersFormProps) {
+    const { brands, lines, notes } = getSearchFacets();
+    const open = Boolean(filters.brand || filters.line || filters.note);
+
+    return (
+        <details open={open} className={`p-4 sm:p-6 border rounded-xl backdrop-blur-sm ${cardClass}`}>
+            <summary className="cursor-pointer font-semibold">Refine by brand, line, or note</summary>
+
+            <form action="/search" method="get" className="mt-4 grid gap-4 sm:grid-cols-3">
+                {filters.query && <input type="hidden" name="q" value={filters.query}/>}
+                {filters.mood && <input type="hidden" name="mood" value={filters.mood}/>}
+
+                <label className="flex flex-col gap-1">
+                    <span className="font-medium">Brand</span>
+                    <select name="brand" defaultValue={filters.brand ?? ""} className={control}>
+                        <option value="">Any brand</option>
+                        {brands.map(({ brand, count }) => (
+                            <option key={brand} value={brand}>{brand} ({count})</option>
+                        ))}
+                    </select>
+                </label>
+
+                <label className="flex flex-col gap-1">
+                    <span className="font-medium">Line</span>
+                    <select name="line" defaultValue={filters.line ?? ""} className={control}>
+                        <option value="">Any line</option>
+                        {lines.map(({ line, brand, count }) => (
+                            <option key={`${brand}-${line}`} value={line}>{brand} · {line} ({count})</option>
+                        ))}
+                    </select>
+                </label>
+
+                <label className="flex flex-col gap-1">
+                    <span className="font-medium">Note</span>
+                    <input
+                        name="note"
+                        list="note-options"
+                        defaultValue={filters.note ?? ""}
+                        placeholder="e.g. vanilla, rose, oud"
+                        className={control}
+                    />
+                    <datalist id="note-options">
+                        {notes.map(({ note }) => <option key={note} value={note}/>)}
+                    </datalist>
+                </label>
+
+                <div className="sm:col-span-3 flex flex-wrap gap-3">
+                    <button type="submit" className="px-6 py-3 rounded-full border border-foreground/60 font-semibold hover:bg-foreground/15 transition-all duration-200 cursor-pointer">
+                        Apply filters
+                    </button>
+                </div>
+            </form>
+        </details>
+    );
+}
