@@ -26,13 +26,13 @@ isOneToOne: false
                   ]
                 },"collections": {
                   Row: {
-                    "created_at": string,"id": string,"kind": Database["public"]['Enums']["collection_kind"],"name": string,"user_id": string
+                    "created_at": string,"id": string,"kind": Database["public"]['Enums']["collection_kind"],"name": string,"shared_with_friends": boolean,"user_id": string
                   }
                   Insert: {
-                    "created_at"?: string,"id"?: string,"kind"?: Database["public"]['Enums']["collection_kind"],"name": string,"user_id": string
+                    "created_at"?: string,"id"?: string,"kind"?: Database["public"]['Enums']["collection_kind"],"name": string,"shared_with_friends"?: boolean,"user_id": string
                   }
                   Update: {
-                    "created_at"?: string,"id"?: string,"kind"?: Database["public"]['Enums']["collection_kind"],"name"?: string,"user_id"?: string
+                    "created_at"?: string,"id"?: string,"kind"?: Database["public"]['Enums']["collection_kind"],"name"?: string,"shared_with_friends"?: boolean,"user_id"?: string
                   }
                   Relationships: [
                     
@@ -50,15 +50,28 @@ isOneToOne: false
                   Relationships: [
                     
                   ]
-                },"profiles": {
+                },"friendships": {
                   Row: {
-                    "created_at": string,"display_name": string,"id": string,"preferences": NonNullable<Json>,"updated_at": string
+                    "addressee_id": string,"created_at": string,"requester_id": string,"responded_at": string | null,"status": string
                   }
                   Insert: {
-                    "created_at"?: string,"display_name"?: string,"id": string,"preferences"?: NonNullable<Json>,"updated_at"?: string
+                    "addressee_id": string,"created_at"?: string,"requester_id": string,"responded_at"?: string | null,"status"?: string
                   }
                   Update: {
-                    "created_at"?: string,"display_name"?: string,"id"?: string,"preferences"?: NonNullable<Json>,"updated_at"?: string
+                    "addressee_id"?: string,"created_at"?: string,"requester_id"?: string,"responded_at"?: string | null,"status"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
+                },"profiles": {
+                  Row: {
+                    "created_at": string,"display_name": string,"id": string,"preferences": NonNullable<Json>,"updated_at": string,"username": string | null
+                  }
+                  Insert: {
+                    "created_at"?: string,"display_name"?: string,"id": string,"preferences"?: NonNullable<Json>,"updated_at"?: string,"username"?: string | null
+                  }
+                  Update: {
+                    "created_at"?: string,"display_name"?: string,"id"?: string,"preferences"?: NonNullable<Json>,"updated_at"?: string,"username"?: string | null
                   }
                   Relationships: [
                     
@@ -89,12 +102,25 @@ isOneToOne: false
                 }
           }
           Functions: {
-            "create_default_collections":
+            "are_friends":
+{ Args: { "a": string,"b": string }; Returns: boolean
+                           },
+"create_default_collections":
 { Args: { "target_user": string }; Returns: undefined
                            },
-"display_names":
+"find_profiles":
+{ Args: { "search": string }; Returns: {
+              "display_name": string,"id": string,"username": string
+            }[]
+                           },
+"profile_by_username":
+{ Args: { "handle": string }; Returns: {
+              "display_name": string,"id": string,"username": string
+            }[]
+                           },
+"public_profiles":
 { Args: { "user_ids": (string)[] }; Returns: {
-              "display_name": string,"id": string
+              "display_name": string,"id": string,"username": string
             }[]
                            }
           }
