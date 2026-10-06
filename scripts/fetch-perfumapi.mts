@@ -55,13 +55,23 @@ function cleanName(name: string, brand: string) {
         : trimmed;
 }
 
-// Drops the stock "Top notes are ...; base notes are ..." sentence, which the note pyramid already shows.
+// Drops the stock note sentences ("Top notes are ...; base notes are ...", "The fragrance features ..."),
+// which the notes card already shows.
 function cleanDescription(description: string) {
     return description
         .split(/\n\s*\n/)
-        .map((paragraph) => paragraph.replace(/\s*Top notes? (is|are) [^.]*?base notes? (is|are) [^.]*\./i, "").trim())
+        .map((paragraph) => paragraph
+            .replace(/\s*Top notes? (is|are) [^.]*?base notes? (is|are) [^.]*\./i, "")
+            .replace(/\s*The fragrance features [^.]*\./i, "")
+            .trim())
         .filter(Boolean)
         .join("\n\n");
+}
+
+// Some perfumes only have a flat note list on Fragrantica: "The fragrance features A, B and C."
+function featuredNotes(description: string) {
+    const sentence = description.match(/The fragrance features ([^.]*)\./i)?.[1] ?? "";
+    return sentence.split(/,\s*|\s+and\s+/).map((note) => note.trim()).filter(Boolean);
 }
 
 function list(values: string[] | null) {
@@ -120,12 +130,14 @@ for (const perfume of perfumes) {
         continue;
     }
 
-    const top = list(perfume.notes_top);
-    const mid = list(perfume.notes_middle);
-    const base = list(perfume.notes_base);
     const rawDescription = perfume.description ?? "";
+    const top = list(perfume.notes_top);
+    let mid = list(perfume.notes_middle);
+    const base = list(perfume.notes_base);
+    // Without a pyramid, the flat list goes in the middle tier (shown simply as "Notes").
+    if (!top.length && !mid.length && !base.length) mid = featuredNotes(rawDescription);
     const description = cleanDescription(rawDescription) || `${name} by ${brand}.`;
-    const moods = suggestMoods([...top, ...mid, ...base], rawDescription);
+    const moods = suggestMoods({ top, mid, base }, rawDescription);
     const image = perfume.image_url ? await downloadImage(perfume.image_url, id) : "";
     if (!image) missingImages++;
 

@@ -53,13 +53,18 @@ export function familyFromDescription(description: string): string[] {
     return sentence.toLowerCase().split(/\s+/).filter((word) => word in familyKeywords);
 }
 
-export function suggestMoods(notes: string[], description: string): Mood[] {
+// Top notes fade within minutes and citrus openers are nearly universal, so they count least.
+const TIER_WEIGHT = { top: 0.5, mid: 1, base: 1 };
+
+export function suggestMoods(notes: { top: string[]; mid: string[]; base: string[] }, description: string): Mood[] {
     const scores = new Map<Mood, number>();
     const add = (mood: Mood, points: number) => scores.set(mood, (scores.get(mood) ?? 0) + points);
 
-    for (const note of notes) {
-        for (const [mood, keywords] of Object.entries(noteKeywords) as [Mood, string[]][]) {
-            if (keywords.some((keyword) => matches(note, keyword))) add(mood, 1);
+    for (const tier of ["top", "mid", "base"] as const) {
+        for (const note of notes[tier]) {
+            for (const [mood, keywords] of Object.entries(noteKeywords) as [Mood, string[]][]) {
+                if (keywords.some((keyword) => matches(note, keyword))) add(mood, TIER_WEIGHT[tier]);
+            }
         }
     }
 
