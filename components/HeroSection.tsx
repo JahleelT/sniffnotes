@@ -14,7 +14,7 @@ export default function HeroSection({ moods, hasPicks = false }: HeroSectionProp
 
 
     return (
-        <section className={`w-full max-w-3xl flex flex-col items-center justify-center gap-6 p-6 sm:p-10 rounded-2xl border backdrop-blur-md ${defaultTheme.card} ${defaultTheme.border}`}>
+        <section className={`w-full max-w-5xl flex flex-col items-center justify-center gap-6 p-6 sm:p-10 lg:px-14 rounded-2xl border backdrop-blur-md ${defaultTheme.card} ${defaultTheme.border}`}>
             <h2 className=" text-2xl sm:text-3xl font-semibold text-center">What are you in the mood to sniff today?</h2>
 
             <div className="w-full">
