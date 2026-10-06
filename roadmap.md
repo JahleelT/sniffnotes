@@ -79,7 +79,11 @@
 ## Phase 4: Social features + Quality of Experience Updates
 
 ### Social Aspect
-- [ ] Friends
+- [X] Friends
+  - [X] Public usernames and profile pages (/people/username) with reviews
+  - [X] Find people, send / accept / decline / cancel requests, unfriend
+  - [X] Friends can see your collections; each collection can be shared or kept private
+  - [X] Friends' reviews are badged and listed first
 - [X] Reviews (star rating, longevity, sillage, best seasons, optional text; one per person, editable)
 - [ ] Peer-reviewed official descriptions
 
