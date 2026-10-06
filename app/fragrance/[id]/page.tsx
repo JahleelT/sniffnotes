@@ -6,10 +6,12 @@ import FragranceHeader from "@/components/FragranceHeader";
 import FragrancePhoto from "@/components/FragrancePhoto";
 import BreakdownNTags from "@/components/BreakdownNTags";
 import Description from "@/components/Description";
+import RecommendationGrid from "@/components/RecommendationGrid";
 import SaveMenu from "@/components/SaveMenu";
 import { getCurrentUser } from "@/lib/auth";
 import { getCollections } from "@/lib/collections";
 import { getAllFragrances, getFragranceById } from "@/lib/fragrances";
+import { getSimilarFragrances } from "@/lib/recommendations";
 import { pickTheme } from "@/utils/themeMap";
 
 export function generateStaticParams() {
@@ -34,6 +36,7 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
     // A random photo from the first mood, so repeat visits vary.
     const theme = pickTheme(fragrance.tags[0]);
     const user = await getCurrentUser();
+    const similar = getSimilarFragrances(fragrance.id);
 
     const saveAction = user ? (
         <SaveMenu
@@ -55,10 +58,19 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
         <Backdrop theme={theme}>
             <FragranceHeader fragrance={fragrance} theme={theme} actions={saveAction}/>
 
-            <main id="main" className="grid grid-cols-1 lg:grid-cols-[1fr_0.9fr_1fr] gap-6 lg:gap-8 p-4 sm:p-8">
-                <BreakdownNTags fragrance={fragrance} theme={theme}/>
-                <FragrancePhoto fragrance={fragrance} theme={theme}/>
-                <Description fragrance={fragrance} theme={theme}/>
+            <main id="main" className="p-4 sm:p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.9fr_1fr] gap-6 lg:gap-8">
+                    <BreakdownNTags fragrance={fragrance} theme={theme}/>
+                    <FragrancePhoto fragrance={fragrance} theme={theme}/>
+                    <Description fragrance={fragrance} theme={theme}/>
+                </div>
+
+                {similar.length > 0 && (
+                    <section aria-labelledby="similar-heading" className="mt-10">
+                        <h2 id="similar-heading" className={`text-2xl font-semibold mb-4 ${theme.accent}`}>You might also like</h2>
+                        <RecommendationGrid recommendations={similar} compact/>
+                    </section>
+                )}
             </main>
         </Backdrop>
     )
