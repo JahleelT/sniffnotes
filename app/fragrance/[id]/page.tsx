@@ -10,7 +10,7 @@ import SaveMenu from "@/components/SaveMenu";
 import { getCurrentUser } from "@/lib/auth";
 import { getCollections } from "@/lib/collections";
 import { getAllFragrances, getFragranceById } from "@/lib/fragrances";
-import { getTheme } from "@/utils/themeMap";
+import { pickTheme } from "@/utils/themeMap";
 
 export function generateStaticParams() {
     return getAllFragrances().map((fragrance) => ({ id: fragrance.id }));
@@ -31,7 +31,8 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
 
     if (!fragrance) notFound();
 
-    const theme = getTheme(fragrance.tags[0]);
+    // A random photo from the first mood, so repeat visits vary.
+    const theme = pickTheme(fragrance.tags[0]);
     const user = await getCurrentUser();
 
     const saveAction = user ? (

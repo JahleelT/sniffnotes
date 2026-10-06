@@ -4,7 +4,7 @@ import SearchBar from "@/components/SearchBar";
 import MoodTags from "@/components/MoodTags";
 import FragranceCard from "@/components/FragranceCard";
 import { searchFragrances } from "@/lib/fragrances";
-import { getTheme, isMood, moods, themeMap } from "@/utils/themeMap";
+import { isMood, moods, pickTheme, themeMap } from "@/utils/themeMap";
 
 export const metadata: Metadata = {
     title: "Search | SniffNotes",
@@ -17,7 +17,7 @@ export default async function SearchPage(props: PageProps<"/search">) {
     const activeMood = typeof mood === "string" && isMood(mood) ? mood : undefined;
 
     const results = searchFragrances({ query, mood: activeMood });
-    const theme = getTheme(activeMood);
+    const theme = pickTheme(activeMood);
 
     const filters = [
         query && `“${query}”`,

@@ -7,7 +7,7 @@ import SaveMenu from "@/components/SaveMenu";
 import { getCurrentUser } from "@/lib/auth";
 import { getCollections } from "@/lib/collections";
 import { getPersonalDailyPick, getSharedDailyPick } from "@/lib/daily";
-import { getTheme } from "@/utils/themeMap";
+import { pickTheme } from "@/utils/themeMap";
 
 export const metadata: Metadata = {
     title: "Fragrance of the Day | SniffNotes",
@@ -33,7 +33,7 @@ export default async function DailyPage() {
     }
 
     const { fragrance } = daily;
-    const theme = getTheme(fragrance.tags[0]);
+    const theme = pickTheme(fragrance.tags[0]);
     const card = `border rounded-xl backdrop-blur-sm ${theme.card} ${theme.border}`;
 
     const collections = user
