@@ -1,3 +1,4 @@
+import { getCurrentUser } from "@/lib/auth";
 import { getFragranceById } from "@/lib/fragrances";
 import type { Database } from "@/lib/supabase/database.types";
 import { createClient } from "@/lib/supabase/server";
@@ -7,8 +8,10 @@ export type CollectionKind = Database["public"]["Enums"]["collection_kind"];
 
 export type CollectionSummary = {
     id: string;
+    userId: string;
     kind: CollectionKind;
     name: string;
+    sharedWithFriends: boolean;
     fragranceIds: string[];
 };
 
@@ -30,17 +33,24 @@ function newestFirst(items: { fragrance_id: string; added_at: string }[]) {
     return [...items].sort((a, b) => b.added_at.localeCompare(a.added_at)).map((item) => item.fragrance_id);
 }
 
-// Row-level security limits every query here to the signed-in user's collections.
-export async function getCollections(): Promise<CollectionSummary[]> {
+const COLLECTION_COLUMNS = "id, user_id, kind, name, shared_with_friends, created_at, collection_items(fragrance_id, added_at)";
+
+// Someone's collections: your own by default, or a friend's (row-level security only returns
+// a friend's collections they've shared). Filtering by owner matters, because the signed-in
+// user can also read their friends' shared collections.
+export async function getCollections(ownerId?: string): Promise<CollectionSummary[]> {
+    const userId = ownerId ?? (await getCurrentUser())?.id;
+    if (!userId) return [];
+
     const supabase = await createClient();
-    const { data } = await supabase
-        .from("collections")
-        .select("id, kind, name, created_at, collection_items(fragrance_id, added_at)");
+    const { data } = await supabase.from("collections").select(COLLECTION_COLUMNS).eq("user_id", userId);
 
     return sortCollections(data ?? []).map((row) => ({
         id: row.id,
+        userId: row.user_id,
         kind: row.kind,
         name: row.name,
+        sharedWithFriends: row.shared_with_friends,
         fragranceIds: newestFirst(row.collection_items),
     }));
 }
@@ -49,7 +59,7 @@ export async function getCollection(id: string): Promise<CollectionDetail | null
     const supabase = await createClient();
     const { data: row } = await supabase
         .from("collections")
-        .select("id, kind, name, created_at, collection_items(fragrance_id, added_at)")
+        .select(COLLECTION_COLUMNS)
         .eq("id", id)
         .maybeSingle();
 
@@ -59,8 +69,10 @@ export async function getCollection(id: string): Promise<CollectionDetail | null
 
     return {
         id: row.id,
+        userId: row.user_id,
         kind: row.kind,
         name: row.name,
+        sharedWithFriends: row.shared_with_friends,
         fragranceIds,
         // Fragrances removed from the dataset are skipped.
         fragrances: fragranceIds.map(getFragranceById).filter((f): f is Fragrance => Boolean(f)),
