@@ -293,7 +293,7 @@ export const themeMap = {
 
     green: {
         label: "Green",
-        aliases: ["herbal", "leafy", "grassy"],
+        aliases: ["herbal", "leafy", "grassy", "aromatic"],
         themes: [
             {
                 image: bg("green/dewy"),
