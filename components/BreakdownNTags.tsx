@@ -1,4 +1,6 @@
+import Link from "next/link";
 import MoodTags from "@/components/MoodTags";
+import { searchHref } from "@/lib/search-params";
 import type { Fragrance } from "@/data/fragrances";
 import type { Theme } from "@/utils/themeMap";
 
@@ -34,7 +36,13 @@ export default function BreakdownNTags({ fragrance, theme }: BreakdownNTagsProps
                         <ul className="flex flex-wrap justify-center gap-4 text-xl">
                             {tier.notes.map((note) => (
                                 <li key={note}>
-                                    {note}
+                                    <Link
+                                        href={searchHref({ note })}
+                                        title={`Fragrances with ${note}`}
+                                        className="underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground"
+                                    >
+                                        {note}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

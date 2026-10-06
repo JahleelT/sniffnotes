@@ -1,4 +1,6 @@
+import Link from "next/link";
 import Header from "@/components/Header";
+import { searchHref } from "@/lib/search-params";
 import type { Fragrance } from "@/data/fragrances";
 import type { Theme } from "@/utils/themeMap";
 
@@ -22,9 +24,13 @@ export default function FragranceHeader({ fragrance, theme, actions }: Fragrance
             <div className="mb-2 px-4">
                 <h1 className="text-4xl sm:text-5xl font-semibold text-center text-foreground">{name}</h1>
                 <h2 className=" mt-1 text-lg sm:text-xl font-medium text-center text-foreground">
-                    {collection
-                        ? `${brand} • ${collection}`
-                        : brand}
+                    <Link href={searchHref({ brand })} className="hover:underline underline-offset-4">{brand}</Link>
+                    {collection && (
+                        <>
+                            {" • "}
+                            <Link href={searchHref({ brand, line: collection })} className="hover:underline underline-offset-4">{collection}</Link>
+                        </>
+                    )}
                 </h2>
                 {actions && <div className="mt-4 flex justify-center">{actions}</div>}
             </div>
