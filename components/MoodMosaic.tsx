@@ -10,9 +10,11 @@ type MoodMosaicProps = {
     initial: string[];
 };
 
-// A new swap starts as the previous fade finishes, so one tile is always changing.
-const FADE_MS = 1500;
-const SWAP_EVERY_MS = FADE_MS;
+// Each fade lasts 3s and a new one starts every 1–1.5s (randomized so they're staggered),
+// so 2–3 tiles are mid-transition at any moment.
+const FADE_MS = 3000;
+const MIN_GAP_MS = 1000;
+const MAX_GAP_MS = 1500;
 
 // Tiles 1–3 show on phones (stacked), 1–9 on tablets (3×3), all 12 on desktop (4×3).
 const tileVisibility = (index: number) => (index >= 9 ? "hidden lg:block" : index >= 3 ? "hidden md:block" : "block");
@@ -68,32 +70,40 @@ function Tile({ image, className }: { image: string; className: string }) {
 export default function MoodMosaic({ photos, initial }: MoodMosaicProps) {
     const [tiles, setTiles] = useState(initial);
     const [paused, setPaused] = useState(false);
-    const lastSwapped = useRef(-1);
+    // Tile index → when its current fade ends, so fading tiles aren't swapped again.
+    const fadingUntil = useRef(new Map<number, number>());
     // Still on the server render; the browser's motion settings decide after hydration.
     const canAnimate = !useSyncExternalStore(subscribeToMotionPreference, prefersReducedMotion, () => true);
 
     useEffect(() => {
         if (!canAnimate || paused) return;
 
-        const timer = window.setInterval(() => {
-            if (document.hidden) return;
+        let timer: number;
 
-            // Never the tile swapped last time, which may still be fading.
-            const candidates = Array.from({ length: visibleTileCount() }, (_, i) => i).filter((i) => i !== lastSwapped.current);
-            const index = candidates[Math.floor(Math.random() * candidates.length)];
-            const pick = Math.random();
-            lastSwapped.current = index;
+        const swapOne = () => {
+            const now = Date.now();
+            const candidates = Array.from({ length: visibleTileCount() }, (_, i) => i)
+                .filter((i) => (fadingUntil.current.get(i) ?? 0) <= now);
 
-            setTiles((current) => {
-                const unused = photos.filter((photo) => !current.includes(photo));
-                if (!unused.length) return current;
-                const next = [...current];
-                next[index] = unused[Math.floor(pick * unused.length)];
-                return next;
-            });
-        }, SWAP_EVERY_MS);
+            if (!document.hidden && candidates.length) {
+                const index = candidates[Math.floor(Math.random() * candidates.length)];
+                const pick = Math.random();
+                fadingUntil.current.set(index, now + FADE_MS);
 
-        return () => window.clearInterval(timer);
+                setTiles((current) => {
+                    const unused = photos.filter((photo) => !current.includes(photo));
+                    if (!unused.length) return current;
+                    const next = [...current];
+                    next[index] = unused[Math.floor(pick * unused.length)];
+                    return next;
+                });
+            }
+
+            timer = window.setTimeout(swapOne, MIN_GAP_MS + Math.random() * (MAX_GAP_MS - MIN_GAP_MS));
+        };
+
+        timer = window.setTimeout(swapOne, MIN_GAP_MS);
+        return () => window.clearTimeout(timer);
     }, [canAnimate, paused, photos]);
 
     return (
