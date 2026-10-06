@@ -44,6 +44,12 @@ New migrations go in `supabase/migrations/` (`npx supabase migration new <name>`
 | `data/import/fragrances.csv` | The source you edit to add fragrances |
 | `utils/themeMap.ts` | Mood list and each mood's background and colors |
 
+## Demo Content
+
+For presentations, `npm run demo:seed` adds 8 demo reviewer accounts with reviews on 12 fragrances and a few voted description suggestions (re-running replaces them). `npm run demo:clear` deletes every demo account and everything it wrote.
+
+Demo accounts use the `@sniffnotes-demo.example` email domain and are created already confirmed, so no email is sent. **Run `npm run demo:clear` before real people use the site**, so demo reviews aren't mistaken for genuine ones.
+
 ## Adding Fragrances
 
 1. Add a row to `data/import/fragrances.csv` (a spreadsheet app works fine).

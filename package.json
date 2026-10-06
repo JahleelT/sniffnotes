@@ -10,7 +10,9 @@
     "import:fragrances": "node --no-warnings scripts/import-fragrances.mts",
     "db:push": "sh scripts/supabase-remote.sh db push",
     "db:types": "sh scripts/supabase-remote.sh gen types typescript --schema public > lib/supabase/database.types.ts",
-    "fetch:perfumapi": "node --no-warnings --env-file-if-exists=.env.local scripts/fetch-perfumapi.mts"
+    "fetch:perfumapi": "node --no-warnings --env-file-if-exists=.env.local scripts/fetch-perfumapi.mts",
+    "demo:seed": "node --no-warnings --env-file-if-exists=.env.local scripts/demo.mts seed",
+    "demo:clear": "node --no-warnings --env-file-if-exists=.env.local scripts/demo.mts clear"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
