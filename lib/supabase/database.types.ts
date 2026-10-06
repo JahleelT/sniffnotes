@@ -63,18 +63,43 @@ isOneToOne: false
                   Relationships: [
                     
                   ]
+                },"reviews": {
+                  Row: {
+                    "body": string,"created_at": string,"fragrance_id": string,"id": string,"longevity": number | null,"rating": number,"seasons": (Database["public"]['Enums']["season"])[],"sillage": number | null,"updated_at": string,"user_id": string
+                  }
+                  Insert: {
+                    "body"?: string,"created_at"?: string,"fragrance_id": string,"id"?: string,"longevity"?: number | null,"rating": number,"seasons"?: (Database["public"]['Enums']["season"])[],"sillage"?: number | null,"updated_at"?: string,"user_id": string
+                  }
+                  Update: {
+                    "body"?: string,"created_at"?: string,"fragrance_id"?: string,"id"?: string,"longevity"?: number | null,"rating"?: number,"seasons"?: (Database["public"]['Enums']["season"])[],"sillage"?: number | null,"updated_at"?: string,"user_id"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
                 }
           }
           Views: {
-            [_ in never]: never
+            "fragrance_review_stats": {
+                  Row: {
+                    "avg_longevity": number | null,"avg_rating": number | null,"avg_sillage": number | null,"fall": number | null,"fragrance_id": string | null,"longevity_votes": number | null,"review_count": number | null,"season_votes": number | null,"sillage_votes": number | null,"spring": number | null,"summer": number | null,"winter": number | null
+                  }
+                  Relationships: [
+                    
+                  ]
+                }
           }
           Functions: {
             "create_default_collections":
 { Args: { "target_user": string }; Returns: undefined
+                           },
+"display_names":
+{ Args: { "user_ids": (string)[] }; Returns: {
+              "display_name": string,"id": string
+            }[]
                            }
           }
           Enums: {
-            "collection_kind": "saved"|"wishlist"|"sampled"|"owned"|"custom"
+            "collection_kind": "saved"|"wishlist"|"sampled"|"owned"|"custom","season": "spring"|"summer"|"fall"|"winter"
           }
           CompositeTypes: {
             [_ in never]: never
@@ -190,7 +215,7 @@ export type CompositeTypes<
 export const Constants = {
   "public": {
           Enums: {
-            "collection_kind": ["saved", "wishlist", "sampled", "owned", "custom"]
+            "collection_kind": ["saved", "wishlist", "sampled", "owned", "custom"],"season": ["spring", "summer", "fall", "winter"]
           }
         }
 } as const
