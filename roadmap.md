@@ -33,7 +33,8 @@
 ## Phase 2: PerfumAPI, account creation, saved fragrances, UI improvement
 
 ### Data
-- [ ] Integrate PerfumAPI (feed results through the import pipeline)
+- [X] Integrate PerfumAPI (`npm run fetch:perfumapi` feeds the import pipeline, with photos and suggested moods)
+  - [ ] Import the first scraped batch (35 perfumes) and review suggested moods
 
 ### User Accounts 
 - [X] User sign up, sign in, sign out (Supabase Auth)
@@ -60,8 +61,9 @@
 - [X] Header marks the current page
 - [X] Search bar is a proper search form with a submit button
 - [X] Rounded, shadowed bottle photos
-- [ ] Using fragrance color themes to apply to the site
-- [ ] Background for Search/Home page cycles through high-res photos that have to do with notes, experiences, and vibes in a 3x4 slideshow format constantly cycling through photos
+- [X] Using fragrance color themes to apply to the site (every background photo has its own palette; fragrance pages pick a random photo from their mood)
+- [X] Background for the home page cycles through high-res mood photos (4×3 desktop, 3×3 tablet, 3 stacked on phones; pausable, still with reduced motion)
+- [X] New moods: Green, Aquatic, Gourmand, Resinous, Ancient (with tag aliases like Fresh → Aquatic, Vanilla → Gourmand)
 - [ ] More TBD...
 
 ## Phase 3: Recommendation system
