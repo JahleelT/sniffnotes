@@ -13,6 +13,7 @@ import { getCurrentUser } from "@/lib/auth";
 import { getCollections } from "@/lib/collections";
 import { getAllFragrances, getFragranceById } from "@/lib/fragrances";
 import { getSimilarFragrances } from "@/lib/recommendations";
+import { communityDescription, getSuggestions } from "@/lib/descriptions";
 import { getFriendIds } from "@/lib/friends";
 import { getReviews, getReviewStats } from "@/lib/reviews";
 import { pickTheme } from "@/utils/themeMap";
@@ -40,7 +41,12 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
     const theme = pickTheme(fragrance.tags[0]);
     const user = await getCurrentUser();
     const similar = getSimilarFragrances(fragrance.id);
-    const [reviews, stats, friendIds] = await Promise.all([getReviews(fragrance.id), getReviewStats(), getFriendIds()]);
+    const [reviews, stats, friendIds, suggestions] = await Promise.all([
+        getReviews(fragrance.id),
+        getReviewStats(),
+        getFriendIds(),
+        getSuggestions(fragrance.id, user?.id),
+    ]);
 
     const saveAction = user ? (
         <SaveMenu
@@ -66,7 +72,12 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.9fr_1fr] gap-6 lg:gap-8">
                     <BreakdownNTags fragrance={fragrance} theme={theme}/>
                     <FragrancePhoto fragrance={fragrance} theme={theme}/>
-                    <Description fragrance={fragrance} theme={theme}/>
+                    <Description
+                        fragrance={fragrance}
+                        theme={theme}
+                        community={communityDescription(suggestions)}
+                        suggestionCount={suggestions.length}
+                    />
                 </div>
 
                 <ReviewSection
