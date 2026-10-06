@@ -85,7 +85,7 @@
   - [X] Friends can see your collections; each collection can be shared or kept private
   - [X] Friends' reviews are badged and listed first
 - [X] Reviews (star rating, longevity, sillage, best seasons, optional text; one per person, editable)
-- [ ] Peer-reviewed official descriptions
+- [X] Peer-reviewed official descriptions (suggest a rewrite, vote; a net +3 replaces the shown description, original one click away)
 
 ### Quality Updates
 - [X] Daily Fragrance Page (scaffold, built during Phase 2)
