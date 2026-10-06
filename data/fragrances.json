@@ -37,7 +37,8 @@
         "brand": "Astre",
         "image": "/fragrances/luminoir.jpg",
         "tags": [
-            "tea"
+            "tea",
+            "green"
         ],
         "description": "An ode to life itself.\n\nThe essence of life's fleeting beauty intertwines with the enigmatic allure of shadows, akin to a delicate whisper of freshness hinting at an infinite inner journey.\n\nMuch like a beckoning sea nourishing fantasies of total freedom, LUMINOIR encapsulates a fragrant tale, inviting hearts to open wide, like wings deployed for flight, towards the mysterious harmony of light and darkness.",
         "notes": {
@@ -68,7 +69,8 @@
         "image": "/fragrances/santal-pao-rosa.jpg",
         "tags": [
             "spicy",
-            "woodsy"
+            "woodsy",
+            "resinous"
         ],
         "description": "Nature becomes art as the strength of sandalwood is enveloped in tender rose petals. Between bark and blossom lies a refreshing, spicy undertone infused with cardamon and deeper notes of agarwood and myrrh.\n\nSantal Pao Rosa is a name buried deep in Guerlain’s heritage, with Pao Rosa being the name given to a fragrance by Aimé Guerlain, created in 1877, and evoking the unique encounter between wood and rose.",
         "notes": {
@@ -92,7 +94,9 @@
         "collection": "Collezione Riservata",
         "image": "/fragrances/midnight-hour.jpg",
         "tags": [
-            "tropical"
+            "green",
+            "tropical",
+            "aquatic"
         ],
         "description": "The Banana Republic Midnight Hour perfume has a chypre leathery fragrance that transports you to an exotic beach illuminated by the midnight moon. Aromatic notes of mango skin and ginger infuse the night air amidst swaying palm trees while pink pepper entangled with the spiced floralcy of geranium elicits a subdued rush of adrenaline pulsing through your body mimicking the sounds of heart-thumping music echoing in the distance. As the night progresses and the moon recedes, the music drums up notes of earthy Indonesian patchouli woven with notes of leather and musk for a deeply tenacious and memorable experience.",
         "notes": {
@@ -150,6 +154,7 @@
         "collection": "Ramad",
         "image": "/fragrances/ramad-earthy.jpg",
         "tags": [
+            "gourmand",
             "woodsy"
         ],
         "description": "Ramad Earthy reveals remarkable depth and complexity. Opening with a radiant blend of Honey, Apricot, Mango, Cardamom, Ginger and Tangerine, the fragrance evokes a luminous warmth. At its heart, Black Tea and Davana intertwine with an unexpected Cappuccino accord, creating a rich and textured sensation. In the drydown, Tonka Bean and Vanilla lend their sweet-smoky facets, while Cedarwood, Labdanum, Vetiver and Patchouli leave an elegant and enduring trail.",

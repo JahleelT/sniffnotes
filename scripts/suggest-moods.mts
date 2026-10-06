@@ -14,7 +14,12 @@ const noteKeywords: Record<Mood, string[]> = {
     tropical: ["coconut", "mango", "pineapple", "passionfruit", "passion fruit", "frangipani", "tiare", "tiaré", "monoi", "banana", "papaya", "guava"],
     floral: ["rose", "jasmine", "tuberose", "iris", "violet", "lily", "orange blossom", "neroli", "gardenia", "peony", "magnolia", "ylang-ylang", "ylang", "mimosa", "heliotrope", "orchid", "freesia", "flowers", "floral", "honeysuckle", "carnation", "osmanthus", "geranium", "lilac"],
     spicy: ["pepper", "pink pepper", "black pepper", "cardamom", "cinnamon", "clove", "cloves", "nutmeg", "saffron", "ginger", "cumin", "anise", "star anise", "spices", "spicy"],
-    clean: ["musk", "white musk", "aldehydes", "aldehyde", "soap", "cotton", "ozonic", "aquatic", "sea notes", "marine", "lily-of-the-valley", "powdery notes", "clean"],
+    clean: ["musk", "white musk", "aldehydes", "aldehyde", "soap", "cotton", "lily-of-the-valley", "powdery notes", "clean"],
+    green: ["green notes", "galbanum", "grass", "leaf", "leaves", "fig leaf", "violet leaf", "basil", "mint", "tomato leaf", "petitgrain", "bamboo", "moss"],
+    aquatic: ["sea notes", "marine", "water notes", "aquatic", "ozonic", "seaweed", "salt", "sea salt", "rain", "calone", "watery"],
+    gourmand: ["vanilla", "honey", "caramel", "chocolate", "cocoa", "coffee", "tonka bean", "praline", "sugar", "almond", "milk", "cream", "toffee", "cappuccino"],
+    resinous: ["amber", "benzoin", "labdanum", "myrrh", "olibanum", "frankincense", "elemi", "opoponax", "tolu balsam", "peru balsam", "resins", "styrax"],
+    ancient: ["papyrus", "frankincense", "myrrh", "oud", "agarwood", "cedar"],
     solar: ["bergamot", "lemon", "orange", "mandarin", "mandarin orange", "grapefruit", "lime", "yuzu", "citrus", "citruses", "salt", "sea salt", "solar notes", "neroli"],
 };
 
@@ -28,10 +33,12 @@ const familyKeywords: Record<string, Mood> = {
     oriental: "spicy",
     leather: "dark",
     citrus: "solar",
-    aquatic: "clean",
+    aquatic: "aquatic",
+    gourmand: "gourmand",
+    amber: "resinous",
     fresh: "clean",
     aromatic: "clean",
-    green: "tea",
+    green: "green",
 };
 
 const FAMILY_WEIGHT = 3;

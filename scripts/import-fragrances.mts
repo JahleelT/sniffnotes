@@ -6,7 +6,7 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, extname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
-import { isMood, moods, themeMap, type Mood } from "../utils/themeMap.ts";
+import { moodFromTag, moods, themeMap, type Mood } from "../utils/themeMap.ts";
 import { readCsvRecords, slugify } from "./csv.mts";
 
 type RawEntry = Record<string, unknown>;
@@ -48,13 +48,6 @@ function text(value: unknown): string {
     return String(value ?? "").trim();
 }
 
-// Matches a tag by key ("woodsy") or label ("Woody"), case-insensitively.
-function toMood(tag: string): Mood | undefined {
-    const value = tag.toLowerCase();
-    if (isMood(value)) return value;
-    return moods.find((mood) => themeMap[mood].label.toLowerCase() === value);
-}
-
 const entries = readEntries(inputPath);
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -81,7 +74,7 @@ entries.forEach((entry, index) => {
     const tags: Mood[] = [];
     const skippedTags: string[] = [];
     for (const tag of list(entry.tags)) {
-        const mood = toMood(tag);
+        const mood = moodFromTag(tag);
         if (!mood) skippedTags.push(tag);
         else if (!tags.includes(mood)) tags.push(mood);
     }
