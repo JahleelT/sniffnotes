@@ -89,9 +89,9 @@
   - [X] Shared daily pick for signed-out visitors
   - [ ] Revisit once PerfumAPI expands the dataset (e.g. pick from saved/wishlisted moods)
 - [ ] Search Updates (Phase 1 covers basic text matching on notes, brands, and collections)
-  - [ ] Search by Note
-  - [ ] Search by Brand
-  - [ ] Search by Line
+  - [X] Search by Note (filter, plus every note on a fragrance page links to its search)
+  - [X] Search by Brand (filter, plus the brand on a fragrance page links to it)
+  - [X] Search by Line (filter, plus the line on a fragrance page links to it)
   - [ ] Search by Performance
   - [ ] Search by Season
 
