@@ -7,11 +7,13 @@ import FragrancePhoto from "@/components/FragrancePhoto";
 import BreakdownNTags from "@/components/BreakdownNTags";
 import Description from "@/components/Description";
 import RecommendationGrid from "@/components/RecommendationGrid";
+import ReviewSection from "@/components/ReviewSection";
 import SaveMenu from "@/components/SaveMenu";
 import { getCurrentUser } from "@/lib/auth";
 import { getCollections } from "@/lib/collections";
 import { getAllFragrances, getFragranceById } from "@/lib/fragrances";
 import { getSimilarFragrances } from "@/lib/recommendations";
+import { getReviews, getReviewStats } from "@/lib/reviews";
 import { pickTheme } from "@/utils/themeMap";
 
 export function generateStaticParams() {
@@ -37,6 +39,7 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
     const theme = pickTheme(fragrance.tags[0]);
     const user = await getCurrentUser();
     const similar = getSimilarFragrances(fragrance.id);
+    const [reviews, stats] = await Promise.all([getReviews(fragrance.id), getReviewStats()]);
 
     const saveAction = user ? (
         <SaveMenu
@@ -64,6 +67,15 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
                     <FragrancePhoto fragrance={fragrance} theme={theme}/>
                     <Description fragrance={fragrance} theme={theme}/>
                 </div>
+
+                <ReviewSection
+                    fragranceId={fragrance.id}
+                    fragranceName={fragrance.name}
+                    theme={theme}
+                    user={user}
+                    reviews={reviews}
+                    stats={stats.get(fragrance.id)}
+                />
 
                 {similar.length > 0 && (
                     <section aria-labelledby="similar-heading" className="mt-10">
