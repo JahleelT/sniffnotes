@@ -99,6 +99,8 @@ const existing = readCsvRecords(csvText);
 const knownSources = new Set(existing.map((row) => row.source_url).filter(Boolean));
 const knownNames = new Set(existing.map((row) => `${row.name}|${row.brand}`.toLowerCase()));
 const takenIds = new Set(existing.map((row) => row.id || slugify(row.name)));
+// Reuse the CSV's spelling of a brand that's already there ("WIDIAN" → "Widian").
+const brandSpelling = new Map(existing.map((row) => [row.brand.toLowerCase(), row.brand]));
 
 // Add the source_url column to older CSVs before appending rows that use it.
 const header = csvText.split(/\r?\n/, 1)[0].split(",").map((c) => c.trim().toLowerCase());
@@ -114,8 +116,9 @@ let missingImages = 0;
 const moodCounts = new Map<string, number>();
 
 for (const perfume of perfumes) {
-    const brand = (perfume.brand ?? "").trim();
-    const name = cleanName(perfume.name ?? "", brand);
+    const rawBrand = (perfume.brand ?? "").trim();
+    const brand = brandSpelling.get(rawBrand.toLowerCase()) ?? rawBrand;
+    const name = cleanName(perfume.name ?? "", rawBrand);
     const source = perfume.perfume_url ?? "";
 
     if (!name || !brand || knownSources.has(source) || knownNames.has(`${name}|${brand}`.toLowerCase())) {
@@ -136,6 +139,11 @@ for (const perfume of perfumes) {
     const base = list(perfume.notes_base);
     // Without a pyramid, the flat list goes in the middle tier (shown simply as "Notes").
     if (!top.length && !mid.length && !base.length) mid = featuredNotes(rawDescription);
+    // Nothing to show or recommend from without notes; the importer would reject it anyway.
+    if (!top.length && !mid.length && !base.length) {
+        skipped++;
+        continue;
+    }
     const description = cleanDescription(rawDescription) || `${name} by ${brand}.`;
     const moods = suggestMoods({ top, mid, base }, rawDescription);
     const image = perfume.image_url ? await downloadImage(perfume.image_url, id) : "";

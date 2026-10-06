@@ -30,14 +30,18 @@ const familyKeywords: Record<string, Mood> = {
     woody: "woodsy",
     chypre: "woodsy",
     spicy: "spicy",
-    oriental: "spicy",
+    // "Oriental" is the amber family: resins and balsams more than spice.
+    oriental: "resinous",
+    vanilla: "gourmand",
+    tobacco: "smoky",
     leather: "dark",
     citrus: "solar",
     aquatic: "aquatic",
     gourmand: "gourmand",
     amber: "resinous",
     fresh: "clean",
-    aromatic: "clean",
+    // Aromatic means herbal (lavender, sage, rosemary).
+    aromatic: "green",
     green: "green",
 };
 
