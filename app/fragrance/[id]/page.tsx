@@ -13,6 +13,7 @@ import { getCurrentUser } from "@/lib/auth";
 import { getCollections } from "@/lib/collections";
 import { getAllFragrances, getFragranceById } from "@/lib/fragrances";
 import { getSimilarFragrances } from "@/lib/recommendations";
+import { getFriendIds } from "@/lib/friends";
 import { getReviews, getReviewStats } from "@/lib/reviews";
 import { pickTheme } from "@/utils/themeMap";
 
@@ -39,7 +40,7 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
     const theme = pickTheme(fragrance.tags[0]);
     const user = await getCurrentUser();
     const similar = getSimilarFragrances(fragrance.id);
-    const [reviews, stats] = await Promise.all([getReviews(fragrance.id), getReviewStats()]);
+    const [reviews, stats, friendIds] = await Promise.all([getReviews(fragrance.id), getReviewStats(), getFriendIds()]);
 
     const saveAction = user ? (
         <SaveMenu
@@ -75,6 +76,7 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
                     user={user}
                     reviews={reviews}
                     stats={stats.get(fragrance.id)}
+                    friendIds={friendIds}
                 />
 
                 {similar.length > 0 && (

@@ -198,7 +198,9 @@ export default function ReviewSection({ fragranceId, fragranceName, theme, user,
                         <li key={review.id} className={card}>
                             <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                                 <p className="font-semibold">
-                                    {review.author}
+                                    {review.authorUsername ? (
+                                        <Link href={`/people/${review.authorUsername}`} className="hover:underline underline-offset-4">{review.author}</Link>
+                                    ) : review.author}
                                     {review.userId === user?.id && <span className="ml-2 text-sm font-normal text-foreground/70">(you)</span>}
                                     {friendIds.has(review.userId) && <span className="ml-2 px-2 py-0.5 rounded-full text-xs border border-foreground/40">Friend</span>}
                                 </p>
