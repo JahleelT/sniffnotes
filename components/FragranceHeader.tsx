@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import { brandSlug } from "@/lib/brands";
 import { searchHref } from "@/lib/search-params";
 import type { Fragrance } from "@/data/fragrances";
 import type { Theme } from "@/utils/themeMap";
@@ -17,14 +18,14 @@ export default function FragranceHeader({ fragrance, theme, actions }: Fragrance
 
     return (
         <div className=" w-full">
-            <div className={`mb-6 sm:mb-8 backdrop-blur-sm border-b ${theme.card} ${theme.border}`}>
+            <div className={`sticky top-0 z-40 mb-6 sm:mb-8 backdrop-blur-sm border-b ${theme.card} ${theme.border}`}>
                 <Header/>
             </div>
 
             <div className="mb-2 px-4">
                 <h1 className="text-4xl sm:text-5xl font-semibold text-center text-foreground">{name}</h1>
                 <h2 className=" mt-1 text-lg sm:text-xl font-medium text-center text-foreground">
-                    <Link href={searchHref({ brand })} className="hover:underline underline-offset-4">{brand}</Link>
+                    <Link href={`/brands/${brandSlug(brand)}`} className="hover:underline underline-offset-4">{brand}</Link>
                     {collection && (
                         <>
                             {" • "}
