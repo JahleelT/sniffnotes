@@ -106,7 +106,7 @@
 ## Phase X: Diving Deeper
 
 ### Deep Dive
-- [ ] Fragrance related news (fragrance releases, events, popups)
+- [X] Fragrance related news (News page from 5 publications' RSS feeds, refreshed every 4 hours; brand and fragrance pages show their mentions; a Following tab for followed brands)
   - [ ] User is notified when their favorite brands or lines release a new fragrance
 - [ ] User messaging
 - [ ] Shop page that will redirect to several other websites showing potential fragrance matches with disclaimer about authenticity of product 

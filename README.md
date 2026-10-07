@@ -44,6 +44,13 @@ New migrations go in `supabase/migrations/` (`npx supabase migration new <name>`
 | `data/import/fragrances.csv` | The source you edit to add fragrances |
 | `utils/themeMap.ts` | Mood list and each mood's background and colors |
 
+## News
+
+The News page collects headlines from five publications' RSS feeds (`lib/news-core.ts`) and tags the brands and fragrances they mention. News refreshes itself: when someone visits a news page and the last fetch is over 4 hours old, the site fetches in the background after responding.
+
+- `npm run news:refresh` fetches right away.
+- `/api/cron/news` is for a scheduler. It requires `Authorization: Bearer $CRON_SECRET` (Vercel Cron sends this when `CRON_SECRET` is set). `vercel.json` schedules it daily, the most Vercel's free plan allows; on a paid plan, change it to `0 */4 * * *`.
+
 ## Demo Content
 
 For presentations, `npm run demo:seed` adds 8 demo reviewer accounts with reviews on 12 fragrances and a few voted description suggestions (re-running replaces them). `npm run demo:clear` deletes every demo account and everything it wrote.
