@@ -43,7 +43,7 @@ export default async function Home() {
     <div className="relative min-h-screen">
         <MoodMosaic photos={allPhotos.map((p) => p.image)} initial={chooseInitialTiles(featuredMoods)}/>
 
-        <div className={`backdrop-blur-sm border-b ${defaultTheme.card} ${defaultTheme.border}`}>
+        <div className={`sticky top-0 z-40 backdrop-blur-sm border-b ${defaultTheme.card} ${defaultTheme.border}`}>
           <Header/>
         </div>
 

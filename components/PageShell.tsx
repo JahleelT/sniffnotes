@@ -11,7 +11,7 @@ type PageShellProps = {
 export default function PageShell({ theme = defaultTheme, children }: PageShellProps) {
     return (
         <Backdrop theme={theme}>
-            <div className={`backdrop-blur-sm border-b ${theme.card} ${theme.border}`}>
+            <div className={`sticky top-0 z-40 backdrop-blur-sm border-b ${theme.card} ${theme.border}`}>
                 <Header/>
             </div>
 
