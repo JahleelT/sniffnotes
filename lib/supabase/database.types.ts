@@ -108,6 +108,32 @@ isOneToOne: false
                   Relationships: [
                     
                   ]
+                },"job_runs": {
+                  Row: {
+                    "last_run_at": string,"last_status": string,"name": string
+                  }
+                  Insert: {
+                    "last_run_at": string,"last_status"?: string,"name": string
+                  }
+                  Update: {
+                    "last_run_at"?: string,"last_status"?: string,"name"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
+                },"news_items": {
+                  Row: {
+                    "brand_slugs": (string)[],"fetched_at": string,"fragrance_ids": (string)[],"id": string,"image_url": string | null,"published_at": string,"source": string,"summary": string,"title": string,"url": string
+                  }
+                  Insert: {
+                    "brand_slugs"?: (string)[],"fetched_at"?: string,"fragrance_ids"?: (string)[],"id"?: string,"image_url"?: string | null,"published_at": string,"source": string,"summary"?: string,"title": string,"url": string
+                  }
+                  Update: {
+                    "brand_slugs"?: (string)[],"fetched_at"?: string,"fragrance_ids"?: (string)[],"id"?: string,"image_url"?: string | null,"published_at"?: string,"source"?: string,"summary"?: string,"title"?: string,"url"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
                 },"profiles": {
                   Row: {
                     "created_at": string,"display_name": string,"id": string,"preferences": NonNullable<Json>,"updated_at": string,"username": string | null
