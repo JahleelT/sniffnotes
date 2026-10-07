@@ -12,11 +12,13 @@
     "db:types": "sh scripts/supabase-remote.sh gen types typescript --schema public > lib/supabase/database.types.ts",
     "fetch:perfumapi": "node --no-warnings --env-file-if-exists=.env.local scripts/fetch-perfumapi.mts",
     "demo:seed": "node --no-warnings --env-file-if-exists=.env.local scripts/demo.mts seed",
-    "demo:clear": "node --no-warnings --env-file-if-exists=.env.local scripts/demo.mts clear"
+    "demo:clear": "node --no-warnings --env-file-if-exists=.env.local scripts/demo.mts clear",
+    "news:refresh": "node --no-warnings --env-file-if-exists=.env.local scripts/news-refresh.mts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.117.2",
+    "fast-xml-parser": "^5.11.2",
     "lucide-react": "^1.47.0",
     "next": "16.3.8",
     "react": "19.2.8",
