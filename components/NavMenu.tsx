@@ -8,10 +8,11 @@ import { navItems } from "@/components/navItems";
 
 type NavMenuProps = {
     signedIn: boolean;
+    unread?: number;
 };
 
 // Labeled menu with every destination, for screens too narrow to show them all as icons.
-export default function NavMenu({ signedIn }: NavMenuProps) {
+export default function NavMenu({ signedIn, unread = 0 }: NavMenuProps) {
     const [open, setOpen] = useState(false);
     const [openedOn, setOpenedOn] = useState<string | null>(null);
     const pathname = usePathname();
@@ -71,6 +72,7 @@ export default function NavMenu({ signedIn }: NavMenuProps) {
                                     >
                                         <Icon aria-hidden className="size-5"/>
                                         {label}
+                                        {href === "/messages" && unread > 0 && <span className="ml-auto text-sm font-semibold">{unread} unread</span>}
                                     </Link>
                                 </li>
                             );

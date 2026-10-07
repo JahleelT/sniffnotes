@@ -47,7 +47,14 @@ export default async function PersonPage(props: PageProps<"/people/[username]">)
                         <p className="text-foreground/70">@{profile.username}{relationship === "friends" && " · Friend"}{relationship === "self" && " · You"}</p>
                     </div>
                     {viewer ? (
-                        <FriendActions userId={profile.id} name={profile.displayName} relationship={relationship}/>
+                        <div className="flex flex-wrap gap-2">
+                            {relationship !== "self" && (
+                                <Link href={`/messages/${profile.username}`} className="px-4 py-2 rounded-full border border-foreground/60 hover:bg-foreground/15 transition-all duration-200 text-sm font-semibold">
+                                    Message
+                                </Link>
+                            )}
+                            <FriendActions userId={profile.id} name={profile.displayName} relationship={relationship}/>
+                        </div>
                     ) : (
                         <Link href={`/sign-in?next=/people/${profile.username}`} className="px-4 py-2 rounded-full border border-foreground/60 hover:bg-foreground/15 transition-all duration-200 text-sm">
                             Sign in to add friend
