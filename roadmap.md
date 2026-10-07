@@ -86,6 +86,7 @@
   - [X] Friends' reviews are badged and listed first
 - [X] Reviews (star rating, longevity, sillage, best seasons, optional text; one per person, editable)
 - [X] Peer-reviewed official descriptions (suggest a rewrite, vote; a net +3 replaces the shown description, original one click away)
+- [X] Follow brands (brand pages with followers, fragrances, and a Follow button; the brand name on any fragrance opens its page)
 
 ### Quality Updates
 - [X] Daily Fragrance Page (scaffold, built during Phase 2)
