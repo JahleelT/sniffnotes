@@ -3,9 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import FollowBrandButton from "@/components/FollowBrandButton";
 import FragranceCard from "@/components/FragranceCard";
+import NewsList from "@/components/NewsList";
 import PageShell from "@/components/PageShell";
 import { getCurrentUser } from "@/lib/auth";
 import { getBrandBySlug, getBrands, getFollowedBrandSlugs, getFollowerCounts } from "@/lib/brands";
+import { getNews, refreshNewsIfStale } from "@/lib/news";
 import { pickTheme } from "@/utils/themeMap";
 
 export function generateStaticParams() {
@@ -23,7 +25,13 @@ export default async function BrandPage(props: PageProps<"/brands/[slug]">) {
     const brand = getBrandBySlug(slug);
     if (!brand) notFound();
 
-    const [user, followed, followers] = await Promise.all([getCurrentUser(), getFollowedBrandSlugs(), getFollowerCounts()]);
+    const [user, followed, followers, news] = await Promise.all([
+        getCurrentUser(),
+        getFollowedBrandSlugs(),
+        getFollowerCounts(),
+        getNews({ brandSlugs: [slug], limit: 5 }),
+    ]);
+    await refreshNewsIfStale();
     const theme = pickTheme(brand.mood);
     const followerCount = followers.get(brand.slug) ?? 0;
 
@@ -42,6 +50,13 @@ export default async function BrandPage(props: PageProps<"/brands/[slug]">) {
                 </div>
                 <FollowBrandButton slug={brand.slug} name={brand.name} following={followed.has(brand.slug)} signedIn={Boolean(user)}/>
             </div>
+
+            {news.length > 0 && (
+                <section aria-labelledby="brand-news-heading" className="mb-10">
+                    <h2 id="brand-news-heading" className={`text-2xl font-semibold mb-4 ${theme.accent}`}>In the news</h2>
+                    <NewsList items={news} cardClass={`${theme.card} ${theme.border}`}/>
+                </section>
+            )}
 
             <section aria-labelledby="brand-fragrances-heading">
                 <h2 id="brand-fragrances-heading" className="sr-only">Fragrances</h2>

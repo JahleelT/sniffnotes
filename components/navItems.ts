@@ -1,4 +1,4 @@
-import { Bookmark, Calendar, Search, Settings, Sparkles, Store, Users, type LucideIcon } from "lucide-react";
+import { Bookmark, Calendar, Newspaper, Search, Settings, Sparkles, Store, Users, type LucideIcon } from "lucide-react";
 
 export type NavItem = {
     href: string;
@@ -12,6 +12,7 @@ export type NavItem = {
 
 export const navItems: NavItem[] = [
     { href: "/search", label: "Search", icon: Search, primary: true },
+    { href: "/news", label: "News", icon: Newspaper, primary: true },
     { href: "/daily", label: "Fragrance of the day", icon: Calendar },
     { href: "/for-you", label: "Picked for you", icon: Sparkles },
     { href: "/brands", label: "Brands", icon: Store },

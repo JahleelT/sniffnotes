@@ -6,6 +6,7 @@ import FragranceHeader from "@/components/FragranceHeader";
 import FragrancePhoto from "@/components/FragrancePhoto";
 import BreakdownNTags from "@/components/BreakdownNTags";
 import Description from "@/components/Description";
+import NewsList from "@/components/NewsList";
 import RecommendationGrid from "@/components/RecommendationGrid";
 import ReviewSection from "@/components/ReviewSection";
 import SaveMenu from "@/components/SaveMenu";
@@ -15,6 +16,7 @@ import { getAllFragrances, getFragranceById } from "@/lib/fragrances";
 import { getSimilarFragrances } from "@/lib/recommendations";
 import { communityDescription, getSuggestions } from "@/lib/descriptions";
 import { getFriendIds } from "@/lib/friends";
+import { getNews } from "@/lib/news";
 import { getReviews, getReviewStats } from "@/lib/reviews";
 import { pickTheme } from "@/utils/themeMap";
 
@@ -47,6 +49,7 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
         getFriendIds(),
         getSuggestions(fragrance.id, user?.id),
     ]);
+    const news = await getNews({ fragranceId: fragrance.id, limit: 3 });
 
     const saveAction = user ? (
         <SaveMenu
@@ -89,6 +92,13 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
                     stats={stats.get(fragrance.id)}
                     friendIds={friendIds}
                 />
+
+                {news.length > 0 && (
+                    <section aria-labelledby="fragrance-news-heading" className="mt-10">
+                        <h2 id="fragrance-news-heading" className={`text-2xl font-semibold mb-4 ${theme.accent}`}>In the news</h2>
+                        <NewsList items={news} cardClass={`${theme.card} ${theme.border}`} compact/>
+                    </section>
+                )}
 
                 {similar.length > 0 && (
                     <section aria-labelledby="similar-heading" className="mt-10">
