@@ -5,7 +5,20 @@ export type Database = {
   
   "public": {
           Tables: {
-            "collection_items": {
+            "brand_follows": {
+                  Row: {
+                    "brand_slug": string,"created_at": string,"user_id": string
+                  }
+                  Insert: {
+                    "brand_slug": string,"created_at"?: string,"user_id": string
+                  }
+                  Update: {
+                    "brand_slug"?: string,"created_at"?: string,"user_id"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
+                },"collection_items": {
                   Row: {
                     "added_at": string,"collection_id": string,"fragrance_id": string
                   }
@@ -136,6 +149,11 @@ isOneToOne: false
           Functions: {
             "are_friends":
 { Args: { "a": string,"b": string }; Returns: boolean
+                           },
+"brand_follower_counts":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "brand_slug": string,"followers": number
+            }[]
                            },
 "create_default_collections":
 { Args: { "target_user": string }; Returns: undefined
