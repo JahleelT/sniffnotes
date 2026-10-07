@@ -108,7 +108,8 @@
 ### Deep Dive
 - [X] Fragrance related news (News page from 5 publications' RSS feeds, refreshed every 4 hours; brand and fragrance pages show their mentions; a Following tab for followed brands)
   - [ ] User is notified when their favorite brands or lines release a new fragrance
-- [ ] User messaging
+- [X] User messaging (live direct messages with unread badges)
+  - [X] Message requests from non-friends: accept, decline, or reply to accept; up to 3 messages until accepted
 - [ ] Shop page that will redirect to several other websites showing potential fragrance matches with disclaimer about authenticity of product 
 
 ### Fragrance Exploration
