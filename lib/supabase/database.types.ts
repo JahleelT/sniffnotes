@@ -121,6 +121,32 @@ isOneToOne: false
                   Relationships: [
                     
                   ]
+                },"message_requests": {
+                  Row: {
+                    "created_at": string,"recipient_id": string,"responded_at": string | null,"sender_id": string,"status": string
+                  }
+                  Insert: {
+                    "created_at"?: string,"recipient_id": string,"responded_at"?: string | null,"sender_id": string,"status"?: string
+                  }
+                  Update: {
+                    "created_at"?: string,"recipient_id"?: string,"responded_at"?: string | null,"sender_id"?: string,"status"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
+                },"messages": {
+                  Row: {
+                    "body": string,"created_at": string,"id": string,"read_at": string | null,"recipient_id": string,"sender_id": string
+                  }
+                  Insert: {
+                    "body": string,"created_at"?: string,"id"?: string,"read_at"?: string | null,"recipient_id": string,"sender_id": string
+                  }
+                  Update: {
+                    "body"?: string,"created_at"?: string,"id"?: string,"read_at"?: string | null,"recipient_id"?: string,"sender_id"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
                 },"news_items": {
                   Row: {
                     "brand_slugs": (string)[],"fetched_at": string,"fragrance_ids": (string)[],"id": string,"image_url": string | null,"published_at": string,"source": string,"summary": string,"title": string,"url": string
@@ -180,6 +206,9 @@ isOneToOne: false
 { Args: Record<PropertyKey, never>; Returns: {
               "brand_slug": string,"followers": number
             }[]
+                           },
+"can_message":
+{ Args: { "recipient": string,"sender": string }; Returns: boolean
                            },
 "create_default_collections":
 { Args: { "target_user": string }; Returns: undefined
