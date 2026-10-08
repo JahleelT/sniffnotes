@@ -1,24 +1,30 @@
-import { Bookmark, Calendar, MapPin, MessageCircle, Newspaper, Search, Settings, Sparkles, Store, Users, type LucideIcon } from "lucide-react";
+import { Bookmark, Calendar, MapPin, Settings, Sparkles, Store, Users, type LucideIcon } from "lucide-react";
 
 export type NavItem = {
     href: string;
     label: string;
     icon: LucideIcon;
-    // Shown as an icon on every screen size; the rest go in the menu below the lg breakpoint.
-    primary?: boolean;
     // Only for signed-in visitors.
     signedIn?: boolean;
 };
 
-export const navItems: NavItem[] = [
-    { href: "/search", label: "Search", icon: Search, primary: true },
-    { href: "/news", label: "News", icon: Newspaper, primary: true },
-    { href: "/daily", label: "Fragrance of the day", icon: Calendar },
+// Search, News, and Messages sit directly in the header; everything else is grouped.
+
+// Ways to find fragrances you don't know yet.
+export const discoverItems: NavItem[] = [
     { href: "/for-you", label: "Picked for you", icon: Sparkles },
+    { href: "/daily", label: "Fragrance of the day", icon: Calendar },
     { href: "/brands", label: "Brands", icon: Store },
     { href: "/guide", label: "NYC guide", icon: MapPin },
-    { href: "/friends", label: "Friends", icon: Users },
-    { href: "/messages", label: "Messages", icon: MessageCircle, primary: true, signedIn: true },
-    { href: "/collections", label: "Collections", icon: Bookmark },
+];
+
+// Your own things (the account menu).
+export const youItems: NavItem[] = [
+    { href: "/collections", label: "Collections", icon: Bookmark, signedIn: true },
+    { href: "/friends", label: "Friends", icon: Users, signedIn: true },
     { href: "/settings", label: "Settings", icon: Settings },
 ];
+
+export function isActive(pathname: string, href: string) {
+    return pathname === href || pathname.startsWith(`${href}/`);
+}
