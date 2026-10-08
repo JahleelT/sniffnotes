@@ -1,4 +1,4 @@
-import { Bookmark, Calendar, MessageCircle, Newspaper, Search, Settings, Sparkles, Store, Users, type LucideIcon } from "lucide-react";
+import { Bookmark, Calendar, MapPin, MessageCircle, Newspaper, Search, Settings, Sparkles, Store, Users, type LucideIcon } from "lucide-react";
 
 export type NavItem = {
     href: string;
@@ -16,6 +16,7 @@ export const navItems: NavItem[] = [
     { href: "/daily", label: "Fragrance of the day", icon: Calendar },
     { href: "/for-you", label: "Picked for you", icon: Sparkles },
     { href: "/brands", label: "Brands", icon: Store },
+    { href: "/guide", label: "NYC guide", icon: MapPin },
     { href: "/friends", label: "Friends", icon: Users },
     { href: "/messages", label: "Messages", icon: MessageCircle, primary: true, signedIn: true },
     { href: "/collections", label: "Collections", icon: Bookmark },
