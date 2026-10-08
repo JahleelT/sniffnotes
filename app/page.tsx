@@ -1,11 +1,12 @@
 import { BackgroundPaletteProvider } from "@/components/BackgroundPalette";
 import Header from "@/components/Header";
+import HeaderBar from "@/components/HeaderBar";
 import HeroSection from "@/components/HeroSection";
 import MoodMosaic from "@/components/MoodMosaic";
 import MoodSlideshow from "@/components/MoodSlideshow";
 import { getPreferences } from "@/lib/preferences";
 import { getFeaturedMoods, getPersonalRecommendations } from "@/lib/recommendations";
-import { allPhotos, defaultTheme, moods, themeMap, type Mood } from "@/utils/themeMap";
+import { allPhotos, moods, themeMap, type Mood } from "@/utils/themeMap";
 
 const MOSAIC_TILES = 12;
 
@@ -60,9 +61,9 @@ export default async function Home(props: PageProps<"/">) {
           <MoodMosaic photos={allPhotos.map((p) => p.image)} initial={choosePhotos(featuredMoods, MOSAIC_TILES).map((p) => p.image)}/>
         )}
 
-        <div className={`sticky top-0 z-40 backdrop-blur-sm border-b ${defaultTheme.card} ${defaultTheme.border}`}>
+        <HeaderBar>
           <Header/>
-        </div>
+        </HeaderBar>
 
         <main id="main" className="flex justify-center px-4 pt-10 sm:pt-24 pb-20">
 
