@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CircleUserRound, LogIn } from "lucide-react";
+import HeaderTitle from "@/components/HeaderTitle";
 import NavLink from "@/components/NavLink";
 import NavMenu from "@/components/NavMenu";
 import { navItems } from "@/components/navItems";
@@ -16,7 +17,7 @@ export default async function Header() {
 
     return (
         <header className="flex justify-between items-center gap-4 cursor-pointer max-w-full p-4 sm:p-6">
-            <Link href="/" className="text-2xl sm:text-4xl font-semibold">SniffNotes</Link>
+            <HeaderTitle/>
             <nav aria-label="Main" className="flex gap-4 sm:gap-6 lg:gap-7 items-center">
 
                 {/* Below lg, only primary destinations show as icons; the menu has everything. */}
