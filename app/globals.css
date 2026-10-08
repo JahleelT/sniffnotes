@@ -126,3 +126,13 @@ html[data-motion="reduce"] *::after {
     scale: none !important;
   }
 }
+
+/* Slow zoom on the home page slideshow (components/MoodSlideshow.tsx). Reduced motion turns it off above. */
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.kenburns {
+  animation: kenburns var(--kenburns-duration, 9s) ease-out forwards;
+}

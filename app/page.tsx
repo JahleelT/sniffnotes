@@ -1,9 +1,10 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import MoodMosaic from "@/components/MoodMosaic";
+import MoodSlideshow from "@/components/MoodSlideshow";
 import { getPreferences } from "@/lib/preferences";
 import { getFeaturedMoods, getPersonalRecommendations } from "@/lib/recommendations";
-import { allPhotos, defaultTheme, moods, type Mood } from "@/utils/themeMap";
+import { allPhotos, defaultTheme, moods, themeMap, type Mood } from "@/utils/themeMap";
 
 const MOSAIC_TILES = 12;
 
@@ -16,22 +17,27 @@ function shuffle<T>(items: T[]) {
   return result;
 }
 
-// Featured moods first (so phones, which show 3 tiles, see them), then one photo per other mood.
-function chooseInitialTiles(featuredMoods: Mood[]) {
+// Featured moods first (so phones, which show 3 tiles, see them), then one photo per other mood,
+// round after round until `count` photos are picked.
+function choosePhotos(featuredMoods: Mood[], count: number) {
   const byMood = new Map(moods.map((mood) => [mood, shuffle(allPhotos.filter((p) => p.mood === mood).map((p) => p.image))]));
   const moodOrder = [...featuredMoods, ...shuffle(moods.filter((mood) => !featuredMoods.includes(mood)))];
-  const picked: string[] = [];
+  const picked: { image: string; mood: Mood }[] = [];
 
-  while (picked.length < MOSAIC_TILES && [...byMood.values()].some((list) => list.length)) {
+  while (picked.length < count && [...byMood.values()].some((list) => list.length)) {
     for (const mood of moodOrder) {
       const next = byMood.get(mood)?.shift();
-      if (next && picked.length < MOSAIC_TILES) picked.push(next);
+      if (next && picked.length < count) picked.push({ image: next, mood });
     }
   }
   return picked;
 }
 
-export default async function Home() {
+export default async function Home(props: PageProps<"/">) {
+  // Trying out two backgrounds: the grid (default) and a single-photo slideshow (?bg=slideshow).
+  const { bg } = await props.searchParams;
+  const slideshow = bg === "slideshow";
+
   const [{ favoriteMoods }, featuredMoods, { picks }] = await Promise.all([
     getPreferences(),
     getFeaturedMoods(),
@@ -41,7 +47,13 @@ export default async function Home() {
 
   return (
     <div className="relative min-h-screen">
-        <MoodMosaic photos={allPhotos.map((p) => p.image)} initial={chooseInitialTiles(featuredMoods)}/>
+        {slideshow ? (
+          <MoodSlideshow
+            slides={choosePhotos(featuredMoods, allPhotos.length).map(({ image, mood }) => ({ image, mood, label: themeMap[mood].label }))}
+          />
+        ) : (
+          <MoodMosaic photos={allPhotos.map((p) => p.image)} initial={choosePhotos(featuredMoods, MOSAIC_TILES).map((p) => p.image)}/>
+        )}
 
         <div className={`sticky top-0 z-40 backdrop-blur-sm border-b ${defaultTheme.card} ${defaultTheme.border}`}>
           <Header/>
