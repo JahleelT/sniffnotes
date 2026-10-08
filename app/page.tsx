@@ -1,3 +1,4 @@
+import { BackgroundPaletteProvider } from "@/components/BackgroundPalette";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import MoodMosaic from "@/components/MoodMosaic";
@@ -20,14 +21,14 @@ function shuffle<T>(items: T[]) {
 // Featured moods first (so phones, which show 3 tiles, see them), then one photo per other mood,
 // round after round until `count` photos are picked.
 function choosePhotos(featuredMoods: Mood[], count: number) {
-  const byMood = new Map(moods.map((mood) => [mood, shuffle(allPhotos.filter((p) => p.mood === mood).map((p) => p.image))]));
+  const byMood = new Map(moods.map((mood) => [mood, shuffle(allPhotos.filter((p) => p.mood === mood))]));
   const moodOrder = [...featuredMoods, ...shuffle(moods.filter((mood) => !featuredMoods.includes(mood)))];
-  const picked: { image: string; mood: Mood }[] = [];
+  const picked: (typeof allPhotos)[number][] = [];
 
   while (picked.length < count && [...byMood.values()].some((list) => list.length)) {
     for (const mood of moodOrder) {
       const next = byMood.get(mood)?.shift();
-      if (next && picked.length < count) picked.push({ image: next, mood });
+      if (next && picked.length < count) picked.push(next);
     }
   }
   return picked;
@@ -45,12 +46,16 @@ export default async function Home(props: PageProps<"/">) {
   ]);
   const orderedMoods = [...favoriteMoods, ...moods.filter((mood) => !favoriteMoods.includes(mood))];
 
+  const slides = slideshow
+    ? choosePhotos(featuredMoods, allPhotos.length).map(({ image, mood, palette }) => ({ image, mood, palette, label: themeMap[mood].label }))
+    : [];
+
   return (
+    // In slideshow mode the search card starts with the first photo's palette, then follows the slideshow.
+    <BackgroundPaletteProvider initial={slides[0]?.palette ?? null}>
     <div className="relative min-h-screen">
         {slideshow ? (
-          <MoodSlideshow
-            slides={choosePhotos(featuredMoods, allPhotos.length).map(({ image, mood }) => ({ image, mood, label: themeMap[mood].label }))}
-          />
+          <MoodSlideshow slides={slides}/>
         ) : (
           <MoodMosaic photos={allPhotos.map((p) => p.image)} initial={choosePhotos(featuredMoods, MOSAIC_TILES).map((p) => p.image)}/>
         )}
@@ -66,5 +71,6 @@ export default async function Home(props: PageProps<"/">) {
 
         </main>
     </div>
+    </BackgroundPaletteProvider>
   );
 }

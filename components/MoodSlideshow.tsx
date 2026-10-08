@@ -4,12 +4,15 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Pause, Play } from "lucide-react";
+import { useBackgroundPalette } from "@/components/BackgroundPalette";
 import { useCanAnimate } from "@/components/useCanAnimate";
+import type { Palette } from "@/utils/themeMap";
 
 export type Slide = {
     image: string;
     mood: string;
     label: string;
+    palette: Palette;
 };
 
 type MoodSlideshowProps = {
@@ -26,16 +29,20 @@ export default function MoodSlideshow({ slides }: MoodSlideshowProps) {
     const [previous, setPrevious] = useState<number | null>(null);
     const [paused, setPaused] = useState(false);
     const canAnimate = useCanAnimate();
+    // Panels over the slideshow (the search card) take on each photo's palette.
+    const { setPalette } = useBackgroundPalette();
 
     useEffect(() => {
         if (!canAnimate || paused || slides.length < 2) return;
         const timer = window.setTimeout(() => {
             if (document.hidden) return;
+            const nextIndex = (index + 1) % slides.length;
             setPrevious(index);
-            setIndex((index + 1) % slides.length);
+            setIndex(nextIndex);
+            setPalette(slides[nextIndex].palette);
         }, SHOW_MS);
         return () => window.clearTimeout(timer);
-    }, [index, canAnimate, paused, slides.length]);
+    }, [index, canAnimate, paused, slides, setPalette]);
 
     const next = (index + 1) % slides.length;
     const current = slides[index];

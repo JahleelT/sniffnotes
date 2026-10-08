@@ -524,4 +524,11 @@ export function pickTheme(mood?: string, random: () => number = Math.random): Th
 }
 
 // Every background photo with its mood, for the homepage mosaic.
-export const allPhotos = moods.flatMap((mood) => themeMap[mood].themes.map((theme) => ({ mood, image: theme.image })));
+export const allPhotos = moods.flatMap((mood) => themeMap[mood].themes.map((theme) => ({
+    mood,
+    image: theme.image,
+    // The photo's own palette, so panels over it can match.
+    palette: { card: theme.card, border: theme.border, accent: theme.accent },
+})));
+
+export type Palette = (typeof allPhotos)[number]["palette"];
