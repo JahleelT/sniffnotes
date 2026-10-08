@@ -13,7 +13,9 @@
     "fetch:perfumapi": "node --no-warnings --env-file-if-exists=.env.local scripts/fetch-perfumapi.mts",
     "demo:seed": "node --no-warnings --env-file-if-exists=.env.local scripts/demo.mts seed",
     "demo:clear": "node --no-warnings --env-file-if-exists=.env.local scripts/demo.mts clear",
-    "news:refresh": "node --no-warnings --env-file-if-exists=.env.local scripts/news-refresh.mts"
+    "news:refresh": "node --no-warnings --env-file-if-exists=.env.local scripts/news-refresh.mts",
+    "guide:fetch": "node --no-warnings scripts/guide.mts fetch",
+    "guide:import": "node --no-warnings scripts/guide.mts import"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
