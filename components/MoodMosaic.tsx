@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Pause, Play } from "lucide-react";
+import { useCanAnimate } from "@/components/useCanAnimate";
 
 type MoodMosaicProps = {
     // Every photo that can appear, and the 12 shown first (chosen on the server).
@@ -23,18 +24,6 @@ function visibleTileCount() {
     if (window.matchMedia("(min-width: 1024px)").matches) return 12;
     if (window.matchMedia("(min-width: 768px)").matches) return 9;
     return 3;
-}
-
-const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
-
-function prefersReducedMotion() {
-    return document.documentElement.dataset.motion === "reduce" || window.matchMedia(REDUCED_MOTION_QUERY).matches;
-}
-
-function subscribeToMotionPreference(onChange: () => void) {
-    const query = window.matchMedia(REDUCED_MOTION_QUERY);
-    query.addEventListener("change", onChange);
-    return () => query.removeEventListener("change", onChange);
 }
 
 // One tile: loads the next photo in a hidden layer, then crossfades to it.
@@ -73,7 +62,7 @@ export default function MoodMosaic({ photos, initial }: MoodMosaicProps) {
     // Tile index → when its current fade ends, so fading tiles aren't swapped again.
     const fadingUntil = useRef(new Map<number, number>());
     // Still on the server render; the browser's motion settings decide after hydration.
-    const canAnimate = !useSyncExternalStore(subscribeToMotionPreference, prefersReducedMotion, () => true);
+    const canAnimate = useCanAnimate();
 
     useEffect(() => {
         if (!canAnimate || paused) return;
