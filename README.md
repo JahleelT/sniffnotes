@@ -51,6 +51,14 @@ The News page collects headlines from five publications' RSS feeds (`lib/news-co
 - `npm run news:refresh` fetches right away.
 - `/api/cron/news` is for a scheduler. It requires `Authorization: Bearer $CRON_SECRET` (Vercel Cron sends this when `CRON_SECRET` is set). `vercel.json` schedules it daily, the most Vercel's free plan allows; on a paid plan, change it to `0 */4 * * *`.
 
+## Manhattan Fragrance Guide
+
+`/guide` lists places to find fragrance, grouped by part of Manhattan, then neighborhood (NYC's official Neighborhood Tabulation Areas).
+
+- `data/guide/stores.csv` is the source of truth. Columns: `name`, `type` (`boutique`, `perfumery`, `shop`, `custom`), `neighborhood` (an exact name from `lib/guide-areas.ts`), `address`, `website`, `carries` (brand slugs, `;`-separated), `custom_blends` (`yes`/`no`), `verified` (`yes`/`no`), `note`, `lat`, `lon`, `osm_id`.
+- `npm run guide:fetch` adds perfume shops from OpenStreetMap that aren't listed yet, placed in a neighborhood by their coordinates and marked unverified. It never changes existing rows.
+- `npm run guide:import` checks the CSV and writes `data/guide/stores.json`, which the page reads.
+
 ## Demo Content
 
 For presentations, `npm run demo:seed` adds 8 demo reviewer accounts with reviews on 12 fragrances and a few voted description suggestions (re-running replaces them). `npm run demo:clear` deletes every demo account and everything it wrote.

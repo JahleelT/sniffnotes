@@ -113,6 +113,7 @@
 - [ ] Shop page that will redirect to several other websites showing potential fragrance matches with disclaimer about authenticity of product 
 
 ### Fragrance Exploration
-- [ ] NYC Fragrance Guide
-  - [ ] Breaks down locations by selection (designer, niche, indie, compound selection)
-  - [ ] briefly covers reputation of each place
+- [X] NYC Fragrance Guide (Manhattan list: sections → neighborhoods → stores, at /guide)
+  - [X] Breaks down locations by selection (brand boutique, multi-brand perfumery, perfume shop, custom blends)
+  - [ ] Verify the 32 OpenStreetMap stores and add custom-blend shops
+  - [ ] briefly covers reputation of each place (the `note` column, written by you)
