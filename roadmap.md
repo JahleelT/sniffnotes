@@ -62,14 +62,14 @@
 - [X] Search bar is a proper search form with a submit button
 - [X] Rounded, shadowed bottle photos
 - [X] Using fragrance color themes to apply to the site (every background photo has its own palette; fragrance pages pick a random photo from their mood)
-- [X] Background for the home page cycles through high-res mood photos (4×3 desktop, 3×3 tablet, 3 stacked on phones; pausable, still with reduced motion)
+- [X] Background for the home page cycles through high-res mood photos (a full-screen slideshow with a slow zoom; the header and search card take each photo's colors; pauses while searching, pausable, still with reduced motion)
 - [X] New moods: Green, Aquatic, Gourmand, Resinous, Ancient (with tag aliases like Fresh → Aquatic, Vanilla → Gourmand)
 - [ ] More TBD...
 
 ## Phase 3: Recommendation system
 
 ### Recommendation System / User Preferences
-- [X] Continuation of the background slideshow concept, but now the vibes/notes/experiences will align with the interest the user has shown (home mosaic leads with favorite moods, then the moods of saved fragrances)
+- [X] Continuation of the background slideshow concept, but now the vibes/notes/experiences will align with the interest the user has shown (the home slideshow leads with favorite moods, then the moods of saved fragrances)
 - [X] Fragrances are recommended based on the one being currently viewed ("You might also like" on every fragrance page)
 - [X] Fragrances recommendations will be shown to the user (own "For you" page in the header; the home page links to it when there are picks)
   - [X] Scored from notes (base notes weigh most, rare notes count more) and moods; picks say why ("Because you saved …", "Shares …")

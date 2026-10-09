@@ -50,7 +50,7 @@ export async function getPersonalRecommendations(limit = 8): Promise<PersonalRec
     };
 }
 
-// Moods to feature first in the homepage mosaic: favorites, then the moods someone saves most.
+// Moods to feature first in the homepage slideshow: favorites, then the moods someone saves most.
 export async function getFeaturedMoods(): Promise<Mood[]> {
     const [signals, { favoriteMoods }] = await Promise.all([getTasteSignals(), getPreferences()]);
     return [...new Set([...favoriteMoods, ...topMoods(index, signals)])];
