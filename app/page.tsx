@@ -1,8 +1,10 @@
+import { cookies } from "next/headers";
 import { BackgroundPaletteProvider } from "@/components/BackgroundPalette";
 import Header from "@/components/Header";
 import HeaderBar from "@/components/HeaderBar";
 import HeroSection from "@/components/HeroSection";
-import MoodSlideshow from "@/components/MoodSlideshow";
+import HomeBackground from "@/components/HomeBackground";
+import { HOME_BACKGROUND_COOKIE } from "@/lib/home-background";
 import { getPreferences } from "@/lib/preferences";
 import { getFeaturedMoods, getPersonalRecommendations } from "@/lib/recommendations";
 import { allPhotos, moods, themeMap, type Mood } from "@/utils/themeMap";
@@ -16,7 +18,9 @@ function shuffle<T>(items: T[]) {
   return result;
 }
 
-// Slideshow order: featured moods first, then one photo per other mood, round after round.
+const GRID_TILES = 12;
+
+// Featured moods first, then one photo per other mood, round after round.
 function orderPhotos(featuredMoods: Mood[]) {
   const byMood = new Map(moods.map((mood) => [mood, shuffle(allPhotos.filter((p) => p.mood === mood))]));
   const moodOrder = [...featuredMoods, ...shuffle(moods.filter((mood) => !featuredMoods.includes(mood)))];
@@ -39,13 +43,21 @@ export default async function Home() {
   ]);
   const orderedMoods = [...favoriteMoods, ...moods.filter((mood) => !favoriteMoods.includes(mood))];
 
-  const slides = orderPhotos(featuredMoods).map(({ image, mood, palette }) => ({ image, mood, palette, label: themeMap[mood].label }));
+  const ordered = orderPhotos(featuredMoods);
+  const slides = ordered.map(({ image, mood, palette }) => ({ image, mood, palette, label: themeMap[mood].label }));
+  // One large photo by default; the grid if the visitor switched to it last time.
+  const mode = (await cookies()).get(HOME_BACKGROUND_COOKIE)?.value === "grid" ? "grid" : "single";
 
   return (
-    // The header and search card start with the first photo's palette, then follow the slideshow.
-    <BackgroundPaletteProvider initial={slides[0]?.palette ?? null}>
+    // In single-photo mode the header and search card start with the first photo's palette, then follow it.
+    <BackgroundPaletteProvider initial={mode === "single" ? slides[0]?.palette ?? null : null}>
     <div className="relative min-h-screen">
-        <MoodSlideshow slides={slides}/>
+        <HomeBackground
+          initialMode={mode}
+          slides={slides}
+          gridInitial={ordered.slice(0, GRID_TILES).map((p) => p.image)}
+          gridPhotos={allPhotos.map((p) => p.image)}
+        />
 
         <HeaderBar>
           <Header/>

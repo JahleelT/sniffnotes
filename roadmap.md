@@ -62,7 +62,7 @@
 - [X] Search bar is a proper search form with a submit button
 - [X] Rounded, shadowed bottle photos
 - [X] Using fragrance color themes to apply to the site (every background photo has its own palette; fragrance pages pick a random photo from their mood)
-- [X] Background for the home page cycles through high-res mood photos (a full-screen slideshow with a slow zoom; the header and search card take each photo's colors; pauses while searching, pausable, still with reduced motion)
+- [X] Background for the home page cycles through high-res mood photos (a full-screen slideshow with a slow zoom; the header and search card take each photo's colors; pauses while searching, pausable, still with reduced motion); a small corner button switches to the 12-photo grid instead, remembered per visitor
 - [X] New moods: Green, Aquatic, Gourmand, Resinous, Ancient (with tag aliases like Fresh → Aquatic, Vanilla → Gourmand)
 - [ ] More TBD...
 

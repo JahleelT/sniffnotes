@@ -5,7 +5,7 @@ import type { Palette } from "@/utils/themeMap";
 
 type BackgroundPaletteValue = {
     palette: Palette | null;
-    setPalette: (palette: Palette) => void;
+    setPalette: (palette: Palette | null) => void;
 };
 
 const BackgroundPaletteContext = createContext<BackgroundPaletteValue>({ palette: null, setPalette: () => {} });

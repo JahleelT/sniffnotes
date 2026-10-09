@@ -95,7 +95,7 @@ export default function MoodSlideshow({ slides }: MoodSlideshowProps) {
                     type="button"
                     onClick={() => setPaused(!paused)}
                     aria-pressed={paused}
-                    className="fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/40 bg-background/60 backdrop-blur-md text-sm hover:bg-background/80 transition-all duration-200 cursor-pointer"
+                    className="fixed bottom-4 right-17 z-40 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/40 bg-background/60 backdrop-blur-md text-sm hover:bg-background/80 transition-all duration-200 cursor-pointer"
                 >
                     {paused ? <Play aria-hidden className="size-4"/> : <Pause aria-hidden className="size-4"/>}
                     {paused ? "Play background" : "Pause background"}
