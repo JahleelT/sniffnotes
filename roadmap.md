@@ -101,6 +101,13 @@
   - [X] Search by Season (a season counts when at least half of reviewers picked it)
 
 
+## Infrastructure
+
+- [X] CI on every push and pull request (lint, type-check, tests, data check, dependency audit, build)
+- [X] CD: Vercel deploys from GitHub; database migrations apply automatically on `main` (once the secret is set)
+- [X] Dependabot updates and baseline security headers
+- [ ] Deploy to Vercel and protect the `main` branch
+
 ## 🚨 BELOW PHASE(S) ARE UNLIKELY TO BE DEVELOPED, BUT CONTINGENTLY NAMED 🚨
 
 ## Phase X: Diving Deeper

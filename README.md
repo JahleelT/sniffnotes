@@ -25,6 +25,42 @@ Accounts and saved data live in Supabase.
 
 New migrations go in `supabase/migrations/` (`npx supabase migration new <name>`). In the dashboard, Authentication → URL Configuration must list every origin the site runs on (for example `http://localhost:3000/**` and the production URL), or email links fall back to the Site URL.
 
+## Checks
+
+The same checks CI runs, locally:
+
+```bash
+npm run lint        # ESLint
+npm run typecheck   # route types + TypeScript
+npm test            # unit and data tests (tests/*.test.mts, Node's built-in runner)
+npm run check:data  # re-runs the importers and fails if data/ changed (CSV edited without importing)
+npm run build       # production build
+```
+
+## CI/CD
+
+**CI** — `.github/workflows/ci.yml` runs on every push to `main` and every pull request: lint, type-check, tests, the data check, `npm audit` (fails on high or critical vulnerabilities in production dependencies), and a production build. The build needs no real secrets; CI uses placeholders.
+
+**Deploys (Vercel)** — Import the GitHub repo into Vercel once. After that, every push to `main` deploys to production and every pull request gets its own preview URL. In the Vercel project, add the environment variables from `.env.example`: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY`, and `CRON_SECRET`.
+
+**Database migrations** — After CI passes on `main`, the `migrate` job runs `supabase db push`, which applies only migrations the database hasn't run (a no-op otherwise). It's skipped until you add the secret: GitHub repo → Settings → Secrets and variables → Actions → `SUPABASE_DB_URL`, set to the **Session pooler** connection string from Supabase (Connect → Session pooler), since GitHub's runners can't reach the IPv6-only direct connection. Vercel can deploy before the migration finishes, so keep migrations additive (new tables and columns) rather than renaming or dropping things code still uses.
+
+**Dependabot** — `.github/dependabot.yml` opens weekly pull requests for outdated npm packages (minor and patch updates grouped into one) and monthly ones for GitHub Actions. CI checks each before you merge.
+
+Recommended: in GitHub → Settings → Branches, protect `main` and require the "Lint, type-check, test, build" check, so nothing merges with a failing build.
+
+## Security
+
+SniffNotes doesn't collect payment or government ID data, so the protections are proportionate:
+
+- **Row-level security** on every Supabase table: people can only read and change what they're allowed to (their own collections, reviews, messages, and friends' shared collections). It's enforced by the database, not just the UI.
+- **Secrets stay on the server.** `SUPABASE_SECRET_KEY` is only used in `lib/supabase/admin.ts`, which imports `server-only`, so the build fails if it's ever bundled into browser code. `.env.local` is git-ignored.
+- **Security headers** on every response (`next.config.ts`): no framing by other sites, no content-type sniffing, a strict referrer policy, unused browser features (camera, microphone, location) disabled, and HTTPS-only.
+- **Dependency checks** in CI and Dependabot updates.
+- **Form input is validated** in server actions, and `?next=` redirects only go to paths on this site.
+
+Worth turning on in the Supabase dashboard before launch: Authentication → **Leaked password protection** and a **custom SMTP** provider; and in GitHub → Settings → Code security, **secret scanning** with push protection.
+
 ## Project Layout
 
 | Path | What it holds |
