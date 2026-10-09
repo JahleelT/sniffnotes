@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Pause, Play } from "lucide-react";
 import { useBackgroundPalette } from "@/components/BackgroundPalette";
 import { useCanAnimate } from "@/components/useCanAnimate";
+import { useSearchFocused } from "@/components/useSearchFocused";
 import type { Palette } from "@/utils/themeMap";
 
 export type Slide = {
@@ -29,11 +30,14 @@ export default function MoodSlideshow({ slides }: MoodSlideshowProps) {
     const [previous, setPrevious] = useState<number | null>(null);
     const [paused, setPaused] = useState(false);
     const canAnimate = useCanAnimate();
+    // Hold still (including the zoom) while someone is using the search bar.
+    const searching = useSearchFocused();
+    const still = paused || searching;
     // Panels over the slideshow (the search card) take on each photo's palette.
     const { setPalette } = useBackgroundPalette();
 
     useEffect(() => {
-        if (!canAnimate || paused || slides.length < 2) return;
+        if (!canAnimate || still || slides.length < 2) return;
         const timer = window.setTimeout(() => {
             if (document.hidden) return;
             const nextIndex = (index + 1) % slides.length;
@@ -42,7 +46,7 @@ export default function MoodSlideshow({ slides }: MoodSlideshowProps) {
             setPalette(slides[nextIndex].palette);
         }, SHOW_MS);
         return () => window.clearTimeout(timer);
-    }, [index, canAnimate, paused, slides, setPalette]);
+    }, [index, canAnimate, still, slides, setPalette]);
 
     const next = (index + 1) % slides.length;
     const current = slides[index];
@@ -70,6 +74,7 @@ export default function MoodSlideshow({ slides }: MoodSlideshowProps) {
                                 // Alternate the zoom's anchor so consecutive photos drift differently.
                                 transformOrigin: i % 2 ? "30% 40%" : "70% 60%",
                                 ["--kenburns-duration" as string]: `${SHOW_MS + FADE_MS}ms`,
+                                animationPlayState: still ? "paused" : "running",
                             }}
                         />
                     );

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Pause, Play } from "lucide-react";
 import { useCanAnimate } from "@/components/useCanAnimate";
+import { useSearchFocused } from "@/components/useSearchFocused";
 
 type MoodMosaicProps = {
     // Every photo that can appear, and the 12 shown first (chosen on the server).
@@ -63,9 +64,11 @@ export default function MoodMosaic({ photos, initial }: MoodMosaicProps) {
     const fadingUntil = useRef(new Map<number, number>());
     // Still on the server render; the browser's motion settings decide after hydration.
     const canAnimate = useCanAnimate();
+    // Hold still while someone is using the search bar, so the page is calmer while they type.
+    const searching = useSearchFocused();
 
     useEffect(() => {
-        if (!canAnimate || paused) return;
+        if (!canAnimate || paused || searching) return;
 
         let timer: number;
 
@@ -93,7 +96,7 @@ export default function MoodMosaic({ photos, initial }: MoodMosaicProps) {
 
         timer = window.setTimeout(swapOne, MIN_GAP_MS);
         return () => window.clearTimeout(timer);
-    }, [canAnimate, paused, photos]);
+    }, [canAnimate, paused, searching, photos]);
 
     return (
         <>
