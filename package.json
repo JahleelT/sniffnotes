@@ -15,7 +15,10 @@
     "demo:clear": "node --no-warnings --env-file-if-exists=.env.local scripts/demo.mts clear",
     "news:refresh": "node --no-warnings --env-file-if-exists=.env.local scripts/news-refresh.mts",
     "guide:fetch": "node --no-warnings scripts/guide.mts fetch",
-    "guide:import": "node --no-warnings scripts/guide.mts import"
+    "guide:import": "node --no-warnings scripts/guide.mts import",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --no-warnings --test \"tests/*.test.mts\"",
+    "check:data": "npm run import:fragrances && npm run guide:import && git diff --exit-code -- data/"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
