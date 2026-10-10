@@ -7,7 +7,7 @@ import HomeBackground from "@/components/HomeBackground";
 import { HOME_BACKGROUND_COOKIE } from "@/lib/home-background";
 import { getPreferences } from "@/lib/preferences";
 import { getFeaturedMoods, getPersonalRecommendations } from "@/lib/recommendations";
-import { allPhotos, moods, themeMap, type Mood } from "@/utils/themeMap";
+import { allPhotos, everydayMoods, moods, themeMap, type Mood } from "@/utils/themeMap";
 
 function shuffle<T>(items: T[]) {
   const result = [...items];
@@ -19,6 +19,7 @@ function shuffle<T>(items: T[]) {
 }
 
 const GRID_TILES = 12;
+const HOME_MOODS = 8;
 
 // Featured moods first, then one photo per other mood, round after round.
 function orderPhotos(featuredMoods: Mood[]) {
@@ -41,7 +42,8 @@ export default async function Home() {
     getFeaturedMoods(),
     getPersonalRecommendations(1),
   ]);
-  const orderedMoods = [...favoriteMoods, ...moods.filter((mood) => !favoriteMoods.includes(mood))];
+  // A short list for the home page: favorites first, then everyday moods. Search has them all.
+  const homeMoods = [...new Set([...favoriteMoods, ...everydayMoods])].slice(0, HOME_MOODS);
 
   const ordered = orderPhotos(featuredMoods);
   const slides = ordered.map(({ image, mood, palette }) => ({ image, mood, palette, label: themeMap[mood].label }));
@@ -63,10 +65,10 @@ export default async function Home() {
           <Header/>
         </HeaderBar>
 
-        <main id="main" className="flex justify-center px-4 pt-10 sm:pt-24 pb-20">
+        <main id="main" className="flex justify-center px-4 pt-6 sm:pt-24 pb-20">
 
           {/* Recommendations live on /for-you; the home page only links there, to keep it calm. */}
-          <HeroSection moods={orderedMoods} hasPicks={picks.length > 0}/>
+          <HeroSection moods={homeMoods} hasPicks={picks.length > 0}/>
 
         </main>
     </div>

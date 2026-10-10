@@ -33,7 +33,7 @@ export default function SearchBar({ initialQuery = "", filters = {} }: SearchBar
                 type="text"
                 enterKeyHint="search"
                 placeholder="Follow your nose..."
-                className="w-full text-l pl-6 sm:pl-8 pr-16 py-4 rounded-full border"
+                className="w-full text-l pl-6 sm:pl-8 pr-16 py-3 sm:py-4 rounded-full border"
             />
             <button
                 type="submit"

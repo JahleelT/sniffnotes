@@ -11,8 +11,8 @@ export default function HeroCard({ title, children }: { title: string; children:
     const transition = "transition-[background-color,border-color,color] duration-[1800ms] ease-in-out";
 
     return (
-        <section className={`w-full max-w-5xl flex flex-col items-center justify-center gap-6 p-6 sm:p-10 lg:px-14 rounded-2xl border backdrop-blur-md ${transition} ${card} ${border}`}>
-            <h2 className={`text-2xl sm:text-3xl font-semibold text-center ${transition} ${accent}`}>{title}</h2>
+        <section className={`w-full max-w-5xl flex flex-col items-center justify-center gap-4 sm:gap-6 p-4 sm:p-10 lg:px-14 rounded-2xl border backdrop-blur-md ${transition} ${card} ${border}`}>
+            <h2 className={`text-xl sm:text-3xl font-semibold text-center ${transition} ${accent}`}>{title}</h2>
             {children}
         </section>
     );

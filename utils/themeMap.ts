@@ -485,6 +485,10 @@ export type Mood = keyof typeof themeMap;
 
 export const moods = Object.keys(themeMap) as Mood[];
 
+// The moods most people recognize without explanation, most familiar first. The home page shows
+// these; the search page shows every mood.
+export const everydayMoods: Mood[] = ["floral", "woodsy", "fruity", "clean", "spicy", "aquatic", "green", "boozy"];
+
 // Used for the homepage and anywhere no mood is selected.
 export const defaultTheme: Theme = {
     label: "SniffNotes",
