@@ -55,6 +55,10 @@ export async function signUp(_: FormState, formData: FormData): Promise<FormStat
     });
 
     if (error?.code === "weak_password") return { error: error.message };
+    if (error?.code === "over_email_send_rate_limit" || error?.status === 429) {
+        return { error: "Too many sign-ups right now. Please wait a few minutes and try again." };
+    }
+    if (error?.code === "email_address_invalid") return { error: "That email address doesn't look right. Check it and try again." };
     if (error) return { error: "We couldn't create that account. Check the email address and try again." };
 
     // With email confirmation off, Supabase signs the user in right away.

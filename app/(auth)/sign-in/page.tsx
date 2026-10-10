@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function SignInPage(props: PageProps<"/sign-in">) {
-    const { next: nextParam, error } = await props.searchParams;
+    const { next: nextParam, error, confirmed } = await props.searchParams;
     const next = safeNext(nextParam);
 
     if (await getCurrentUser()) redirect(next);
@@ -29,6 +29,9 @@ export default async function SignInPage(props: PageProps<"/sign-in">) {
                 </>
             }
         >
+            {confirmed && (
+                <p role="status" className="mb-4">Your email is confirmed. Sign in to finish setting up your account.</p>
+            )}
             {error === "link" && (
                 <p role="alert" className="mb-4 text-danger">That link is invalid or has expired. Try again below.</p>
             )}

@@ -22,8 +22,18 @@ export async function GET(request: NextRequest) {
         userId = (await supabase.auth.verifyOtp({ type, token_hash: tokenHash })).data.user?.id;
     }
 
-    if (userId) await syncPreferencesOnSignIn(supabase, userId);
-    const verified = Boolean(userId);
+    if (userId) {
+        await syncPreferencesOnSignIn(supabase, userId);
+        return NextResponse.redirect(new URL(next, origin));
+    }
 
-    return NextResponse.redirect(new URL(verified ? next : "/sign-in?error=link", origin));
+    // A `code` means Supabase already accepted the link (and confirmed the email) but the session
+    // couldn't be finished here, usually because the link was opened in a different browser or
+    // app than the one used to sign up (e.g. tapping it inside the Gmail app on a phone).
+    if (code) {
+        const isReset = next.startsWith("/account/update-password");
+        return NextResponse.redirect(new URL(isReset ? "/forgot-password?error=browser" : "/sign-in?confirmed=1", origin));
+    }
+
+    return NextResponse.redirect(new URL("/sign-in?error=link", origin));
 }
