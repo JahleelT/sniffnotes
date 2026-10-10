@@ -23,7 +23,7 @@ export default function BreakdownNTags({ fragrance, theme }: BreakdownNTagsProps
     ].filter((tier) => tier.notes.length > 0);
 
     return (
-        <div className={`flex flex-col justify-center px-4 backdrop-blur-sm border rounded-xl lg:mb-6 ${theme.card} ${theme.border}`}>
+        <div className={`flex flex-col justify-start px-4 pb-4 backdrop-blur-sm border rounded-xl ${theme.card} ${theme.border}`}>
             <section id="notes">
 
                 <h2 className={`text-2xl mt-3 px-2 font-semibold ${theme.accent}`}>Notes</h2>

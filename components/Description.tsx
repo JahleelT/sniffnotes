@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ClampedText from "@/components/ClampedText";
 import type { Fragrance } from "@/data/fragrances";
 import type { Suggestion } from "@/lib/descriptions";
 import type { Theme } from "@/utils/themeMap";
@@ -33,17 +34,17 @@ export default function Description({ fragrance, theme, community, suggestionCou
                     <p className="px-2 pt-2 text-sm text-foreground/70">
                         Community description by {community.author} · approved by {community.upvotes} {community.upvotes === 1 ? "vote" : "votes"}
                     </p>
-                    <Paragraphs text={community.body}/>
+                    <ClampedText><Paragraphs text={community.body}/></ClampedText>
                     <details className="px-2 mt-2">
                         <summary className="cursor-pointer text-sm underline text-foreground/80">Original description</summary>
                         <div className="text-foreground/80"><Paragraphs text={fragrance.description}/></div>
                     </details>
                 </>
             ) : (
-                <Paragraphs text={fragrance.description}/>
+                <ClampedText><Paragraphs text={fragrance.description}/></ClampedText>
             )}
 
-            <Link href={`/fragrance/${fragrance.id}/descriptions`} className="inline-block px-2 mt-2 text-sm underline text-foreground/80 hover:text-foreground">
+            <Link href={`/fragrance/${fragrance.id}/descriptions`} className="block w-fit px-2 mt-3 text-sm underline text-foreground/80 hover:text-foreground">
                 {suggestionCount ? `Review ${suggestionCount} suggested ${suggestionCount === 1 ? "description" : "descriptions"}` : "Suggest a better description"}
             </Link>
         </div>
