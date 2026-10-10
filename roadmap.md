@@ -35,6 +35,7 @@
 ### Data
 - [X] Integrate PerfumAPI (`npm run fetch:perfumapi` feeds the import pipeline, with photos and suggested moods)
   - [X] Import the first scraped batch (35 perfumes; 41 fragrances total)
+  - [X] Import 82 designer fragrances (Dior, Chanel, YSL, Armani, Versace, Prada, JPG, Tom Ford, D&G, Rabanne, Valentino, Carolina Herrera; 155 total)
 
 ### User Accounts 
 - [X] User sign up, sign in, sign out (Supabase Auth)

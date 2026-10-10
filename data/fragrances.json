@@ -2392,5 +2392,2555 @@
                 "Sandalwood"
             ]
         }
+    },
+    {
+        "id": "sauvage",
+        "name": "Sauvage",
+        "brand": "Dior",
+        "image": "/fragrances/sauvage.jpg",
+        "price": 2,
+        "tags": [
+            "spicy",
+            "aquatic",
+            "woodsy"
+        ],
+        "description": "Sauvage by Dior is a Aromatic Fougere fragrance for men. Sauvage was launched in 2015. The nose behind this fragrance is François Demachy.\n\nDior launches its new fragrance Sauvage, with the name originating from the fragrance Eau Sauvage from 1966, although the two don’t belong to the same collection. Sauvage is inspired by wild, open spaces; blue sky that covers rocky landscapes, hot under the desert sun.\n\nDior in-house perfumer, François Demachy, signed this creation. The fragrance is announced as radically fresh, raw and noble at the same time. The composition is reportedly prevalent with carefully selected natural ingredients. Fresh top notes of Calabria bergamot encounter ambroxan, obtained from precious ambergris, and its woody trail.\n\nDior Sauvage comes out in September 2015, advertised by actor Johnny Depp. It is available as 60 and 100 ml Eau de Toilette.",
+        "notes": {
+            "top": [
+                "Calabrian bergamot",
+                "Pepper"
+            ],
+            "mid": [
+                "Sichuan Pepper",
+                "Lavender",
+                "Pink Pepper",
+                "Vetiver",
+                "Patchouli",
+                "Geranium",
+                "elemi"
+            ],
+            "base": [
+                "Ambroxan",
+                "Cedar",
+                "Labdanum"
+            ]
+        }
+    },
+    {
+        "id": "dior-homme-intense-2011",
+        "name": "Dior Homme Intense 2011",
+        "brand": "Dior",
+        "image": "/fragrances/dior-homme-intense-2011.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "clean",
+            "woodsy"
+        ],
+        "description": "Dior Homme Intense 2011 by Dior is a Woody Floral Musk fragrance for men. Dior Homme Intense 2011 was launched in 2011. The nose behind this fragrance is François Demachy.",
+        "notes": {
+            "top": [],
+            "mid": [
+                "Iris",
+                "Ambrette (Musk Mallow)",
+                "Pear"
+            ],
+            "base": [
+                "Virginia Cedar",
+                "Vetiver"
+            ]
+        }
+    },
+    {
+        "id": "hypnotic-poison",
+        "name": "Hypnotic Poison",
+        "brand": "Dior",
+        "image": "/fragrances/hypnotic-poison.jpg",
+        "price": 2,
+        "tags": [
+            "gourmand",
+            "floral",
+            "resinous"
+        ],
+        "description": "Hypnotic Poison by Dior is a Oriental Vanilla fragrance for women. Hypnotic Poison was launched in 1998. The nose behind this fragrance is Annick Menardo.",
+        "notes": {
+            "top": [
+                "Coconut",
+                "Plum",
+                "Apricot"
+            ],
+            "mid": [
+                "Brazilian Rosewood",
+                "Jasmine",
+                "Tuberose",
+                "Caraway",
+                "Rose",
+                "Lily-of-the-Valley"
+            ],
+            "base": [
+                "Vanilla",
+                "Almond",
+                "Sandalwood",
+                "Musk"
+            ]
+        }
+    },
+    {
+        "id": "j-adore",
+        "name": "J'adore",
+        "brand": "Dior",
+        "image": "/fragrances/j-adore.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "fruity",
+            "clean"
+        ],
+        "description": "J'adore by Dior is a Floral Fruity fragrance for women. J'adore was launched in 1999. The nose behind this fragrance is Calice Becker. This perfume is the winner of award FiFi Award Best National Advertising Campaign / TV 2007 .\n\nJ’adore is a modern, glamorous fragrance, which has become incredibly popular, and for that reason developed in number of variants of different concentrations. J’adore is a luminous fragrance. Its opulent, golden scent shimmers on skin like sunbeams. The classic and ambitions of this fragrance reflects in the bottle shaped like Greek amphora. J’adore presents a new conception of Dior feminity, a scent so new and so in line with Dior style at the same time – sweet but balmy, slightly sharp floral with fresh mandarin in the top; jasmine, plum, orchid and rose in the heart; and amaranth, musk and blackberry in the trail. It was created in 1999.",
+        "notes": {
+            "top": [
+                "Pear",
+                "Melon",
+                "Magnolia",
+                "Peach",
+                "Mandarin Orange",
+                "Bergamot"
+            ],
+            "mid": [
+                "Jasmine",
+                "Lily-of-the-Valley",
+                "Tuberose",
+                "Freesia",
+                "Rose",
+                "Orchid",
+                "Violet",
+                "Plum"
+            ],
+            "base": [
+                "Musk",
+                "Vanilla",
+                "Cedar",
+                "Blackberry"
+            ]
+        }
+    },
+    {
+        "id": "fahrenheit",
+        "name": "Fahrenheit",
+        "brand": "Dior",
+        "image": "/fragrances/fahrenheit.jpg",
+        "price": 2,
+        "tags": [
+            "dark",
+            "floral",
+            "woodsy"
+        ],
+        "description": "Fahrenheit by Dior is a Aromatic Fougere fragrance for men. Fahrenheit was launched in 1988. Fahrenheit was created by Jean-Louis Sieuzac, Michel Almairac and Maurice Roger.",
+        "notes": {
+            "top": [
+                "Nutmeg Flower",
+                "Lavender",
+                "Cedar",
+                "Mandarin Orange",
+                "Chamomile",
+                "Bergamot",
+                "Hawthorn",
+                "Lemon"
+            ],
+            "mid": [
+                "Violet Leaf",
+                "Nutmeg",
+                "Cedar",
+                "Sandalwood",
+                "Carnation",
+                "Honeysuckle",
+                "Jasmine",
+                "Lily-of-the-Valley"
+            ],
+            "base": [
+                "Leather",
+                "Vetiver",
+                "Musk",
+                "Amber",
+                "Patchouli",
+                "Tonka Bean"
+            ]
+        }
+    },
+    {
+        "id": "pure-poison",
+        "name": "Pure Poison",
+        "brand": "Dior",
+        "image": "/fragrances/pure-poison.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "solar",
+            "woodsy"
+        ],
+        "description": "Pure Poison by Dior is a Floral fragrance for women. Pure Poison was launched in 2004. Pure Poison was created by Carlos Benaïm, Dominique Ropion and Olivier Polge.\n\nPure Poison is the newest Dior’s poison; it enchants you, and fills you with bold strength. The name reflects the fragrance. Pure Poison was created by three perfumers, three ‘noses’, three souls, so this collective product delights with complex composition and incredible harmony.\n\nAt the beginning you are allured by fresh notes of bergamot and jasmine, then white flowers come in, erotic and intoxicating, while sandalwood and amber in the base give it depth.\n\nPure Poison was made in 2004. The creators are Carlos Benaim, Dominique Ropion and Olivier Polge.",
+        "notes": {
+            "top": [
+                "Jasmine",
+                "Orange",
+                "Bergamot",
+                "Sicilian Mandarin"
+            ],
+            "mid": [
+                "Gardenia",
+                "Orange Blossom"
+            ],
+            "base": [
+                "Sandalwood",
+                "White Amber",
+                "Cedar",
+                "White Musk"
+            ]
+        }
+    },
+    {
+        "id": "acqua-di-gio-profondo",
+        "name": "Acqua di Giò Profondo",
+        "brand": "Giorgio Armani",
+        "image": "/fragrances/acqua-di-gio-profondo.jpg",
+        "price": 2,
+        "tags": [
+            "green",
+            "solar",
+            "woodsy"
+        ],
+        "description": "Acqua di Giò Profondo by Giorgio Armani is a Aromatic Fougere fragrance for men. Acqua di Giò Profondo was launched in 2020. The nose behind this fragrance is Alberto Morillas.",
+        "notes": {
+            "top": [
+                "Sea Notes",
+                "Aquozone",
+                "Bergamot",
+                "Green Mandarin"
+            ],
+            "mid": [
+                "Rosemary",
+                "Lavender",
+                "Cypress",
+                "Mastic or Lentisque"
+            ],
+            "base": [
+                "Mineral notes",
+                "Musk",
+                "Patchouli",
+                "Amber"
+            ]
+        }
+    },
+    {
+        "id": "sauvage-eau-de-parfum",
+        "name": "Sauvage Eau de Parfum",
+        "brand": "Dior",
+        "image": "/fragrances/sauvage-eau-de-parfum.jpg",
+        "price": 2,
+        "tags": [
+            "spicy",
+            "resinous",
+            "gourmand"
+        ],
+        "description": "Sauvage Eau de Parfum by Dior is a Oriental Fougere fragrance for men. Sauvage Eau de Parfum was launched in 2018. The nose behind this fragrance is François Demachy.\n\nIn 2018, Dior introduces the new edition of Dior Sauvage, originally launched in 2015, in an Eau de Parfum interpretation. Dior‘s in-house perfumer François Demachy imagines the Eau de Parfum as revealing new facets of Sauvage. The composition with oriental and vanilla facets is described as enveloping, suave, mysterious and sensual.\n\nhe composition keeps some of the notes from the original, like bergamot, Sichuan pepper, lavender and ambroxan and enriches them with spices and warm, oriental tones of star anise, nutmeg and papua vanilla.\n\nThe new ad campaign also features actor Johnny Depp as the face. The fragrance is available as a 60 and a 100 ml Eau de Parfum.",
+        "notes": {
+            "top": [],
+            "mid": [
+                "Sichuan Pepper",
+                "Lavender",
+                "Star Anise",
+                "Nutmeg"
+            ],
+            "base": [
+                "Ambroxan",
+                "Vanilla"
+            ]
+        }
+    },
+    {
+        "id": "dior-homme-parfum",
+        "name": "Dior Homme Parfum",
+        "brand": "Dior",
+        "image": "/fragrances/dior-homme-parfum.jpg",
+        "price": 2,
+        "tags": [
+            "dark",
+            "floral",
+            "woodsy"
+        ],
+        "description": "Dior Homme Parfum by Dior is a Leather fragrance for men. Dior Homme Parfum was launched in 2014. The nose behind this fragrance is François Demachy.\n\nThe new version will introduce the very essence of Dior Homme, in an unusual concentration which leaves an urban and intense impression. The nobility of its ingredients is expressed by the uniqueness of the skin.\n\nDIOR HOMME PARFUM contains three key notes of the composition printed on its bottle: Iris from Tuscany, sandalwood from Sri Lanka and dark and masculine leather accord. The fragrance is available in a distinctive glass bottle of 75 ml at a price of 102.50 Euros. The outer packaging is black with discreet detailing in gold color.",
+        "notes": {
+            "top": [
+                "Tuscan Iris",
+                "Italian Orange"
+            ],
+            "mid": [
+                "Leather",
+                "Rose"
+            ],
+            "base": [
+                "Sandalwood",
+                "Ambrette (Musk Mallow)",
+                "Agarwood (Oud)",
+                "Cedar"
+            ]
+        }
+    },
+    {
+        "id": "coco-mademoiselle",
+        "name": "Coco Mademoiselle",
+        "brand": "Chanel",
+        "image": "/fragrances/coco-mademoiselle.jpg",
+        "price": 3,
+        "tags": [
+            "floral",
+            "resinous",
+            "solar"
+        ],
+        "description": "Coco Mademoiselle by Chanel is a Oriental Floral fragrance for women. Coco Mademoiselle was launched in 2001. The nose behind this fragrance is Jacques Polge. This perfume is the winner of award FiFi Award Best National Advertising Campaign / TV 2008 .",
+        "notes": {
+            "top": [
+                "Orange",
+                "Mandarin Orange",
+                "Bergamot",
+                "Orange Blossom"
+            ],
+            "mid": [
+                "Turkish Rose",
+                "Jasmine",
+                "Mimosa",
+                "Ylang-Ylang"
+            ],
+            "base": [
+                "Patchouli",
+                "White Musk",
+                "Vanilla",
+                "Vetiver",
+                "Tonka Bean",
+                "Opoponax"
+            ]
+        }
+    },
+    {
+        "id": "bleu-de-chanel",
+        "name": "Bleu de Chanel",
+        "brand": "Chanel",
+        "image": "/fragrances/bleu-de-chanel.jpg",
+        "price": 3,
+        "tags": [
+            "woodsy",
+            "green",
+            "spicy"
+        ],
+        "description": "Bleu de Chanel by Chanel is a Woody Aromatic fragrance for men. Bleu de Chanel was launched in 2010. The nose behind this fragrance is Jacques Polge.\n\nBleu de Chanel by Chanel is a woody aromatic fragrance for men presented on the market in 2010. The nose behind this fragrance is Jacques Polge.\n\nAfter shave lotion with innovative splash formula is also on the market.",
+        "notes": {
+            "top": [
+                "Grapefruit",
+                "Lemon",
+                "Mint",
+                "Pink Pepper"
+            ],
+            "mid": [
+                "Ginger",
+                "Nutmeg",
+                "Jasmine",
+                "Iso E Super"
+            ],
+            "base": [
+                "Incense",
+                "Cedar",
+                "Vetiver",
+                "Sandalwood",
+                "Patchouli",
+                "Labdanum",
+                "White Musk"
+            ]
+        }
+    },
+    {
+        "id": "chance-eau-tendre",
+        "name": "Chance Eau Tendre",
+        "brand": "Chanel",
+        "image": "/fragrances/chance-eau-tendre.jpg",
+        "price": 3,
+        "tags": [
+            "floral",
+            "fruity",
+            "clean"
+        ],
+        "description": "Chance Eau Tendre by Chanel is a Floral Fruity fragrance for women. Chance Eau Tendre was launched in 2010. The nose behind this fragrance is Jacques Polge.\n\nChanel is presenting a new flanker of their popular fragrance Chance which arrives on the market on April 2nd 2010. The romantic and pink new version, Chance Eau Tendre, is announced as a floral-fruity interpretation of Chance EDP.\n\nFace of advertising campaign is Sigrid Agren, and photographer is Jean-Paul Goude. The flacon is the same as its antecedent, but it is characterized by pink fluid this time. The fragrance will be available as 50 and 100ml.",
+        "notes": {
+            "top": [
+                "Quince",
+                "Grapefruit"
+            ],
+            "mid": [
+                "Hyacinth",
+                "Jasmine"
+            ],
+            "base": [
+                "Musk",
+                "Iris",
+                "Virginia Cedar",
+                "Amber"
+            ]
+        }
+    },
+    {
+        "id": "allure-homme-sport",
+        "name": "Allure Homme Sport",
+        "brand": "Chanel",
+        "image": "/fragrances/allure-homme-sport.jpg",
+        "price": 3,
+        "tags": [
+            "solar",
+            "aquatic",
+            "woodsy"
+        ],
+        "description": "Allure Homme Sport by Chanel is a Woody Spicy fragrance for men. Allure Homme Sport was launched in 2004. The nose behind this fragrance is Jacques Polge.\n\nFive years after the launch of Allure Homme, Chanel house presented Allure Homme Sport, which came as a fresher and sharper fragrance. The crystal clear beginning introduces notes of water and aldehydes. It is followed by woodsy and spicy character of the fragrance, which thanks to luminous vetiver is not oriental heavy, but light and translucent. The base is composed of sensual white musk, tonka beans and amber. It was designed in 2004 by the famous \\'nose\\' of Chanel house, Jacques Polge.",
+        "notes": {
+            "top": [
+                "Orange",
+                "Sea Notes",
+                "Aldehydes",
+                "Blood Mandarin"
+            ],
+            "mid": [
+                "Pepper",
+                "Neroli",
+                "Cedar"
+            ],
+            "base": [
+                "Vanilla",
+                "Tonka Bean",
+                "White Musk",
+                "Amber",
+                "Vetiver",
+                "Elemi resin"
+            ]
+        }
+    },
+    {
+        "id": "le-beau-le-parfum",
+        "name": "Le Beau Le Parfum",
+        "brand": "Jean Paul Gaultier",
+        "image": "/fragrances/le-beau-le-parfum.jpg",
+        "price": 2,
+        "tags": [
+            "tropical",
+            "woodsy",
+            "resinous"
+        ],
+        "description": "Le Beau Le Parfum by Jean Paul Gaultier is a Oriental Woody fragrance for men. Le Beau Le Parfum was launched in 2022. The nose behind this fragrance is Quentin Bisch.",
+        "notes": {
+            "top": [
+                "Pineapple",
+                "Iris",
+                "Ginger",
+                "Cypress"
+            ],
+            "mid": [
+                "Coconut",
+                "Woodsy Notes"
+            ],
+            "base": [
+                "Tonka Bean",
+                "Sandalwood",
+                "Amber",
+                "Ambergris"
+            ]
+        }
+    },
+    {
+        "id": "bleu-de-chanel-parfum",
+        "name": "Bleu de Chanel Parfum",
+        "brand": "Chanel",
+        "image": "/fragrances/bleu-de-chanel-parfum.jpg",
+        "price": 3,
+        "tags": [
+            "woodsy",
+            "green",
+            "solar"
+        ],
+        "description": "Bleu de Chanel Parfum by Chanel is a Woody Aromatic fragrance for men. Bleu de Chanel Parfum was launched in 2018. The nose behind this fragrance is Olivier Polge.\n\nBLEU DE CHANEL represents the colour of freedom.  A fragrance unveiling three nuances of its temperament in three interpretations: Eau de Toilette from 2010, Eau de Parfum from 2014 and Parfum from 2018.\n\n\"The most intense of the BLEU DE CHANEL fragrances. Powerful and refined, BLEU DE CHANEL Parfum for men reveals the essence of determination.An aromatic freshness opens, lingering on the warm, addictive fullness of Cedar and Sandalwood from New Caledonia that sweeps throughout the intense, woody fragrance.\"\n\nIt is available in bottles of 50 and 100 ml.",
+        "notes": {
+            "top": [
+                "Lemon Zest",
+                "Bergamot",
+                "Mint",
+                "Artemisia"
+            ],
+            "mid": [
+                "Lavender",
+                "Pineapple",
+                "Geranium",
+                "Green Notes"
+            ],
+            "base": [
+                "Sandalwood",
+                "Cedar",
+                "Amberwood",
+                "Iso E Super",
+                "Tonka Bean"
+            ]
+        }
+    },
+    {
+        "id": "chance-eau-fraiche",
+        "name": "Chance Eau Fraiche",
+        "brand": "Chanel",
+        "image": "/fragrances/chance-eau-fraiche.jpg",
+        "price": 3,
+        "tags": [
+            "solar",
+            "floral",
+            "woodsy"
+        ],
+        "description": "Chance Eau Fraiche by Chanel is a Chypre Floral fragrance for women. Chance Eau Fraiche was launched in 2007. The nose behind this fragrance is Jacques Polge.",
+        "notes": {
+            "top": [
+                "Lemon",
+                "Cedar",
+                "Citron"
+            ],
+            "mid": [
+                "Water Hyacinth",
+                "Pink Pepper",
+                "Jasmine"
+            ],
+            "base": [
+                "White Musk",
+                "Patchouli",
+                "Vetiver",
+                "Teak Wood",
+                "Iris",
+                "Amber"
+            ]
+        }
+    },
+    {
+        "id": "egoiste-platinum",
+        "name": "Egoiste Platinum",
+        "brand": "Chanel",
+        "image": "/fragrances/egoiste-platinum.jpg",
+        "price": 3,
+        "tags": [
+            "woodsy",
+            "floral",
+            "green"
+        ],
+        "description": "Egoiste Platinum by Chanel is a Woody Floral Musk fragrance for men. Egoiste Platinum was launched in 1993. The nose behind this fragrance is Jacques Polge.",
+        "notes": {
+            "top": [
+                "Lavender",
+                "Rosemary",
+                "Neroli",
+                "Petitgrain"
+            ],
+            "mid": [
+                "Geranium",
+                "Clary Sage",
+                "Galbanum",
+                "Jasmine"
+            ],
+            "base": [
+                "Oakmoss",
+                "Vetiver",
+                "Cedar",
+                "Sandalwood",
+                "Amber"
+            ]
+        }
+    },
+    {
+        "id": "y-eau-de-parfum",
+        "name": "Y Eau de Parfum",
+        "brand": "Yves Saint Laurent",
+        "image": "/fragrances/y-eau-de-parfum.jpg",
+        "price": 2,
+        "tags": [
+            "aquatic",
+            "green",
+            "woodsy"
+        ],
+        "description": "Y Eau de Parfum by Yves Saint Laurent is a Aromatic Fougere fragrance for men. Y Eau de Parfum was launched in 2018. Y Eau de Parfum was created by Dominique Ropion and Claire Liégent.\n\nYSL is introducing a new version of Y fragrance - Y Eau De Parfum - packaged in a darker bottle.\n\nY Eau de Parfum, is coming out on the global market in September 2018 as \"a seductive fragrance interpretation of Yves Saint Laurent's iconic white T-shirt and black jacket.\"\n\nPerfumer Dominique Ropion constructed the new composition as deep, fresh and masculine, with aromatic, spicy, woody and fougere features.\n\nTop notes: bergamot, ginger, apple Heart: sage, geranium, juniper berries Base: vetiver, cedar, tonka, amber woods, olibanum\n\nThe fragrance is available as a 60 and 100 ml of Eau de Parfum.",
+        "notes": {
+            "top": [
+                "Apple",
+                "Ginger",
+                "Bergamot"
+            ],
+            "mid": [
+                "Sage",
+                "Juniper Berries",
+                "Geranium"
+            ],
+            "base": [
+                "Amberwood",
+                "Tonka Bean",
+                "Cedar",
+                "Vetiver",
+                "Olibanum"
+            ]
+        }
+    },
+    {
+        "id": "la-nuit-de-l-homme",
+        "name": "La Nuit de l'Homme",
+        "brand": "Yves Saint Laurent",
+        "image": "/fragrances/la-nuit-de-l-homme.jpg",
+        "price": 2,
+        "tags": [
+            "spicy",
+            "floral",
+            "woodsy"
+        ],
+        "description": "La Nuit de l'Homme by Yves Saint Laurent is a Woody Spicy fragrance for men. La Nuit de l'Homme was launched in 2009. La Nuit de l'Homme was created by Anne Flipo, Pierre Wargnye and Dominique Ropion.\n\nYves Saint Laurent La Nuit de l`Homme is a new masculine representative of the house of YSL and it appeared on the market in March 2009. The perfume is announced as one full of contrasts and tensions.\n\nIts flacon is dark and powerful, as if it were announcing powerful ingredients it carries in itself. A veil of mystery and an explosive spicy accord reveal cardamom with sparkling freshness of bergamot, lavender and cedar, which stand for strength of men. Cumin and vetiver in a base ensure a sensual finish and an opulent, elegant closure.\n\nPerfume La Nuit de l`Homme is available in three sizes of bottle - 40ml edt, 60ml edt and100ml edt, along with perfumed deo spray in a collection. The noses behind this fragrance are Anne Flipo, Pierre Wargnye and Dominique Ropion.",
+        "notes": {
+            "top": [],
+            "mid": [
+                "Lavender",
+                "Virginia Cedar",
+                "Bergamot"
+            ],
+            "base": [
+                "Vetiver",
+                "Caraway"
+            ]
+        }
+    },
+    {
+        "id": "libre",
+        "name": "Libre",
+        "brand": "Yves Saint Laurent",
+        "image": "/fragrances/libre.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "gourmand",
+            "resinous"
+        ],
+        "description": "Libre by Yves Saint Laurent is a Oriental Fougere fragrance for women. Libre was launched in 2019. Libre was created by Anne Flipo and Carlos Benaïm.",
+        "notes": {
+            "top": [
+                "Lavender",
+                "Mandarin Orange",
+                "Black Currant",
+                "Petitgrain"
+            ],
+            "mid": [
+                "Lavender",
+                "Orange Blossom",
+                "Jasmine"
+            ],
+            "base": [
+                "Madagascar Vanilla",
+                "Musk",
+                "Cedar",
+                "Ambergris"
+            ]
+        }
+    },
+    {
+        "id": "si",
+        "name": "Si",
+        "brand": "Giorgio Armani",
+        "image": "/fragrances/si.jpg",
+        "price": 2,
+        "tags": [
+            "woodsy",
+            "floral",
+            "fruity"
+        ],
+        "description": "Si by Giorgio Armani is a Chypre Fruity fragrance for women. Si was launched in 2013. The nose behind this fragrance is Christine Nagel.\n\nAccording to Women's Wear Daily: \"Australian actress Cate Blanchett has been confirmed as the new face of Giorgio Armani Parfums, a division of L’Oréal Luxe. Blanchett, who is rehearsing for a play with Isabelle Huppert at the Sydney Theatre Company, will be the face of an advertising campaign for a new eau de parfum called 'Sí' that will hit shelves at the end of the summer. The confirmation comes after weeks of unsubstantiated buzz following press reports about a fragrance collaboration between the actress and Giorgio Armani, who have a long-standing professional relationship. Blanchett has often worn Armani creations on the red carpet and openly expressed admiration of him.\"",
+        "notes": {
+            "top": [],
+            "mid": [
+                "May Rose",
+                "Freesia"
+            ],
+            "base": [
+                "Vanilla",
+                "Patchouli",
+                "Woody Notes",
+                "Ambroxan"
+            ]
+        }
+    },
+    {
+        "id": "myslf-eau-de-parfum",
+        "name": "MYSLF Eau de Parfum",
+        "brand": "Yves Saint Laurent",
+        "image": "/fragrances/myslf-eau-de-parfum.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "solar",
+            "woodsy"
+        ],
+        "description": "MYSLF Eau de Parfum by Yves Saint Laurent is a Aromatic fragrance for men. MYSLF Eau de Parfum was launched in 2023. MYSLF Eau de Parfum was created by Christophe Raynaud, Antoine Maisondieu and Daniela Andrier.\n\n“MYSLF is the expression of the man you are, with all of your emotions and nuances.\n\n“A twist of the traditional woody fragrance family with flowers. A statement of modern masculinity to celebrate your true self.”\n\nThe expression of the man you are, with all your nuances. A statement of modern masculinity, embracing all his facets and emotions. The first YSL BEAUTY woody floral for a contrasted trail of modernity. At first, a fresh & vibrant accord made of bergamot heart from Calabria and vert de bergamot. At heart, a raw & beating orange blossom absolute heart from Tunisia crafted for YSL beauty. At last, a sensual & textured woods accord made of Indonesian patchouli heart and Ambrofix™. A YSL silhouette in a bottle. Sleek. Fluid. A black lacquered monolith in nuances where you can see yourself. At its heart, embedded in the glass, is the iconic YSL Cassandre logotype. My scent, MYSLF.\n\nAvailable as 40ml, 60ml 100ml Eau de Parfum. Refil bottle is available in size of 150ml Eau de Parfum.",
+        "notes": {
+            "top": [
+                "Calabrian bergamot",
+                "Bergamot"
+            ],
+            "mid": [],
+            "base": [
+                "Ambrofix™",
+                "Patchouli"
+            ]
+        }
+    },
+    {
+        "id": "libre-intense",
+        "name": "Libre Intense",
+        "brand": "Yves Saint Laurent",
+        "image": "/fragrances/libre-intense.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "resinous",
+            "solar"
+        ],
+        "description": "Libre Intense by Yves Saint Laurent is a Oriental Fougere fragrance for women. Libre Intense was launched in 2020. Libre Intense was created by Anne Flipo and Carlos Benaïm.\n\nYves Saint Laurent presents a new version of Libre fragrance from 2019, ie. an intense version of this modern feminine fougere. Libre Eau de Parfum Intense is a perfume of \"an intense woman living her roaring freedom and following her instincts,” coming out in August 2020.\n\nLibre Intense illuminates a new fragrant shade, described as that between fire and gold. Her \"masculine signature\" was done in a \"feminine way\". \"A fragrance like a shout of freedom – the freedom to live everything with excess.\"\n\nTop notes: mandarin essence, French lavender essence, bergamot essence Heart: Diva lavender heart, sambac jasmine absolute, orange blossom absolute from Morocco, living orchid accord Base: vanilla extract from Madagascar, vetiver essence, ambergris, tonka absolute from Venezuela\n\nThe Libre bottle is made like a geometric silhouette in a tuxedo, with a large house monogram. The face of the perfume is singer Dua Lipa. The fragrance is available as a 30, 50 and 90 ml Eau de Parfum Intense.",
+        "notes": {
+            "top": [
+                "Lavender",
+                "Mandarin Orange",
+                "Bergamot"
+            ],
+            "mid": [
+                "Lavender",
+                "Tunisian Orange Blossom",
+                "Jasmine Sambac",
+                "Orchid"
+            ],
+            "base": [
+                "Madagascar Vanilla",
+                "Tonka Bean",
+                "Ambergris",
+                "Vetiver"
+            ]
+        }
+    },
+    {
+        "id": "mon-paris",
+        "name": "Mon Paris",
+        "brand": "Yves Saint Laurent",
+        "image": "/fragrances/mon-paris.jpg",
+        "price": 2,
+        "tags": [
+            "fruity",
+            "floral",
+            "woodsy"
+        ],
+        "description": "Mon Paris by Yves Saint Laurent is a Chypre Fruity fragrance for women. Mon Paris was launched in 2016. Mon Paris was created by Olivier Cresp, Harry Fremont and Dora Baghriche.\n\nYSL is launching the new Paris-inspired line called Mon Paris, coming out mid-2016. Mon Paris is announced as a dazzling fragrance that represents a modern olfactory interpretation of love, free from all the obstacles, dedicated and intense.\n\nThe composition has a fruity start, intoxicating floral heart and a dark chypre base. It opens with a juicy and sweet blend of Calabria bergamot, strawberry, raspberry and pear. The heart is dominated by datura flower accompanied by a bouquet of peony, Chinese and Sambac jasmine and orange blossom. Airy crystal white musk (three types of it), ambroxan and an intense patchouli duo (from Indonesian and Guatemala) provide the provocative classic chypre signature base.\n\nThe campaign shot by French film direction duo Clément Durou and Pierre Dupaquier features Canadian model Crista Cober and French actor Jérémie Laheurte shown together in various parts of Paris, including a club, the Metro, near the Eiffel Tower and on the Opéra Garnier’s roof, during both day and night. The still ad was photographed by Billy Kidd.\n\nYSL Mon Paris is available as a 30, 50 and 90 ml Eau de Parfum.",
+        "notes": {
+            "top": [
+                "Strawberry",
+                "Raspberry",
+                "Pear",
+                "Orange",
+                "Calabrian bergamot",
+                "Tangerine",
+                "Calone"
+            ],
+            "mid": [
+                "Peony",
+                "Jasmine Sambac",
+                "Chinese Jasmine",
+                "Datura",
+                "Orange Blossom"
+            ],
+            "base": [
+                "Indonesian Patchouli Leaf",
+                "Patchouli",
+                "White Musk",
+                "Vanila",
+                "Ambroxan",
+                "Moss",
+                "Cedar"
+            ]
+        }
+    },
+    {
+        "id": "emporio-armani-stronger-with-you-intensely",
+        "name": "Emporio Armani Stronger With You Intensely",
+        "brand": "Giorgio Armani",
+        "image": "/fragrances/emporio-armani-stronger-with-you-intensely.jpg",
+        "price": 2,
+        "tags": [
+            "gourmand",
+            "spicy",
+            "resinous"
+        ],
+        "description": "Emporio Armani Stronger With You Intensely by Giorgio Armani is a Oriental Fougere fragrance for men. Emporio Armani Stronger With You Intensely was launched in 2019.\n\nEmporio Armani Stronger With You Intensely is an oriental-woody fragrance with fougere accents. It tells a story of the excitement of a new and young love. Top notes include spices and violet, with the heart that combines lavender with sweet toffee caramel and cinnamon. The base ends with suede, vanilla and amber.\n\nEmporio Armani Stronger With You Intensely is available as a 30, 50 and 100 ml Eau de Parfum.",
+        "notes": {
+            "top": [
+                "Pink Pepper",
+                "Juniper",
+                "Violet"
+            ],
+            "mid": [
+                "Toffee",
+                "Cinnamon",
+                "Lavender",
+                "Sage"
+            ],
+            "base": [
+                "Vanilla",
+                "Amber",
+                "Tonka Bean",
+                "Suede"
+            ]
+        }
+    },
+    {
+        "id": "acqua-di-gio",
+        "name": "Acqua di Gio",
+        "brand": "Giorgio Armani",
+        "image": "/fragrances/acqua-di-gio.jpg",
+        "price": 2,
+        "tags": [
+            "aquatic",
+            "solar",
+            "floral"
+        ],
+        "description": "Acqua di Gio by Giorgio Armani is a Aromatic Aquatic fragrance for men. Acqua di Gio was launched in 1996. Acqua di Gio was created by Alberto Morillas, Annick Menardo and Christian Dussoulier.\n\nInspired by beauty of Pantellerie, where he spent his vacation, Armani created the aroma of Aqua di Gio for men and women. The fragrance for men is a scent of freedom, full of wind and water. The composition is built of a perfect harmony of sweet and salty notes of sea water and nuances of sunny warmth on your skin. Aqua di Gio is full of scorching Mediterranean sun. Bitter citrus with aromatic nuance of rosemary intertwines with salty, sea nuances and pellucid hedione. Sharp notes of spices are softened by woody base with warm, musky trail.\n\nIt was created in 1996 by Alberto Morillas.",
+        "notes": {
+            "top": [
+                "Lime",
+                "Lemon",
+                "Bergamot",
+                "Jasmine",
+                "Orange",
+                "Mandarin Orange",
+                "Neroli"
+            ],
+            "mid": [
+                "Sea Notes",
+                "Jasmine",
+                "Calone",
+                "Rosemary",
+                "Peach",
+                "Freesia",
+                "Hiacynth",
+                "Violet",
+                "Cyclamen",
+                "Coriander",
+                "Rose",
+                "Nutmeg",
+                "Mignonette"
+            ],
+            "base": [
+                "White Musk",
+                "Cedar",
+                "Oakmoss",
+                "Patchouli",
+                "Amber"
+            ]
+        }
+    },
+    {
+        "id": "acqua-di-gioia",
+        "name": "Acqua di Gioia",
+        "brand": "Giorgio Armani",
+        "image": "/fragrances/acqua-di-gioia.jpg",
+        "price": 2,
+        "tags": [
+            "aquatic",
+            "green",
+            "floral"
+        ],
+        "description": "Acqua di Gioia by Giorgio Armani is a Floral Aquatic fragrance for women. Acqua di Gioia was launched in 2010. Acqua di Gioia was created by Loc Dong, Anne Flipo and Dominique Ropion.\n\nAcqua di Gioia is a new fragrance by Giorgio Armani, presented in March 2010. Seductive sea aromas in the new fragrance are put into first plan and used as creators' inspiration. Composition of the perfume is compared with woman who is ''strong, dignified and free spirit but in perfect harmony with nature''.\n\nInspired by several summer holidays spent on the islands of Pantelleria and Antigua, where Armani has his villas, the fragrance was lead by the idea of escape into nature, a heavenly place of real holiday where we restore the energy necessary to body and soul, and where we create natural balance.\n\nIts flacon was made as a natural shape – water drops which are clear, airy, and pellucid.\n\nThe fragrance arrives on the market in June 2010 as a blend of refreshing notes of crushed mint leaves and lemon Limone Primo Fiore Femminello from Calabria. Structure of the composition pushes the limits from fresh citruses to a floral heart which encompasses aquatic jasmine, dewy peony and pink pepper, while a base closes with cedar, yellow sugar and labdanum. Acqua di Gioia was created by three perfumers: Loc Dong, Anne Flipo and Dominique Ropion, who see it as Eve's seduction and as fragrance turned completely towards the nature.\n\nThe perfume can be purchased as 30, 50 and 100 ml EDP, along with 200 ml body lotion.",
+        "notes": {
+            "top": [
+                "Amalfi Lemon",
+                "Mint"
+            ],
+            "mid": [],
+            "base": [
+                "Virginia Cedar",
+                "Brown sugar",
+                "French labdanum"
+            ]
+        }
+    },
+    {
+        "id": "my-way",
+        "name": "My Way",
+        "brand": "Giorgio Armani",
+        "image": "/fragrances/my-way.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "solar",
+            "gourmand"
+        ],
+        "description": "My Way by Giorgio Armani is a Floral fragrance for women. My Way was launched in 2020. My Way was created by Carlos Benaïm and Bruno Jovanovic.",
+        "notes": {
+            "top": [
+                "Orange Blossom",
+                "Bergamot"
+            ],
+            "mid": [
+                "Tuberose",
+                "Indian Jasmine"
+            ],
+            "base": [
+                "Madagascar Vanilla",
+                "White Musk",
+                "Virginian Cedar"
+            ]
+        }
+    },
+    {
+        "id": "emporio-armani-stronger-with-you-absolutely",
+        "name": "Emporio Armani Stronger With You Absolutely",
+        "brand": "Giorgio Armani",
+        "image": "/fragrances/emporio-armani-stronger-with-you-absolutely.jpg",
+        "price": 2,
+        "tags": [
+            "boozy",
+            "gourmand",
+            "woodsy"
+        ],
+        "description": "Emporio Armani Stronger With You Absolutely by Giorgio Armani is a Oriental Fougere fragrance for men. Emporio Armani Stronger With You Absolutely was launched in 2021. The nose behind this fragrance is Cecile Matton.",
+        "notes": {
+            "top": [
+                "Rum",
+                "elemi",
+                "Bergamot"
+            ],
+            "mid": [
+                "Lavender",
+                "Davana"
+            ],
+            "base": [
+                "Madagascar Vanilla",
+                "Chestnut",
+                "Cedar",
+                "Patchouli"
+            ]
+        }
+    },
+    {
+        "id": "armani-code-for-women",
+        "name": "Armani Code for Women",
+        "brand": "Giorgio Armani",
+        "image": "/fragrances/armani-code-for-women.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "solar",
+            "gourmand"
+        ],
+        "description": "Armani Code for Women by Giorgio Armani is a Floral fragrance for women. Armani Code for Women was launched in 2006. Armani Code for Women was created by Carlos Benaïm, Dominique Ropion and Olivier Polge.\n\nArmani Code was introduced to women in the spring of 2006. It is based on harmony between orange blossom, fresh spicy notes of ginger and warm sandalwood. A luminous opening captures the essence of two different oranges - bitter orange from Africa and sweet Italian orange. In the heart of the composition Tunisian orange blossom absolute makes a magical floral fantasy in alliance with jasmine Sambac. Its sensual trail brings a sweet unity of orange blossom, vanilla and a drop of honey.",
+        "notes": {
+            "top": [
+                "Italian Orange",
+                "Jasmine",
+                "Bitter Orange"
+            ],
+            "mid": [
+                "Jasmine",
+                "Orange Blossom",
+                "Ginger"
+            ],
+            "base": [
+                "Honey",
+                "Vanilla",
+                "Sandalwood"
+            ]
+        }
+    },
+    {
+        "id": "eros",
+        "name": "Eros",
+        "brand": "Versace",
+        "image": "/fragrances/eros.jpg",
+        "price": 1,
+        "tags": [
+            "green",
+            "gourmand",
+            "woodsy"
+        ],
+        "description": "Eros by Versace is a Aromatic Fougere fragrance for men. Eros was launched in 2012. The nose behind this fragrance is Aurélien Guichard.\n\nVersace is launching a new fragrance for men – Eros inspired by and deeply connected with Greek mythology. The aim of this edition is to reveal and release unrestrained passion and to accentuate desire. The fragrance was named after Greek god of love and son of goddess Aphrodite – Eros. Inspiration by ancient Greece has lasted since the time when Gianni Versace raised his fashion empire and took goddess Medusa as symbol of the brand to adorn numerous products of the house, among them also the new flacon of men's fragrance Eros.\n\nThe new perfume Eros is the first in the past five years to be launched and aimed at men. Donatella Versace's desire was to fit the fragrance into the concept of the Versace brand and to depict style and significance of long-lasting design, quality and popularity. \"Eros is truly the DNA of the house of Versace\" - explains Donatella. \"We have a Greek motive making us think about ancient Greece, antiquities and mythology, while turquoise color represents the Mediterranean. That is Versace!\"\n\nEros was created by Aurelien Guichard of Givaudan and it was announced as fresh, woody and slightly oriental. The fragrance includes mint oil combined with green apple and Italian lemon. Warmth is provided by tonka mixed with Venezuelan ambroxan and geranium flowers giving a fougere twist to the fragrance this way.\n\nFlacon of the new fragrance for men Eros is created of turquoise color glass with head of Medusa on the body of the bottle and on its top. The fragrance is available as 50 and 100 ml EDT, along with accompanying perfumed body care products. Face of the advertising campaign is Brian Shimansky, while photographers are Mert & Marcus.",
+        "notes": {
+            "top": [
+                "Mint",
+                "Green Apple",
+                "Lemon"
+            ],
+            "mid": [
+                "Tonka Bean",
+                "Ambroxan",
+                "Geranium"
+            ],
+            "base": [
+                "Madagascar Vanilla",
+                "Virginian Cedar",
+                "Atlas Cedar",
+                "Vetiver",
+                "Oakmoss"
+            ]
+        }
+    },
+    {
+        "id": "versace-man-eau-fraiche",
+        "name": "Versace Man Eau Fraiche",
+        "brand": "Versace",
+        "image": "/fragrances/versace-man-eau-fraiche.jpg",
+        "price": 1,
+        "tags": [
+            "woodsy",
+            "spicy",
+            "aquatic"
+        ],
+        "description": "Versace Man Eau Fraiche by Versace is a Woody Aquatic fragrance for men. Versace Man Eau Fraiche was launched in 2006. The nose behind this fragrance is Olivier Cresp.\n\nThis new Versace Man version is fresher and more aquatic. While the original Versace Man had a certain Latino vibe to it due to tobacco note in its oriental surroundings, Eau Fraiche has a Mediterranean quality with some woody notes. Top notes include lemon, bergamot, rosewood, and rose. Heart notes feature cedar, tarragon, sage and pepper. Base notes are amber, musk, saffron and woody notes. Versace Eau Fraiche was created in 2006.",
+        "notes": {
+            "top": [
+                "Lemon",
+                "Bergamot",
+                "Carambola (Star Fruit)",
+                "Cardamom",
+                "Brazilian Rosewood"
+            ],
+            "mid": [
+                "Cedar",
+                "Tarragon",
+                "Sage",
+                "Pepper"
+            ],
+            "base": [
+                "Musk",
+                "Woodsy Notes",
+                "Saffron",
+                "Amber",
+                "Sycamore"
+            ]
+        }
+    },
+    {
+        "id": "versace-pour-homme-dylan-blue",
+        "name": "Versace Pour Homme Dylan Blue",
+        "brand": "Versace",
+        "image": "/fragrances/versace-pour-homme-dylan-blue.jpg",
+        "price": 1,
+        "tags": [
+            "aquatic",
+            "woodsy",
+            "spicy"
+        ],
+        "description": "Versace Pour Homme Dylan Blue by Versace is a Aromatic Fougere fragrance for men. Versace Pour Homme Dylan Blue was launched in 2016. The nose behind this fragrance is Alberto Morillas.\n\nIn late July 2016, Versace launches Dylan Blue, a new fragrance from the Versace Pour Homme collection under the license of Euroitalia, which includes the original from 2008 and the Oud Noir edition from 2013.\n\nIts aromatic, woody - fougere composition with fresh aquatic notes, Calabrian bergamot, grapefruit and fig leaves at the top, develops with a heart of violet leaf, papyrus wood, organic patchouli, black pepper and ambrox. Mineral musks, tonka bean, incense and saffron wrap the composition up and give it a fougere vibe.\n\nThe advertising campaign, which was shot by Bruce Weber, includes models Gigi Hadid, Trevor Signorino, Alan Jouban, Louis Solywoda and Filip Sjunnesson, as well as martial arts athletes Nic Thompson, Travis Conover, Adam von Rothfelder, Lukasz Grabowski and Levi Morgan.\n\nThe bottle with clean lines comes in dark, Mediterranean blue with a golden cap and a golden Medusa seal. The fragrance is available as a 30, 50, 100 and 200 ml ml Eau de Toilette with an additional after shave lotion, deodorant and bath & shower gel.",
+        "notes": {
+            "top": [
+                "Calabrian bergamot",
+                "Water Notes",
+                "Grapefruit",
+                "Fig Leaf"
+            ],
+            "mid": [
+                "Ambroxan",
+                "Black Pepper",
+                "Patchouli",
+                "Violet Leaf",
+                "Papyrus"
+            ],
+            "base": [
+                "Incense",
+                "Musk",
+                "Tonka Bean",
+                "Saffron"
+            ]
+        }
+    },
+    {
+        "id": "versace-pour-homme",
+        "name": "Versace Pour Homme",
+        "brand": "Versace",
+        "image": "/fragrances/versace-pour-homme.jpg",
+        "price": 1,
+        "tags": [
+            "solar",
+            "aquatic",
+            "floral"
+        ],
+        "description": "Versace Pour Homme by Versace is a Aromatic Fougere fragrance for men. Versace Pour Homme was launched in 2008. The nose behind this fragrance is Alberto Morillas.",
+        "notes": {
+            "top": [
+                "Lemon",
+                "Bergamot",
+                "Neroli",
+                "Rose de Mai"
+            ],
+            "mid": [
+                "Hyacinth",
+                "Cedar",
+                "Clary Sage",
+                "Geranium"
+            ],
+            "base": [
+                "Musk",
+                "Tonka Bean",
+                "Amber"
+            ]
+        }
+    },
+    {
+        "id": "crystal-noir",
+        "name": "Crystal Noir",
+        "brand": "Versace",
+        "image": "/fragrances/crystal-noir.jpg",
+        "price": 1,
+        "tags": [
+            "floral",
+            "resinous",
+            "spicy"
+        ],
+        "description": "Crystal Noir by Versace is a Oriental Floral fragrance for women. Crystal Noir was launched in 2004. The nose behind this fragrance is Antoine Lie.\n\nAccording to Donatella Versace, Crystal Noir is a rare essence, sensual and delicate. The central note of the composition is mysterious gardenia, fresh, sensual, luminous and creamy, reproduced by 'headspace' technology. Oriental and musk in the base make the scent dark and mysterious, very sensual and distinct. The fragrance was created by Antoine Lie in 2004.",
+        "notes": {
+            "top": [
+                "Pepper",
+                "Ginger",
+                "Cardamom"
+            ],
+            "mid": [
+                "Coconut",
+                "Gardenia",
+                "Orange Blossom",
+                "Peony"
+            ],
+            "base": [
+                "Sandalwood",
+                "Musk",
+                "Amber"
+            ]
+        }
+    },
+    {
+        "id": "eros-flame",
+        "name": "Eros Flame",
+        "brand": "Versace",
+        "image": "/fragrances/eros-flame.jpg",
+        "price": 1,
+        "tags": [
+            "woodsy",
+            "spicy",
+            "floral"
+        ],
+        "description": "Eros Flame by Versace is a Woody Spicy fragrance for men. Eros Flame was launched in 2018. The nose behind this fragrance is Olivier Pescheux.\n\nVersace Eros Flame, is a flanker to the original masculine Eros from 2012. While the pillar is an aromatic-fougère, the new scent goes into a totally different direction with citrusy, spicy, woody, and ambery accords, described as \"cold and hot, sweet and spicy, light and shadow.\"\n\nThe concept is based on an interpretation of passionate love, marketed as a fragrance for a \"strong, passionate, self-confident man who is deeply in touch with his emotions.\"\n\nOlivier Pescheux developed the composition as one of contrasts; the head notes are made to be vivacious and fresh with italian citruses, black pepper and rosemary. Pepperwood, geranium and rose facets are in the heart, before a warm base of woods, blended with tonka and vanilla.\n\nThe advertising campaign is a modern interpretation of Canova's iconic \"Eros and Psyche\" sculpture, where a man embraces a woman played by Gigi Hadid and Salomon Diaz. The campaign is shot by Steven Meisel.\n\nVersace Eros Flame is available as a 30, 50, 100 and 200 ml Eau de Parfum, a 100 ml After Shave Lotion, a 100 ml After Shave Balm, a 75 ml Deodorant Stick, a 100 ml Deodorant and a 250 ml Shower Gel.",
+        "notes": {
+            "top": [
+                "Mandarin Orange",
+                "Madagascar Pepper",
+                "Lemon",
+                "Chinotto",
+                "Rosemary"
+            ],
+            "mid": [
+                "Geranium",
+                "Rose",
+                "Pepperwood™"
+            ],
+            "base": [
+                "Vanilla",
+                "Tonka Bean",
+                "Sandalwood",
+                "Texas Cedar",
+                "Patchouli",
+                "Oakmoss"
+            ]
+        }
+    },
+    {
+        "id": "bright-crystal",
+        "name": "Bright Crystal",
+        "brand": "Versace",
+        "image": "/fragrances/bright-crystal.jpg",
+        "price": 1,
+        "tags": [
+            "floral",
+            "fruity",
+            "clean"
+        ],
+        "description": "Bright Crystal by Versace is a Floral Fruity fragrance for women. Bright Crystal was launched in 2006. The nose behind this fragrance is Alberto Morillas.\n\nThe pink colored bottle announces softer and more luminous fragrance in comparison with Crystal Noir. Nowadays popular fruity note gives the composition slightly gourmand nuance. The top notes are pomegranate, Yuzu and frosted accord. Peony and magnolia are in the centre of the composition, while waterly fresh lotus note moderates the intensity and sweetnes of the floral accords. The opulent base introduces amber note extracted from plants, musk and red woods. The fragrance was designed by Alberto Morillas in 2006.",
+        "notes": {
+            "top": [
+                "Yuzu",
+                "Pomegranate",
+                "Ice"
+            ],
+            "mid": [
+                "Peony",
+                "Lotus",
+                "Magnolia"
+            ],
+            "base": [
+                "Musk",
+                "Mahogany",
+                "Amber"
+            ]
+        }
+    },
+    {
+        "id": "le-male-le-parfum",
+        "name": "Le Male Le Parfum",
+        "brand": "Jean Paul Gaultier",
+        "image": "/fragrances/le-male-le-parfum.jpg",
+        "price": 2,
+        "tags": [
+            "resinous",
+            "floral",
+            "gourmand"
+        ],
+        "description": "Le Male Le Parfum by Jean Paul Gaultier is a Oriental fragrance for men. Le Male Le Parfum was launched in 2020. Le Male Le Parfum was created by Quentin Bisch and Natalie Gracia-Cetto.",
+        "notes": {
+            "top": [],
+            "mid": [
+                "Lavender",
+                "Iris"
+            ],
+            "base": [
+                "Vanilla",
+                "Oriental notes",
+                "Woodsy Notes"
+            ]
+        }
+    },
+    {
+        "id": "versense",
+        "name": "Versense",
+        "brand": "Versace",
+        "image": "/fragrances/versense.jpg",
+        "price": 1,
+        "tags": [
+            "woodsy",
+            "floral",
+            "solar"
+        ],
+        "description": "Versense by Versace is a Woody Floral Musk fragrance for women. Versense was launched in 2009.\n\nThis modern fragrance of a beautiful and rare floral bouquet is composed of elements of the Mediterranean and it represents Versace woman perfectly with its authentic expression and a fusion of freshness and energy. The new fragrance by the house of Versace was named Versace Versense and it promises a lot with its name and composition. It is created for irresistible experience for all senses.\n\nThe fragrance Versace Versense is composed of natural tones and it is a picture of awakening of nature, evoking feeling of freedom, movement and balance of internal energy with surroundings and nature. Versense is a walk in a fragrant garden, which contributes to freshness and a stream of feelings, as well as to self-esteem and vitality.\n\nIts composition opens with fruit of the Mediterranean: bergamot and green mandarin, and wraps you with freshness and luminous, optimistic accords with irresistible fig zests. Pleasure will rise with sparks of citruses mixed with fruity aromas. They will take us to a heart ruled by sea lily, rare flower with rare aromas, strengthened with jasmine petals and bitter-spicy accords of cardamom in an elegant way. Base notes leave a cover of woody accords of sandalwood, cedar, olive wood and sensual musk.\n\nFlacon of this perfume is made of see-through glass, created just like its antecedent from 2008, Versace. It is coloured in light green, it is luxurious and decorated with traditional Versace symbols. The new eau de toilette is accompanied with a 200 ml perfumed bath, 200 ml perfumed body milk and 75 ml deo spray. EDT Versace Versense is available in amounts of 30, 50 and 100ml (1, 1.7 and 3 oz) edt. Advertising face for Versense is Toni Garrn, and photographer is Michelan",
+        "notes": {
+            "top": [
+                "Bergamot",
+                "Citruses",
+                "Green Mandarin",
+                "Fig",
+                "Pear"
+            ],
+            "mid": [
+                "Cardamom",
+                "Lily",
+                "Jasmine",
+                "Narcissus"
+            ],
+            "base": [
+                "Virginia Cedar",
+                "Musk",
+                "Olive Tree",
+                "Sandalwood"
+            ]
+        }
+    },
+    {
+        "id": "eros-eau-de-parfum",
+        "name": "Eros Eau de Parfum",
+        "brand": "Versace",
+        "image": "/fragrances/eros-eau-de-parfum.jpg",
+        "price": 1,
+        "tags": [
+            "gourmand",
+            "woodsy",
+            "green"
+        ],
+        "description": "Eros Eau de Parfum by Versace is a Oriental Woody fragrance for men. Eros Eau de Parfum was launched in 2020.",
+        "notes": {
+            "top": [
+                "Mint",
+                "Candy apple",
+                "Lemon",
+                "Mandarin Orange"
+            ],
+            "mid": [
+                "Ambroxan",
+                "Geranium",
+                "Clary Sage"
+            ],
+            "base": [
+                "Vanilla",
+                "Cedar",
+                "Sandalwood",
+                "Bitter Orange",
+                "Patchouli",
+                "Leather"
+            ]
+        }
+    },
+    {
+        "id": "prada-l-homme",
+        "name": "Prada L'Homme",
+        "brand": "Prada",
+        "image": "/fragrances/prada-l-homme.jpg",
+        "price": 2,
+        "tags": [
+            "clean",
+            "floral",
+            "woodsy"
+        ],
+        "description": "Prada L'Homme by Prada is a Woody Chypre fragrance for men. Prada L'Homme was launched in 2016. The nose behind this fragrance is Daniela Andrier.\n\nThe house of Prada launches La Femme Prada and L'Homme Prada mid-2016. The new fragrant “pair of equals\" represents man and woman that are “reunited in an identical vision. She could be him, he could be her. She is an absolute woman, he is an absolute man. There is not an obvious definition of relationship between them. They could be lovers, friends, or even strangers. Both have multiple identities.“\n\nL'Homme Prada is a modern scent that combines the classic Prada ingredients - amber and iris. There are also notes of neroli, geranium and patchouli. The character of the fragrance is described as airy, reserved and challenging. Available as a 50 and 100 ml Eau de Toilette.",
+        "notes": {
+            "top": [
+                "Neroli",
+                "Black Pepper",
+                "Cardamom",
+                "Carrot Seeds"
+            ],
+            "mid": [
+                "Iris",
+                "Violet",
+                "Geranium",
+                "Mate"
+            ],
+            "base": [
+                "Amber",
+                "Cedar",
+                "Sandalwood",
+                "Patchouli"
+            ]
+        }
+    },
+    {
+        "id": "prada-candy",
+        "name": "Prada Candy",
+        "brand": "Prada",
+        "image": "/fragrances/prada-candy.jpg",
+        "price": 2,
+        "tags": [
+            "gourmand",
+            "resinous",
+            "clean"
+        ],
+        "description": "Prada Candy by Prada is a Oriental Vanilla fragrance for women. Prada Candy was launched in 2011. The nose behind this fragrance is Daniela Andrier.\n\nPrada Candy is a new fragrance by Prada launched in August 2011. The composition includes an elegant mix of musks in the top, a sensual balsamic vanillic accord of benzoin in the heart and sweet modern caramel in the base of the fragrance.\n\nIt is available as 30, 50 and 80 ml Eau de Parfum.",
+        "notes": {
+            "top": [],
+            "mid": [
+                "Powdery Notes",
+                "Musk"
+            ],
+            "base": [
+                "Benzoin",
+                "Vanilla"
+            ]
+        }
+    },
+    {
+        "id": "prada-paradoxe",
+        "name": "Prada Paradoxe",
+        "brand": "Prada",
+        "image": "/fragrances/prada-paradoxe.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "resinous",
+            "solar"
+        ],
+        "description": "Prada Paradoxe by Prada is a Oriental Floral fragrance for women. Prada Paradoxe was launched in 2022. Prada Paradoxe was created by Nadège Le Garlantezec, Antoine Maisondieu and Shyamala Maisondieu.\n\n\"Reinventing freshness with the first neroli bud extraction for Prada, to capture the flower’s fresh dimension. Reinventing sensuality with Ambrofix, a bio-converted amber, revealing a vibrant warmth. Reinventing intensity through a new revolutionary musk molecule: the Serenolide, for an intense yet subtle and comfortable trail noticeable right from the top.\"\n\nPrada Paradoxe is available as a 30, 50 and 90 ml Eau de Parfum and in a 100 ml refill.",
+        "notes": {
+            "top": [
+                "Pear",
+                "Tangerine",
+                "Bergamot"
+            ],
+            "mid": [
+                "Orange Blossom",
+                "Neroli Essence",
+                "Neroli",
+                "Jasmine Sambac"
+            ],
+            "base": [
+                "Bourbon Vanilla",
+                "Amber",
+                "White Musk",
+                "Benzoin"
+            ]
+        }
+    },
+    {
+        "id": "infusion-d-iris",
+        "name": "Infusion d'Iris",
+        "brand": "Prada",
+        "image": "/fragrances/infusion-d-iris.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "woodsy",
+            "solar"
+        ],
+        "description": "Infusion d'Iris by Prada is a Floral Woody Musk fragrance for women. Infusion d'Iris was launched in 2007. The nose behind this fragrance is Daniela Andrier. This perfume is the winner of award FiFi Award Fragrance Of The Year Women`s Nouveau Niche 2008 .\n\nPrada Infusion d\\'Iris was introduces in 2007 as oriental-woodsy fragrance. The name of this fragrance was inspired by the old method of producing iris extract which took six months of soaking until the sweetly fresh iris notes were extracted.\n\nThis modern and elegant fragrance opens with notes of mandarin, galbanum, orange and orange blossom which lead to the heart composed of iris, cedar and vetiver. The base is composed of incense and benzoin.\n\nThe fragrance was designed by Daniela Roche-Andrier of Givaudan. It is captured in an elegant glass bottle reminiscent of retro perfume bottles.\n\nIt is available as 50ml (1.7 fl.oz.), 100ml (3.4 fl.oz.) and 200ml (6.9 fl.oz.) EDP and as pure perfume in 3.5ml (0.12 fl.oz.) and 7.5ml (0.26 fl.oz.) sizes.",
+        "notes": {
+            "top": [
+                "African Orange Flower",
+                "Neroli",
+                "Orange",
+                "Mandarin Orange"
+            ],
+            "mid": [
+                "Iris",
+                "Galbanum",
+                "Mastic or Lentisque"
+            ],
+            "base": [
+                "Virginia Cedar",
+                "Incense",
+                "Benzoin",
+                "Vetiver"
+            ]
+        }
+    },
+    {
+        "id": "prada-l-homme-intense",
+        "name": "Prada L'Homme Intense",
+        "brand": "Prada",
+        "image": "/fragrances/prada-l-homme-intense.jpg",
+        "price": 2,
+        "tags": [
+            "resinous",
+            "woodsy",
+            "dark"
+        ],
+        "description": "Prada L'Homme Intense by Prada is a Oriental Woody fragrance for men. Prada L'Homme Intense was launched in 2017. The nose behind this fragrance is Daniela Andrier.\n\nPrada's new fragrant pair, Prada La Femme and Prada L'Homme, premiered on the market mid-2016. A year later, their enriched and intensified compositions in Eau de Parfum Intense concentration are announced.\n\nPrada L'Homme Intense promises \"a multi-layered experience\" and enhances the scent of iris and amber with notes of leather and patchouli, while tonka bean gives it an oriental signature. The goal of the scent and its opaque bottle is to evoke \"the elusive nature of the multi-faceted Prada man.\"\n\nIt is available as a 50 and 100 ml Eau de Parfum.",
+        "notes": {
+            "top": [],
+            "mid": [
+                "Amber",
+                "Patchouli"
+            ],
+            "base": [
+                "Tonka Bean",
+                "Leather",
+                "Sandalwood"
+            ]
+        }
+    },
+    {
+        "id": "luna-rossa-black",
+        "name": "Luna Rossa Black",
+        "brand": "Prada",
+        "image": "/fragrances/luna-rossa-black.jpg",
+        "price": 2,
+        "tags": [
+            "resinous",
+            "woodsy",
+            "dark"
+        ],
+        "description": "Luna Rossa Black by Prada is a Oriental Woody fragrance for men. Luna Rossa Black was launched in 2018. The nose behind this fragrance is Daniela Andrier.\n\nIn early 2018, the 7th version of Prada's popular Luna Rossa fragrance arrives on shelves. Luna Rossa Black follows the original Luna Rossa from 2012 and more recently, 2017's Luna Rossa Carbon.\n\nInspired by the Prada Luna Rossa sailing challenge, an Italian sailboat racing syndicate first created to compete for the 2000 America's Cup and co-sponsored by Prada, the Luna Rossa fragrances have been created by perfumer Daniela Andrier with bottle designs by Yves Behar.\n\nThis new version of Luna Rossa will feature top notes of bergamot and angelica; heart notes of patchouli and coumarin; and base notes of woody amber. Of note is the absence of lavender that was a key feature in so many of the other Luna Rossa editions.\n\nPrada Luna Rossa Black is available as a 50 and 100 ml Eau de Parfum.",
+        "notes": {
+            "top": [],
+            "mid": [
+                "Angelica",
+                "Patchouli"
+            ],
+            "base": [
+                "Coumarin",
+                "Amber",
+                "Musk"
+            ]
+        }
+    },
+    {
+        "id": "luna-rossa-carbon-eau-de-toilette",
+        "name": "Luna Rossa Carbon Eau de Toilette",
+        "brand": "Prada",
+        "image": "/fragrances/luna-rossa-carbon-eau-de-toilette.jpg",
+        "price": 2,
+        "tags": [
+            "green",
+            "aquatic",
+            "woodsy"
+        ],
+        "description": "Luna Rossa Carbon Eau de Toilette by Prada is a Aromatic Fougere fragrance for men. Luna Rossa Carbon Eau de Toilette was launched in 2017. The nose behind this fragrance is Daniela Andrier.\n\nStrong as the darkest rock, with the freshness of air, Luna Rossa Carbon brings together steam-distilled botanicals and synthetics in a mineral-forward mix: metallic notes of Lavender, green Citrus of Vert de Bergamote from Italy, radiant Wood of Patchouli and dry Amber of Ambroxan. Engineered as much as designed, the bottle for Prada Luna Rossa Carbon develops the visual themes of the Prada Luna Rossa line, but using radically different materials. It has the visual depth of slate, coal or jet, but with complex textures. The base of the bottle is presented in the richest of blacks; light absorbing, with a soft organic-velvet texture. The glass is both black and transparent, something that appears pure, as if mined, but also refined and perfected by advanced technology. The distinctive red stripe of Prada is cut into the façade of the glass; it is architectural and immediate, bringing balance to the form.",
+        "notes": {
+            "top": [
+                "Bergamot",
+                "Pepper"
+            ],
+            "mid": [
+                "Lavender",
+                "Metallic notes",
+                "Watery Notes",
+                "Coal",
+                "Soil Tincture"
+            ],
+            "base": [
+                "Ambroxan",
+                "Patchouli"
+            ]
+        }
+    },
+    {
+        "id": "luna-rossa-ocean",
+        "name": "Luna Rossa Ocean",
+        "brand": "Prada",
+        "image": "/fragrances/luna-rossa-ocean.jpg",
+        "price": 2,
+        "tags": [
+            "aquatic",
+            "green",
+            "floral"
+        ],
+        "description": "Luna Rossa Ocean by Prada is a Aromatic Fougere fragrance for men. Luna Rossa Ocean was launched in 2021. Luna Rossa Ocean was created by Anne Flipo and Carlos Benaïm.\n\n\"Prada Luna Rossa Ocean is the new masculine fragrance from Prada, built on a conviction that with technology as an extension of humanity, we can push beyond  our  limits,  imagine  beyond  possibility  and  open  new  horizons. This singular leathery heart expresses a second skin effect by exploring a sensual suede and saffron accord and the elegant creaminess of orris notes.\"\n\nAmerican actor Jake Gyllenhaal fronts the new campaign, shot by Johan Renck.\n\nThe fragrance is available as a 50 and 100 ml Eau de Toilette.",
+        "notes": {
+            "top": [
+                "Bergamot",
+                "Pink Pepper",
+                "Artemisia"
+            ],
+            "mid": [
+                "Lavender",
+                "Iris",
+                "Sage",
+                "Suede",
+                "Saffron"
+            ],
+            "base": [
+                "Musk",
+                "Caramel",
+                "Haitian Vetiver",
+                "Patchouli"
+            ]
+        }
+    },
+    {
+        "id": "prada-paradoxe-intense",
+        "name": "Prada Paradoxe Intense",
+        "brand": "Prada",
+        "image": "/fragrances/prada-paradoxe-intense.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "resinous",
+            "solar"
+        ],
+        "description": "Prada Paradoxe Intense by Prada is a Oriental Floral fragrance for women. Prada Paradoxe Intense was launched in 2023. Prada Paradoxe Intense was created by Nadège Le Garlantezec, Shyamala Maisondieu and Antoine Maisondieu.\n\nPrada launches Paradoxe Intense, a new flanker of the 2022 pillar, Paradoxe. The new edition is described as an extraordinary floral bouquet with the freshness of the neroli bud and jasmine superinfusion with ambrofix and serenolide. Prada Paradoxe Intense embodies an exuberant celebration of the unexpected, harmoniously balancing of strength with graceful delicacy.\n\nJust like its predecessor, Paradoxe Intense was created by perfumers Nadège Le Garlantezec, Shyamala Maisondieu, and Antoine Maisondieu.\n\nTop notes: bergamot essence, neroli bud, pear Heart: neroli esesence, jasmin superinfusion, moss Base: Serenolide, Moxalone, Ambrofix, vanilla Bourbon, natural vanillin\n\nPrada Paradoxe Intense is available as 30, 50 and 90 ml Eau de Parfum and as a 100 ml refill.",
+        "notes": {
+            "top": [
+                "Neroli",
+                "Pear",
+                "Bergamot"
+            ],
+            "mid": [
+                "Jasmine",
+                "Neroli Essence",
+                "Moss"
+            ],
+            "base": [
+                "Bourbon Vanilla",
+                "Vanilla",
+                "Amber",
+                "Ambrofix™",
+                "Serenolide"
+            ]
+        }
+    },
+    {
+        "id": "ultra-male",
+        "name": "Ultra Male",
+        "brand": "Jean Paul Gaultier",
+        "image": "/fragrances/ultra-male.jpg",
+        "price": 2,
+        "tags": [
+            "gourmand",
+            "resinous",
+            "dark"
+        ],
+        "description": "Ultra Male by Jean Paul Gaultier is a Oriental Fougere fragrance for men. Ultra Male was launched in 2015. The nose behind this fragrance is Francis Kurkdjian.\n\nJean Paul Gaultier launches its new fragrance Ultra Male in summer 2015. The fragrance is a reinterpretation or enhanced version of the popular original Le Male from 1995. Ultra Male, announced as masculine, intense, seductive and at the same time delicate, is supposedly built on contrasts notes and is a spicier version of the original.\n\nIt opens with citrus notes of bergamot, along with juicy pear, black lavender and mint. The heart includes spices of cumin and cinnamon, with aromatic clary sage. The base consists of black vanilla, amber and woods. It is signed by Francis Kurkdjian.\n\nThe face of the advertising campaign is model Jarrod Scott. The fragrance arrives in a characteristic torso bottle, this time colored in dark blue with black stripes. It is available as 40, 75 and 125 ml Eau de Toilette Intense.",
+        "notes": {
+            "top": [
+                "Pear",
+                "Lavender",
+                "Mint",
+                "Bergamot",
+                "Lemon"
+            ],
+            "mid": [
+                "Cinnamon",
+                "Clary Sage",
+                "Caraway"
+            ],
+            "base": [
+                "Black Vanilla Husk",
+                "Amber",
+                "Patchouli",
+                "Cedar"
+            ]
+        }
+    },
+    {
+        "id": "le-beau-paradise-garden",
+        "name": "Le Beau Paradise Garden",
+        "brand": "Jean Paul Gaultier",
+        "image": "/fragrances/le-beau-paradise-garden.jpg",
+        "price": 2,
+        "tags": [
+            "aquatic",
+            "green",
+            "tropical"
+        ],
+        "description": "Le Beau Paradise Garden by Jean Paul Gaultier is a fragrance for men. Le Beau Paradise Garden was launched in 2024. The nose behind this fragrance is Quentin Bisch.\n\nDrawing inspiration from the Autumn/Winter fashion collection of 2010-2011, imagine a lush, enchanting garden named \"Le Beau Paradise Garden\" and \"La Belle Paradise,\" a haven of intense delights and fervent desires.\n\nPicture a bottle of striking beauty: an emerald-green glass ornately embroidered with a vibrant vine leaf, boasting exquisite, high-fashion details. This alluring, unclothed bottle is impossible to overlook, inviting you to succumb to its charm.\n\nThis bottle is a masterpiece, unforgettable in its presence. It's like a tropical beacon, with a Couture-styled embroidered vine leaf artfully obscuring a secret garden where the naked, emerald-green bottle resides. Its magnetic allure draws you into the depths of a hypnotizing and sensuous masculine scent, both mysterious and compelling.\n\nThis fragrance is a woody, green aquatic symphony crafted by Quentin Bisch. It encapsulates the heavenly essence of a tropical paradise, replete with radiant flowers and alluring aromas directly from the Garden of Gaultier. The scent intertwines fresh, salty coconut with green fig and the warmth of sandalwood. Accents of spicy ginger, refreshing mint, and sun-warmed Tonka bean add to the fragrance's green aquatic and woody notes, perfectly embodying the passion of the vigorous men who embrace it.\n\nLE BEAU PARADISE GARDEN will be available as 75ml and 125ml Eau de Parum.",
+        "notes": {
+            "top": [
+                "Green Notes",
+                "Watery Notes",
+                "Mint",
+                "Ginger"
+            ],
+            "mid": [
+                "Coconut",
+                "Fig",
+                "Salt"
+            ],
+            "base": [
+                "Tonka Bean",
+                "Sandalwood"
+            ]
+        }
+    },
+    {
+        "id": "la-belle",
+        "name": "La Belle",
+        "brand": "Jean Paul Gaultier",
+        "image": "/fragrances/la-belle.jpg",
+        "price": 2,
+        "tags": [
+            "gourmand",
+            "floral",
+            "resinous"
+        ],
+        "description": "La Belle by Jean Paul Gaultier is a Oriental Vanilla fragrance for women. La Belle was launched in 2019. La Belle was created by Quentin Bisch and Sonia Constant.",
+        "notes": {
+            "top": [
+                "Pear",
+                "Bergamot"
+            ],
+            "mid": [
+                "Floral Notes",
+                "Leather"
+            ],
+            "base": [
+                "Vanilla",
+                "Vetiver",
+                "Amber",
+                "Musk"
+            ]
+        }
+    },
+    {
+        "id": "scandal",
+        "name": "Scandal",
+        "brand": "Jean Paul Gaultier",
+        "image": "/fragrances/scandal.jpg",
+        "price": 2,
+        "tags": [
+            "gourmand",
+            "floral",
+            "woodsy"
+        ],
+        "description": "Scandal by Jean Paul Gaultier is a Chypre Floral fragrance for women. Scandal was launched in 2017. Scandal was created by Daphné Bugey, Fabrice Pellegrin and Christophe Raynaud.\n\nNew pillar fragrance from Jean Paul Gaultier is launched in June 2017 in collaboration with PUIG and named SCANDAL.\n\nScandal is designed to break all clichés, offering something new and modern, and at the same time powerful and elegant. The key notes of the composition are blood orange, honey, patchouli and gardenia, which united share a creamy, earthy and balsamic gourmet effect, with warm, deep, woody undertones.\n\nThe bottle of the new fragrance SCANDAL is made of transparent glass while the stopper is designed in the sculptural form of female legs in a golden color.\n\nThis is the first fragrance of Jean Paul Gaultier launched with Puig company. The brand stated that they wanted to offer a different version of previous fragrances from the Jean Paul Gaultier collection respecting the well-known DNA of the brand and \"to stop the fever of limited editions.\" The goal is to create something more spicy, festive, sexy and fun, from the bottle to the campaign.\n\nThe advertising campaign was created as a mix of sex and politics. “We decided to tell the life of ‘Madame La Ministre.’ She’s a government minister who goes partying at night in Paris’ Pigalle neighborhood and makes her way directly into the office for her day job. The advertising face is model Vanessa Axente, leaving a club in a form-fitting black number. In her waiting car, filled with friends, she’s literally cut out of the outfit as her car speeds through the streets of Paris toward the Élysée Palace, where she steps out elegantly in a tailored outfit to join colleagues,\" explains Jose Manuel Albesa, chief brand officer of Puig.\n\nScandal is available in 30 ml Eau",
+        "notes": {
+            "top": [
+                "Blood Orange",
+                "Mandarin Orange"
+            ],
+            "mid": [
+                "Honey",
+                "Gardenia",
+                "Orange Blossom",
+                "Jasmine",
+                "Peach"
+            ],
+            "base": [
+                "Beeswax",
+                "Caramel",
+                "Patchouli",
+                "Licorice"
+            ]
+        }
+    },
+    {
+        "id": "ombre-leather-2018",
+        "name": "Ombré Leather (2018)",
+        "brand": "Tom Ford",
+        "image": "/fragrances/ombre-leather-2018.jpg",
+        "price": 3,
+        "tags": [
+            "dark",
+            "floral",
+            "resinous"
+        ],
+        "description": "Ombré Leather (2018) by Tom Ford is a Leather fragrance for women and men. Ombré Leather (2018) was launched in 2018. The nose behind this fragrance is Sonia Constant.",
+        "notes": {
+            "top": [],
+            "mid": [
+                "Leather",
+                "Jasmine Sambac"
+            ],
+            "base": [
+                "Amber",
+                "Moss",
+                "Patchouli"
+            ]
+        }
+    },
+    {
+        "id": "noir-extreme",
+        "name": "Noir Extreme",
+        "brand": "Tom Ford",
+        "image": "/fragrances/noir-extreme.jpg",
+        "price": 3,
+        "tags": [
+            "gourmand",
+            "spicy",
+            "woodsy"
+        ],
+        "description": "Noir Extreme by Tom Ford is a Oriental Woody fragrance for men. Noir Extreme was launched in 2015. The nose behind this fragrance is Sonia Constant.\n\nTom Ford launched Tom Ford Noir Eau de Parfum in 2012, followed by Tom Ford Noir Eau de Toilette in November 2013. In May 2015, he prepared a new version of the fragrance called Tom Ford Noir Extreme.\n\n“Tom Ford Noir Extreme reveals a new dimension of the Noir man. An amber drenched, woody oriental fragrance with a tantalizing and delectable heart, Noir Extreme captures the aspect of the man that relishes in immoderation and dares to be extraordinary. \"\n\nThe composition opens with a blend of fresh citruses and warm spicy notes. There are mandarin oil, neroli, saffron, cardamom and nutmeg at the beginning. Its heart contains accord of Indian kulfi dessert, traditionally made of Himalayan snow and pistachio, transmitted with mastic accord. A bouquet of rose absolute, jasmine and orange blossom is also placed in the heart. Hot amber in the base is subtly balanced with woody accords of sandalwood and milky- sweet vanilla.\n\nThe face of the campaign is Tom Ford himself. Available as 50 and 100 Eau de Parfum.",
+        "notes": {
+            "top": [
+                "Cardamom",
+                "Nutmeg",
+                "Saffron",
+                "Mandarin Orange",
+                "Neroli"
+            ],
+            "mid": [
+                "Kulfi",
+                "Rose",
+                "Mastic or Lentisque",
+                "Orange Blossom",
+                "Jasmine"
+            ],
+            "base": [
+                "Vanilla",
+                "Amber",
+                "Woody Notes",
+                "Sandalwood"
+            ]
+        }
+    },
+    {
+        "id": "soleil-blanc",
+        "name": "Soleil Blanc",
+        "brand": "Tom Ford",
+        "image": "/fragrances/soleil-blanc.jpg",
+        "price": 4,
+        "tags": [
+            "tropical",
+            "solar",
+            "floral"
+        ],
+        "description": "Soleil Blanc by Tom Ford is a Oriental Floral fragrance for women and men. Soleil Blanc was launched in 2016. The nose behind this fragrance is Natalie Gracia-Cetto.\n\nTom Ford Soleil Blanc is unexpected, sultry and addictive solar floral scent. It evokes emote private islands where summer lasts all year. Tom Ford’s latest private blend creation unapologetically exudes the endless pursuit of sun and luxury that defines Tom Ford Soleil.\n\nThe top note of the unisex fragrance combines spicy notes of cardamom and pink pepper with a hint of pistachio and bergamot. Flowery sensuality of ylang ylang, Egyptian jasmine and tuberose are placed in the heart of the fragrance for carnal intensity. Benzoin a herbal substance contained in oil of bitter almonds, amber, tonka bean and coconut milk form the luxurious base.\n\nAvailable as 50, 100 and 250 ml Eau de Parfum.",
+        "notes": {
+            "top": [
+                "Pistachio",
+                "Bergamot",
+                "Cardamom",
+                "Pink Pepper"
+            ],
+            "mid": [
+                "Tuberose",
+                "Ylang-Ylang",
+                "Jasmine"
+            ],
+            "base": [
+                "Coconut",
+                "Amber",
+                "Tonka Bean",
+                "Benzoin"
+            ]
+        }
+    },
+    {
+        "id": "light-blue",
+        "name": "Light Blue",
+        "brand": "Dolce&Gabbana",
+        "image": "/fragrances/light-blue.jpg",
+        "price": 2,
+        "tags": [
+            "solar",
+            "aquatic",
+            "fruity"
+        ],
+        "description": "Light Blue by Dolce&Gabbana is a Floral Fruity fragrance for women. Light Blue was launched in 2001. The nose behind this fragrance is Olivier Cresp.\n\nDolce & Gabbana Light blue is a casual and breezy, sparkling fruity-floral scent that evokes the spirit of the Sicilian summer.\n\nMouth-watering and fresh notes of lime and cedar are bringing an image of the South woods on the seashore. A very popular summer fragrance. Launched in 2001.",
+        "notes": {
+            "top": [
+                "Sicilian Lemon",
+                "Apple",
+                "Cedar",
+                "Bellflower"
+            ],
+            "mid": [
+                "Bamboo",
+                "Jasmine",
+                "White Rose"
+            ],
+            "base": [
+                "Cedar",
+                "Musk",
+                "Amber"
+            ]
+        }
+    },
+    {
+        "id": "the-one-for-men-eau-de-parfum",
+        "name": "The One for Men Eau de Parfum",
+        "brand": "Dolce&Gabbana",
+        "image": "/fragrances/the-one-for-men-eau-de-parfum.jpg",
+        "price": 2,
+        "tags": [
+            "spicy",
+            "woodsy",
+            "solar"
+        ],
+        "description": "The One for Men Eau de Parfum by Dolce&Gabbana is a Woody Spicy fragrance for men. The One for Men Eau de Parfum was launched in 2015. The nose behind this fragrance is Olivier Polge.\n\nDolce & Gabbana launched The One for Men in 2008 as the fragrance intended to become a masculine classics. In 2015, The One for Men Eau de Parfum appears as an enhanced, denser version of the scent.\n\nThe elegant top notes of coriander, basil and grapefruit are leading to the heart where there is a warm blend of ginger, orange blossom and cardamom. Tobacco, sensual amber and cedar leave their mark at the base of the perfume.\n\nIt is available as 50 and 100 ml Eau de Parfum in a dark bottle of the original design.",
+        "notes": {
+            "top": [
+                "Grapefruit",
+                "Coriander",
+                "Basil"
+            ],
+            "mid": [
+                "Cardamom",
+                "Ginger",
+                "Orange Blossom"
+            ],
+            "base": [
+                "Amber",
+                "Tobacco",
+                "Cedar"
+            ]
+        }
+    },
+    {
+        "id": "d-g-anthology-l-imperatrice-3",
+        "name": "D&G Anthology L'Imperatrice 3",
+        "brand": "Dolce&Gabbana",
+        "image": "/fragrances/d-g-anthology-l-imperatrice-3.jpg",
+        "price": 2,
+        "tags": [
+            "fruity",
+            "floral",
+            "aquatic"
+        ],
+        "description": "D&G Anthology L'Imperatrice 3 by Dolce&Gabbana is a Floral Aquatic fragrance for women. D&G Anthology L'Imperatrice 3 was launched in 2009.\n\nDolce & Gabbana presents five perfumes of their collection The D&G Anthology, which arrives on the market in September 2009. Two other fragrances will join the collection next year.\n\nThe fragrances are advertised by celebrities, who are shown naked in advertising campaign made by Mario Testino. Women models are Naomi Campbell, Eva Herzigova and Claudia Schiffer, and men are: Noah Mills, Fernando Fernanes and Tyson Ballou. The collection The D&G Anthology was inspired by tarot cards and their marks.\n\nThe fragrances of this collection were named: Le Bateleur 1 (Tyson Ballou), L’Imperatrice 3 (Naomi Campbell), L’Amoureaux 6 (Noah Mills), La Roue de la Fortune 10 (Eva Herzigova and Fernando Fernandes), La Lune 18 (Claudia Schiffer). All fragrances will be available in amount of 100ml (3.4 oz) edt.\n\nD&G Anthology L`Imperatrice 3 is advertised by Naomi Campbell, and the perfume features aromas of watermelon, kiwi, pink cyclamen and musk.",
+        "notes": {
+            "top": [
+                "Kiwi",
+                "Rhuburb",
+                "Pink Pepper"
+            ],
+            "mid": [
+                "Watermelon",
+                "Cyclamen",
+                "Jasmine"
+            ],
+            "base": [
+                "Lemon Tree",
+                "Musk",
+                "Sandalwood"
+            ]
+        }
+    },
+    {
+        "id": "the-one",
+        "name": "The One",
+        "brand": "Dolce&Gabbana",
+        "image": "/fragrances/the-one.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "resinous",
+            "clean"
+        ],
+        "description": "The One by Dolce&Gabbana is a Oriental Floral fragrance for women. The One was launched in 2006. The nose behind this fragrance is Christine Nagel.\n\nAs it was envisioned by designers, The One is a fragrance for an exceptional woman who instantly draws attention, not only with her looks, but also with her manners, pose and inner world. This fragrance, like all of the fragrances of D&G house, is a \\'fragrance with character\\', special and alluring. Its oriental floral-fruity composition is very warm and sensual with powdery vanilla trace. The color of the fragrance perfectly matches its tone.\n\nThe composition opens with softly fresh mandarin, bergamot, litchi and peach. The heart is thin and balmy, with the notes of jasmine, lily of the valley and white lily which graciously intertwine with the fruity touch of plum. The woodsy-powdery base is created of vetiver root, amber, musk and vanilla. The One was created in 2006.",
+        "notes": {
+            "top": [
+                "Peach",
+                "Litchi",
+                "Mandarin Orange",
+                "Bergamot"
+            ],
+            "mid": [
+                "Lily",
+                "Plum",
+                "Jasmine",
+                "Lily-of-the-Valley"
+            ],
+            "base": [
+                "Vanilla",
+                "Amber",
+                "Musk",
+                "Vetiver"
+            ]
+        }
+    },
+    {
+        "id": "the-one-for-men",
+        "name": "The One for Men",
+        "brand": "Dolce&Gabbana",
+        "image": "/fragrances/the-one-for-men.jpg",
+        "price": 2,
+        "tags": [
+            "spicy",
+            "woodsy",
+            "solar"
+        ],
+        "description": "The One for Men by Dolce&Gabbana is a Woody Spicy fragrance for men. The One for Men was launched in 2008. The nose behind this fragrance is Olivier Polge.\n\nAfter presenting more than successful fragrance for women, The One, Dolce&Gabbana house launched a fragrance for men named The One for Men at the begining of March 2008.\n\nCreating this fragrance, Stefano Gabbana was following the idea of creating an uomo , a very masculine fragrance, and a very classic one, \\\"not a banal classic, but a classic men\\'s fragrance that would last for years and be the type of scent that women adore\\\".\n\nThe notes of this fragrance are composed in accordance with the Gabbana creator\\'s taste, who wanted to create a woody-oriental composition. In line with that Gabbana said:\"I like spicy-oriental notes and we\\'ve never done these types of fragrances, it\\'s a little warmer than our other men's scents\".\n\nFragrance The One for Men opens with sparkling notes of bergamot, coriander and basil, the middle motes bring in cardamom, ginger and neroli, while the base notes create a very masculine trace of cedar, ambergris and tobacco.\n\nThe fragrance is created in cooperation with P&G Prestige Product and International Flavors & Fragrances Inc. (IFF). It comes in a glass made bottle that matches the shape of The One for Women bottle, only with silver-metal neck and chocolate-brown rectangular top.\n\nThe model of the fragrance advertising campaign will be the actor Matthew McConaughey, who will next week join the designers in the NYC. When it comes to the choice of the model, the Dolce&Gabbana designers said that they wanted to have the sexiest man on the planet. And with regards to that, Gabbana adds that this is the first time that a model in one of D&G men\\'s fragrance campaigns appears in clothes.\n\nThe One for Men will be available in the US as EDT in two s",
+        "notes": {
+            "top": [
+                "Grapefruit",
+                "Coriander",
+                "Basil"
+            ],
+            "mid": [
+                "Ginger",
+                "Cardamom",
+                "Orange Blossom"
+            ],
+            "base": [
+                "Amber",
+                "Tobacco",
+                "Cedar"
+            ]
+        }
+    },
+    {
+        "id": "the-only-one",
+        "name": "The Only One",
+        "brand": "Dolce&Gabbana",
+        "image": "/fragrances/the-only-one.jpg",
+        "price": 2,
+        "tags": [
+            "gourmand",
+            "floral",
+            "resinous"
+        ],
+        "description": "The Only One by Dolce&Gabbana is a Oriental Vanilla fragrance for women. The Only One was launched in 2018.\n\nDolce & Gabbana presents The Only One as a new variation on the theme of The One, the oriental-floral original from 2006. The Only One comes out at the end of August 2018 as a fragrance that \"captures the essence of sophisticated and hypnotizing femininity.\"\n\nThe floriental-gourmand composition plays on opposites: The violet blossom in contrast to the gourmand aroma of coffee gives character to the scent.\n\nTop notes: bergamot, violet Heart: coffee, iris Base: patchouli, vanilla\n\nThe face of the campaign is actress Emilia Clarke. Dolce & Gabbana The Only One is available as a 30, 50 and 100 ml Eau de Parfum.",
+        "notes": {
+            "top": [
+                "Violet",
+                "Orange",
+                "Bergamot"
+            ],
+            "mid": [
+                "Coffee",
+                "Pear",
+                "Iris",
+                "Orange Blossom",
+                "Rose"
+            ],
+            "base": [
+                "Caramel",
+                "Vanilla",
+                "Patchouli"
+            ]
+        }
+    },
+    {
+        "id": "invictus",
+        "name": "Invictus",
+        "brand": "Rabanne",
+        "image": "/fragrances/invictus.jpg",
+        "price": 2,
+        "tags": [
+            "aquatic",
+            "woodsy",
+            "solar"
+        ],
+        "description": "Invictus by Rabanne is a Woody Aquatic fragrance for men. Invictus was launched in 2013. Invictus was created by Veronique Nyberg, Anne Flipo, Olivier Polge and Dominique Ropion.\n\nPaco Rabanne launches Invictus, its new fragrance for men, which represents fresh and sporty creation in relation to the other perfumes of the house. The fragrance comes out in July 2013. Invictus, which is Latin for \"invincible,\" represents power, dynamism and energy.\n\nThe fragrance opens with fresh grapefruit and a marine accord that lead to the heart of aromatic bay leaf and Hedione jasmine and a woody base of guaiac wood, patchouli, oak moss and ambergris.\n\nThe bottle is designed in the form of a trophy. The fragrance is available as 50 and 100 ml Eau de Toilette with an accompanying collection.",
+        "notes": {
+            "top": [
+                "Sea Notes",
+                "Grapefruit",
+                "Mandarin Orange"
+            ],
+            "mid": [
+                "Bay Leaf",
+                "Jasmine"
+            ],
+            "base": [
+                "Ambergris",
+                "Guaiac Wood",
+                "Oakmoss",
+                "Patchouli"
+            ]
+        }
+    },
+    {
+        "id": "lady-million",
+        "name": "Lady Million",
+        "brand": "Rabanne",
+        "image": "/fragrances/lady-million.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "fruity",
+            "solar"
+        ],
+        "description": "Lady Million by Rabanne is a Floral Fruity fragrance for women. Lady Million was launched in 2010. Lady Million was created by Anne Flipo, Beatrice Piquet, Dominique Ropion and Bruno Jovanovic.\n\n1 Million is one of the most popular fragrances launched in last several years. After the edition for men, women's version inspired by gold and wealth was expected. Two years after men's edition, fragrant lady finally appears - Lady Million! We can just assume if this lady wants to earn millions or look like a million dollar. It is perfectly clear that the woman represented by this edition radiates, dominates and possesses fiery character with incredible sensuality.\n\nFlacon of Lady Million is in tune with composition and theme of this edition. Instead of gold bullion, the flacon for women is designed as a golden diamond. While insinuating luxury and wealth, the fragrance prepares a surprising composition of intertwined floral, fresh and woody accords. Only diamond can compete with gold, so Lady Million is the perfect companion to modern and masculine 1 Million.\n\nThe Notes of Fragrance\n\nAnne Flipo, Béatrice Piquet and Dominque Ropion have all created scents for some of the biggest names in perfumery. But what path did they take to create Lady Million? “It was clear that this perfume had to be as charismatic as 1 Million, with as strong a signature, yet without a direct olfactory link. The Lady Million woman is dazzling, always seductive. This ‘playful’ aspect inspired us immensely.  Lady Million is fresh, floral and woody, like a nectar of voluptuous flowers, trailing delicately but still very present. Powerfully seductive, the sparkle of bitter orange with a touch of raspberry reveals the first breath. A burst of neroli follows, smooth and bright. But then the lethal weapon of heady orange blossom slips out of its sh",
+        "notes": {
+            "top": [
+                "Raspberry",
+                "Neroli",
+                "Amalfi Lemon"
+            ],
+            "mid": [
+                "Jasmine",
+                "African Orange Flower",
+                "Gardenia"
+            ],
+            "base": [
+                "White Honey",
+                "Patchouli",
+                "Amber"
+            ]
+        }
+    },
+    {
+        "id": "1-million-lucky",
+        "name": "1 Million Lucky",
+        "brand": "Rabanne",
+        "image": "/fragrances/1-million-lucky.jpg",
+        "price": 2,
+        "tags": [
+            "gourmand",
+            "woodsy",
+            "fruity"
+        ],
+        "description": "1 Million Lucky by Rabanne is a Woody fragrance for men. 1 Million Lucky was launched in 2018. The nose behind this fragrance is Natalie Gracia-Cetto.\n\nThe best-selling perfumes from the house of Paco Rabanne 1 Million (2008) and Lady Million (2010) get the new interpretations that come out in the spring of 2018 - 1 Million Lucky and Lady Million Lucky.\n\n\"Seize your dreams and build your own life. Intensely. Grab hold of happiness when it arises. Pure feeling. Tremble, share, and dare. Without limits. Live every moment, without delay.\"\n\nOne Million Lucky Eau de Toilette is announced as a pulsating and captivating scent of woody and gourmand tones. It is described as fresh, vivid and sensual. Hazelnut note enriches the composition of woody elements, with fresh ozone combined with Greengage plum.\n\nIt is available as a 50 and 100 ml Eau de Toilette.",
+        "notes": {
+            "top": [
+                "Plum",
+                "Ozonic notes",
+                "Grapefruit",
+                "Bergamot"
+            ],
+            "mid": [
+                "Hazelnut",
+                "Honey",
+                "Cedar",
+                "Cashmere Wood",
+                "Orange Blossom",
+                "Jasmine"
+            ],
+            "base": [
+                "Amberwood",
+                "Patchouli",
+                "Vetiver",
+                "Oakmoss"
+            ]
+        }
+    },
+    {
+        "id": "invictus-victory-elixir",
+        "name": "Invictus Victory Elixir",
+        "brand": "Rabanne",
+        "image": "/fragrances/invictus-victory-elixir.jpg",
+        "price": 2,
+        "tags": [
+            "resinous",
+            "gourmand",
+            "woodsy"
+        ],
+        "description": "Invictus Victory Elixir by Rabanne is a Oriental Woody fragrance for men. Invictus Victory Elixir was launched in 2023. Invictus Victory Elixir was created by Domitille Michalon Bertier, Anne Flipo and Nicolas Beaulieu.\n\nDiscover Invictus Victory Elixir , the pinnacle of Invictus intensity. The new powerful men’s fragrance by Paco Rabanne. A powerful elixir that transcends all boundaries. Now is the time to experience your moment of immortality. A rich, powerful and long-lasting fragrance composed of spicy woods and intense freshness. The fragrance for absolute winners. The ultimate expression of victory. Never stop winning!\n\nThe new fragrance reveals its true nature with its intense blue to black lacquered bottle. The imposing central golden V is the deciding factor.",
+        "notes": {
+            "top": [
+                "Lavender",
+                "Cardamom",
+                "Black Pepper"
+            ],
+            "mid": [
+                "Incense",
+                "Patchouli"
+            ],
+            "base": [
+                "Vanilla Pod",
+                "Tonka Bean"
+            ]
+        }
+    },
+    {
+        "id": "1-million-parfum",
+        "name": "1 Million Parfum",
+        "brand": "Rabanne",
+        "image": "/fragrances/1-million-parfum.jpg",
+        "price": 2,
+        "tags": [
+            "dark",
+            "solar",
+            "woodsy"
+        ],
+        "description": "1 Million Parfum by Rabanne is a Leather fragrance for men. 1 Million Parfum was launched in 2020. 1 Million Parfum was created by Quentin Bisch, Christophe Raynaud and Sonia Constant.\n\nSun-drenched leather with salty effects. A warm deliberate scent on the edge of the extreme. Salty pulse: \"tuberous salty\" textured by amber woods. Leather opulence: accord \"solar leather\" patinated with notes of resin and pine.\n\nQuentin Bisch:\n\n\"The original idea of this one comes from an accident: back from vacation I had two bottles broken in my leather bag... one was my sunscreen and the other a sample of cistus. The smell was absolutely divine! I captured it with one simple formula: a contrasted smell of salty monoï-tuberose blended with resinous leather...\"",
+        "notes": {
+            "top": [],
+            "mid": [
+                "Tuberose",
+                "Solar Notes",
+                "Salt",
+                "Monoi Oil",
+                "Ambergris",
+                "Leather",
+                "Cashmeran",
+                "Labdanum",
+                "Pine"
+            ],
+            "base": []
+        }
+    },
+    {
+        "id": "black-xs-for-her",
+        "name": "Black XS for Her",
+        "brand": "Rabanne",
+        "image": "/fragrances/black-xs-for-her.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "woodsy",
+            "dark"
+        ],
+        "description": "Black XS for Her by Rabanne is a Floral Woody Musk fragrance for women. Black XS for Her was launched in 2007. Black XS for Her was created by Emilie Coppermann and Mark Buxton.\n\nSuper popular Black XS has got a female companion – Black XS For Her, presented by Paco Rabanne on May 30, 2007.\n\nThis modern floral-fruity composition starts sharp and spicy with cranberry, pink peppercorn and tamarind notes around the heart of hellebore noir rose, black violet and cocoa blossom. The base notes are patchouli, Massoia wood and vanilla.\n\nThe perfume was created by Emilie Coppermann i Marc Buxton of Symrise. The face of the fragrance is Italian model Bianca Balti. It comes as Eau de Toilette in an interesting and appealing black and purple bottle adorned with a beautiful rose. It is accompanied with matching products.",
+        "notes": {
+            "top": [
+                "Cranberry",
+                "Pink Pepper",
+                "Tamarind"
+            ],
+            "mid": [
+                "Cacao",
+                "Rose",
+                "Black Violet"
+            ],
+            "base": [
+                "Vanilla",
+                "Patchouli",
+                "Massoia Wood"
+            ]
+        }
+    },
+    {
+        "id": "pure-xs-for-her",
+        "name": "Pure XS For Her",
+        "brand": "Rabanne",
+        "image": "/fragrances/pure-xs-for-her.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "resinous",
+            "clean"
+        ],
+        "description": "Pure XS For Her by Rabanne is a Oriental Floral fragrance for women. Pure XS For Her was launched in 2018. The nose behind this fragrance is Quentin Bisch.\n\nAfter the success of last year's edition Paco Rabanne Pure XS for Him, advertised by Francisco Henriques, the woman's version is announced, described as wild and very provocative. Paco Rabanne makes a new step in the XS line by launching PURE XS FOR HER EAU DE PARFUM: an erotic floral-oriental edition advertised by the new brand ambassador, American actress and model Emily Ratajkowski.\n\nThe perfumer who composed and signed the newest Rabanne release is Quentin Bisch. \"A wildly provocative – and wildly untamed – floral created by Quentin Bisch, an impassioned and passionate perfumer at Givaudan. Inspired by one of his trips to Reunion Island, he came back to Paris obsessed with a heady, dazzling ylang-ylang. His goal: to bottle the essence of an orgasm, an explosion of the senses brought within reach with a distinctive Paco flair. Quentin has devised a detonating duo: magnetic ylang-ylang on an intriguing popcorn-note explosion. The notes vibrate against each other, together in tension. To trigger, in an avalanche of the senses, a moment of explosive erotica.\"\n\nThe formula explosion: ylang-ylang, vanilla, popcorn note, sandalwood, ambrette seeds.\n\nThe photo campaign is realized by the famous photographer Nathaniel Goldberg, who is also behind the Million and Pure XS campaigns. The face and muse for the newest Paco Rabanne creation is Emily Ratajkowski.\n\nThe sculptural bottle resembles the shape of the Black XS Eau de Parfum from 2018 with sharper edges then the previous Black XS editions, made in an ombre-style of powder pink shades, while the pink outer box is made with a velvety finish and gold-colored details.\n\nThe fragrance Pure XS For Her is available as a 30ml E",
+        "notes": {
+            "top": [],
+            "mid": [
+                "Popcorn",
+                "Vanilla",
+                "Ylang-Ylang",
+                "Coconut",
+                "Peach",
+                "Orange Blossom",
+                "White Musk",
+                "Sandalwood",
+                "Amberwood",
+                "Ambrette (Musk Mallow)"
+            ],
+            "base": []
+        }
+    },
+    {
+        "id": "valentino-uomo-born-in-roma-coral-fantasy",
+        "name": "Valentino Uomo Born In Roma Coral Fantasy",
+        "brand": "Valentino",
+        "image": "/fragrances/valentino-uomo-born-in-roma-coral-fantasy.jpg",
+        "price": 2,
+        "tags": [
+            "woodsy",
+            "green",
+            "boozy"
+        ],
+        "description": "Valentino Uomo Born In Roma Coral Fantasy by Valentino is a Woody Aromatic fragrance for men. Valentino Uomo Born In Roma Coral Fantasy was launched in 2022. Valentino Uomo Born In Roma Coral Fantasy was created by Nicolas Beaulieu and Jean-Christophe Hérault.",
+        "notes": {
+            "top": [
+                "Red Apple",
+                "Cardamom",
+                "Calabrian bergamot"
+            ],
+            "mid": [
+                "Lavender",
+                "Bourbon Geranium",
+                "Clary Sage"
+            ],
+            "base": [
+                "Tobacco Leaf",
+                "Patchouli",
+                "Haitian Vetiver"
+            ]
+        }
+    },
+    {
+        "id": "valentino-uomo-intense",
+        "name": "Valentino Uomo Intense",
+        "brand": "Valentino",
+        "image": "/fragrances/valentino-uomo-intense.jpg",
+        "price": 2,
+        "tags": [
+            "dark",
+            "gourmand",
+            "floral"
+        ],
+        "description": "Valentino Uomo Intense by Valentino is a Leather fragrance for men. Valentino Uomo Intense was launched in 2016.\n\nValentino Uomo is conceived as a young Italian heir, whose timeless elegance comes from his legacy. The new edition of the fragrance Valentino Uomo from 2014, Valentino Uomo Intense, comes out in the spring of 2016, announced as the more intense, charismatic and masculine version.\n\nThe composition is suave leathery, deep and bright; a typical Italian fragrance style. While the original fragrance represents white leather, the new version brings the intense scent of black leather. Its top notes contain clary sage oil and fresh mandarin. The heart notes include the elegance of iris absolute and tonka bean, laid on a base of black leather and vanilla bean.\n\nThe face of the perfume is French actor Louis Garrel. The refined design of the original bottle remained the same, coated in a darker shades of gray. Available as a 50 and 100 ml Eau de Parfum.",
+        "notes": {
+            "top": [
+                "Mandarin Orange",
+                "Clary Sage"
+            ],
+            "mid": [
+                "Iris",
+                "Tonka Bean"
+            ],
+            "base": [
+                "Vanilla",
+                "Leather"
+            ]
+        }
+    },
+    {
+        "id": "valentino-uomo",
+        "name": "Valentino Uomo",
+        "brand": "Valentino",
+        "image": "/fragrances/valentino-uomo.jpg",
+        "price": 2,
+        "tags": [
+            "dark",
+            "gourmand",
+            "woodsy"
+        ],
+        "description": "Valentino Uomo by Valentino is a Leather fragrance for men. Valentino Uomo was launched in 2014. The nose behind this fragrance is Olivier Polge.\n\nValentino and Puig are launching a new fragrance for men for the house of Valentino, and it has been promoted recently in sunny Venice. The idea was to create a fragrance that would be a classic of the future, aiming at men who strive for classics and like casual style. They select top quality for themselves – as announced by the brand. Valentino Uomo is closely connected with fashion collection Valentino, so Rome was an excellent choice for advertising campaign of the new perfume.\n\nPerfumer Olivier Polge has signed the new creation for Valentino and created it with a traditional pyramidal concept (top, heart, base), where woody notes in the base are particularly highlighted in this edition. The composition opens with bergamot and myrtle, succeeded in the heart by roasted coffee combined with gianduja cream, on a rich base created of cedar and precious leather.\n\nValentino Uomo arrives on the market in the beginning of 2014. Advertising face of Valentino Uomo is French actor Louis Garrelm, video advertisement is directed by Johan Renck, while photos were taken by David Sims.",
+        "notes": {
+            "top": [
+                "Bergamot",
+                "Myrtle"
+            ],
+            "mid": [
+                "Hazelnut",
+                "Chocolate",
+                "Roasted Coffee Beans"
+            ],
+            "base": [
+                "Leather",
+                "Cedar"
+            ]
+        }
+    },
+    {
+        "id": "valentino-donna-born-in-roma-intense",
+        "name": "Valentino Donna Born In Roma Intense",
+        "brand": "Valentino",
+        "image": "/fragrances/valentino-donna-born-in-roma-intense.jpg",
+        "price": 2,
+        "tags": [
+            "resinous",
+            "floral",
+            "boozy"
+        ],
+        "description": "Valentino Donna Born In Roma Intense by Valentino is a Oriental Floral fragrance for women. Valentino Donna Born In Roma Intense was launched in 2023. Valentino Donna Born In Roma Intense was created by Amandine Clerc-Marie and Honorine Blanc.",
+        "notes": {
+            "top": [
+                "Bourbon Vanilla",
+                "Amber"
+            ],
+            "mid": [],
+            "base": []
+        }
+    },
+    {
+        "id": "valentina",
+        "name": "Valentina",
+        "brand": "Valentino",
+        "image": "/fragrances/valentina.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "resinous",
+            "solar"
+        ],
+        "description": "Valentina by Valentino is a Oriental Floral fragrance for women. Valentina was launched in 2011. Valentina was created by Alberto Morillas and Olivier Cresp.\n\nThe fashion house of Valentino launches its new fragrance named Valentina in mid-September 2011. The fragrance, inspired by Rome and Italian flavors, is developed in collaboration with Puig and perfumers Alberto Morillas and Olivier Cresp.\n\nThe composition is designed as a fresh floral - fruity - oriental, full of contradictions, simultaneously delicate and strong, elegant, sensual, rebellious and fun.\n\nIt starts off with bergamot from Calabria and white truffles from Alba. Amalfi orange blossoms, sweet jasmine, tuberose and wild strawberries compose the perfumeâ€™s heart, settling on the base of cedar, vanilla and amber.\n\nThe face of the advertising campaign is model Freja Beha Erichsen, shot by David Sims. Valentina is available as 30, 50 and 80 ml EDP with additional body lotion, body oil, shower gel and deodorant.",
+        "notes": {
+            "top": [
+                "Truffle",
+                "Bergamot"
+            ],
+            "mid": [
+                "Strawberry",
+                "Jasmine",
+                "Tuberose",
+                "African Orange Flower"
+            ],
+            "base": [
+                "Vanille",
+                "Amber",
+                "Virginia Cedar"
+            ]
+        }
+    },
+    {
+        "id": "valentino-uomo-born-in-roma-yellow-dream",
+        "name": "Valentino Uomo Born In Roma Yellow Dream",
+        "brand": "Valentino",
+        "image": "/fragrances/valentino-uomo-born-in-roma-yellow-dream.jpg",
+        "price": 2,
+        "tags": [
+            "spicy",
+            "resinous",
+            "gourmand"
+        ],
+        "description": "Valentino Uomo Born In Roma Yellow Dream by Valentino is a Oriental Spicy fragrance for men. Valentino Uomo Born In Roma Yellow Dream was launched in 2021.",
+        "notes": {
+            "top": [
+                "Pineapple",
+                "Mandarin Orange"
+            ],
+            "mid": [
+                "Spices",
+                "Gingerbread",
+                "Ginger"
+            ],
+            "base": [
+                "Vanilla Absolute",
+                "Cedar Essence"
+            ]
+        }
+    },
+    {
+        "id": "good-girl",
+        "name": "Good Girl",
+        "brand": "Carolina Herrera",
+        "image": "/fragrances/good-girl.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "gourmand",
+            "resinous"
+        ],
+        "description": "Good Girl by Carolina Herrera is a Oriental Floral fragrance for women. Good Girl was launched in 2016. Good Girl was created by Louise Turner and Quentin Bisch.\n\nCarolina Herrera announces the release of a new women's fragrance in September 2016. The new, sexy oriental fragrance is ironically named Good Girl with the message \"It's so good to be bad!\" (#goodtobebad).\n\nGood Girl promises an innovative and addictive combination of tuberose and roasted tonka bean, which represents the duality of a woman’s character. A floral wave of white Sambac jasmine and tuberose is placed in contrast with the mysterious and deep notes of tonka bean and cocoa.\n\nThe face of the perfume is model Karlie Kloss. The fragrance comes in an elegant black stiletto shaped bottle as a 50 and 80 ml Eau de Parfum.\n\nGood Girl is created by perfumers Louise Turner and Quentin Bisch.",
+        "notes": {
+            "top": [
+                "Almond",
+                "Coffee",
+                "Bergamot",
+                "Lemon"
+            ],
+            "mid": [
+                "Tuberose",
+                "Jasmine Sambac",
+                "Orange Blossom",
+                "Bulgarian Rose",
+                "Orris"
+            ],
+            "base": [
+                "Tonka Bean",
+                "Cacao",
+                "Vanilla",
+                "Praline",
+                "Sandalwood",
+                "Musk",
+                "Amber",
+                "Cashmere Wood",
+                "Patchouli",
+                "Cinnamon",
+                "Cedar"
+            ]
+        }
+    },
+    {
+        "id": "good-girl-blush",
+        "name": "Good Girl Blush",
+        "brand": "Carolina Herrera",
+        "image": "/fragrances/good-girl-blush.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "woodsy",
+            "gourmand"
+        ],
+        "description": "Good Girl Blush by Carolina Herrera is a Chypre Floral fragrance for women. Good Girl Blush was launched in 2023. Good Girl Blush was created by Quentin Bisch, Shyamala Maisondieu and Christophe Raynaud.\n\nGood Girl Blush is a delicate reinterpretation of Carolina Herrera’s iconic fragrance, softer and more playful than ever. With a romantic sensuality, the fragrance expresses the superpower of modern femininity and reveals another facet of the unique character of today’s independent woman. Good Girl is unthinkable without the unmistakable stiletto, which is a symbol of female empowerment.The bottle has a beautiful finish in soft powder pink, making it an absolute eye-catcher!\n\nGood Girl Blush was created by perfumers Quentin Bisch, Shyamala Maisondieu, and Christophe Raynaud.",
+        "notes": {
+            "top": [
+                "Bergamot",
+                "Bitter Almond"
+            ],
+            "mid": [
+                "Peony",
+                "Ylang-Ylang"
+            ],
+            "base": [
+                "Vanilla",
+                "Coumarin"
+            ]
+        }
+    },
+    {
+        "id": "very-good-girl",
+        "name": "Very Good Girl",
+        "brand": "Carolina Herrera",
+        "image": "/fragrances/very-good-girl.jpg",
+        "price": 2,
+        "tags": [
+            "fruity",
+            "floral",
+            "gourmand"
+        ],
+        "description": "Very Good Girl by Carolina Herrera is a Floral Fruity fragrance for women. Very Good Girl was launched in 2021. Very Good Girl was created by Quentin Bisch, Louise Turner and Shyamala Maisondieu.\n\nAt the beginning of February 2021, Carolina Herrera presents a new flanker in an attractive bright red stiletto bottle. Red is definitely a trend in 2021 because many houses have decided to offer new creations in red bottles. It is composed by Quentin Bisch, Louise Turner and Shyamala Maisondieu.\n\nVery Good Girl is a new olfactory adventure that takes a surprising turn : Where previous fragrances in the family explored the subversive power of jasmine or the tonka bean, this new Eau de Parfum ups the ante, drawing its strength from the potency of the rose, a distinctive scent, which here treads on entirely new ground.\n\nVERY GOOD GIRL arrives after last year's creation, Good Girl Suprême, and Good Girl Légère from 2018. They stand out as different compositions from the other editions of the collection, which were limited edition bottles of the original Good Girl creation from 2016.\n\nAs the brand explains: \" Rose and vetiver: an idyllic contrast. Very Good Girl is a Floral Fruity fragrance . Its aromatic journey starts with the currant, a playfully mischievous wild berry that’s joined by the exotic lychee in a unity of confidence. It’s at this point that the singular yet mysterious qualities of the rose come into play. As one of the most important raw ingredients in the history of perfumery, it has previously seen countless interpretations. All-encompassing and seductive, its unique scent is an ace up any sleeve, which is exactly what perfumers Quentin Bisch and Louise Turner capitalized on for this new chapter in the Good Girl universe.\"\n\n\"Here, it’s the creamy and powdery nuances of the rose that come to the fore, with an indulgent romanticism that’s as warm and silky as the world",
+        "notes": {
+            "top": [
+                "Litchi",
+                "Red Currant"
+            ],
+            "mid": [],
+            "base": [
+                "Vanilla",
+                "Vetiver"
+            ]
+        }
+    },
+    {
+        "id": "212-men",
+        "name": "212 Men",
+        "brand": "Carolina Herrera",
+        "image": "/fragrances/212-men.jpg",
+        "price": 2,
+        "tags": [
+            "woodsy",
+            "floral",
+            "spicy"
+        ],
+        "description": "212 Men by Carolina Herrera is a Woody Floral Musk fragrance for men. 212 Men was launched in 1999. 212 Men was created by Alberto Morillas, Rosendo Mateu and Ann Gottlieb.",
+        "notes": {
+            "top": [
+                "Green Notes",
+                "Grapefruit",
+                "Spices",
+                "Bergamot",
+                "Lavender",
+                "Petitgrain"
+            ],
+            "mid": [
+                "Ginger",
+                "Violet",
+                "Gardenia",
+                "Sage",
+                "Green Pepper"
+            ],
+            "base": [
+                "Musk",
+                "Sandalwood",
+                "Vetiver",
+                "Incense",
+                "Guaiac Wood",
+                "Labdanum"
+            ]
+        }
+    },
+    {
+        "id": "212-sexy",
+        "name": "212 Sexy",
+        "brand": "Carolina Herrera",
+        "image": "/fragrances/212-sexy.jpg",
+        "price": 2,
+        "tags": [
+            "floral",
+            "resinous",
+            "clean"
+        ],
+        "description": "212 Sexy by Carolina Herrera is a Oriental Floral fragrance for women. 212 Sexy was launched in 2004. The nose behind this fragrance is Rosendo Mateu.\n\n212 Sexy is an essence of the sensual feminity, charming, impressive, and irresistible. The mauve colored bottle with matte metallic cap symbolizes the harmony between passion and tenderness. The top unites freshness of bergamot with warm and exciting pink pepper. The heart reveals delicate gardenia and sharp geranium. The base is deep and balmy with a long and sensual trace of caramel, vanilla, sandalwood and mysterious musk. It was launched in 2005.",
+        "notes": {
+            "top": [
+                "Pink Pepper",
+                "Mandarin Orange",
+                "Bergamot"
+            ],
+            "mid": [
+                "Cotton Candy",
+                "Gardenia",
+                "Flowers",
+                "Pelargonium",
+                "Rose"
+            ],
+            "base": [
+                "Vanilla",
+                "Musk",
+                "Sandalwood",
+                "Caramel",
+                "Violet",
+                "Patchouli"
+            ]
+        }
+    },
+    {
+        "id": "ch-men-prive",
+        "name": "CH Men Prive",
+        "brand": "Carolina Herrera",
+        "image": "/fragrances/ch-men-prive.jpg",
+        "price": 2,
+        "tags": [
+            "dark",
+            "spicy",
+            "gourmand"
+        ],
+        "description": "CH Men Prive by Carolina Herrera is a Leather fragrance for men. CH Men Prive was launched in 2015.\n\nCarolina Herrera presents new versions of the original fragrances CH from 2007 and CH Men from 2009. CH Carolina Herrera gets a new packaging in bright red and golden details, while the CH Men Prive is a brand new composition.\n\n“With  sensuality  and  an  evocative  allure,  the  worlds  of  CH  Men  Privé  and  CH Carolina Herrera form an unmistakable duo. Classic and timeless, yet modern and intoxicating at the same time, they are two fragrances which define elegance, luxury and passion. A seduction on every level.”\n\nCH Men Prive is an oriental - woody, leather scent, exciting, rich and luxurious. The composition combines layers of explosive whiskey accords with intense and sensual black leather. It opens with accords of grapefruit, pomelo and whiskey that lead to the heart of frozen lavender, sage, red thyme and cardamom. The base notes are leather, tonka bean and benzoin.\n\nCampaign photographer is Mario Testino, and models are Justice Joslin and Lily Aldridge.\n\nCH Men Prive is available as 50 and 100 ml Eau de Toilette.",
+        "notes": {
+            "top": [
+                "Whiskey",
+                "Grapefruit",
+                "Pomelo"
+            ],
+            "mid": [
+                "Cardamom",
+                "Lavender",
+                "Sage",
+                "Red Thyme"
+            ],
+            "base": [
+                "Leather",
+                "Tonka Bean",
+                "Woody Notes",
+                "Benzoin"
+            ]
+        }
+    },
+    {
+        "id": "bad-boy",
+        "name": "Bad Boy",
+        "brand": "Carolina Herrera",
+        "image": "/fragrances/bad-boy.jpg",
+        "price": 2,
+        "tags": [
+            "spicy",
+            "resinous",
+            "gourmand"
+        ],
+        "description": "Bad Boy by Carolina Herrera is a Oriental Spicy fragrance for men. Bad Boy was launched in 2019. Bad Boy was created by Quentin Bisch and Louise Turner.",
+        "notes": {
+            "top": [
+                "White Pepper",
+                "Bergamot",
+                "Pink Pepper"
+            ],
+            "mid": [
+                "Cedarwood",
+                "Clary Sage"
+            ],
+            "base": [
+                "Tonka Bean",
+                "Cacao"
+            ]
+        }
     }
 ]
