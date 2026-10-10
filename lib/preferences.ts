@@ -89,13 +89,4 @@ export function preferencesToJson(preferences: Preferences) {
 }
 
 // Data attributes on <html> that globals.css uses to apply each preference.
-export function preferenceAttributes(preferences: Preferences) {
-    return {
-        "data-theme": preferences.theme,
-        "data-text-size": preferences.textSize,
-        "data-motion": preferences.reduceMotion ? "reduce" : undefined,
-        "data-contrast": preferences.highContrast ? "more" : undefined,
-        "data-font": preferences.legibleFont ? "legible" : undefined,
-        "data-links": preferences.underlineLinks ? "underline" : undefined,
-    };
-}
+export { preferenceAttributes } from "@/lib/preference-attributes";

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ActionForm from "@/components/ActionForm";
 import PageShell from "@/components/PageShell";
+import PreferencePreview from "@/components/PreferencePreview";
 import { getCurrentUser } from "@/lib/auth";
 import { getPreferences, MAX_FAVORITE_MOODS, type Preferences } from "@/lib/preferences";
 import { defaultTheme, moods, themeMap } from "@/utils/themeMap";
@@ -49,6 +50,7 @@ export default async function SettingsPage() {
                 </p>
 
                 <div className={card}>
+                    <PreferencePreview saved={preferences}>
                     <ActionForm action={savePreferences} submitLabel="Save settings" pendingLabel="Saving...">
                         <fieldset className="mb-4">
                             <legend className={legend}>Appearance</legend>
@@ -116,6 +118,7 @@ export default async function SettingsPage() {
                             </div>
                         </fieldset>
                     </ActionForm>
+                    </PreferencePreview>
                 </div>
             </div>
         </PageShell>
