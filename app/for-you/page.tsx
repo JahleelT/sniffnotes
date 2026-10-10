@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import MoodPicker from "@/components/MoodPicker";
 import PageShell from "@/components/PageShell";
 import RecommendationGrid from "@/components/RecommendationGrid";
 import { getCurrentUser } from "@/lib/auth";
+import { MAX_FAVORITE_MOODS } from "@/lib/preferences";
 import { getPersonalRecommendations } from "@/lib/recommendations";
 import { defaultTheme, themeMap } from "@/utils/themeMap";
 
@@ -26,7 +28,17 @@ export default async function ForYouPage() {
     return (
         <PageShell>
             <h1 className="text-3xl sm:text-4xl font-semibold">Picked for you</h1>
-            {basis.length > 0 && <p className="mt-2 mb-8 text-foreground/80">Based on {basis.join(" and ")}.</p>}
+            {basis.length > 0 && (
+                <div className="mt-2 mb-8 text-foreground/80">
+                    Based on {basis.join(" and ")}.{" "}
+                    <MoodPicker
+                        selected={favoriteMoods}
+                        max={MAX_FAVORITE_MOODS}
+                        label={favoriteMoods.length ? "Change moods" : "Add favorite moods"}
+                        className="underline underline-offset-4 cursor-pointer hover:text-foreground"
+                    />
+                </div>
+            )}
 
             {picks.length > 0 ? (
                 <RecommendationGrid recommendations={picks}/>
@@ -44,9 +56,12 @@ export default async function ForYouPage() {
                                 Sign in to save fragrances
                             </Link>
                         )}
-                        <Link href="/settings" className="px-6 py-3 rounded-full border border-foreground/60 hover:bg-foreground/15 transition-all duration-200">
-                            Pick favorite moods
-                        </Link>
+                        <MoodPicker
+                            selected={favoriteMoods}
+                            max={MAX_FAVORITE_MOODS}
+                            label="Pick favorite moods"
+                            className="px-6 py-3 rounded-full border border-foreground/60 hover:bg-foreground/15 transition-all duration-200 cursor-pointer"
+                        />
                         <Link href="/search" className="px-6 py-3 rounded-full border border-foreground/60 hover:bg-foreground/15 transition-all duration-200">
                             Browse fragrances
                         </Link>

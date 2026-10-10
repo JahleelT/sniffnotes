@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { getCurrentUser } from "@/lib/auth";
 import type { FormState } from "@/lib/forms";
-import { MAX_FAVORITE_MOODS, parsePreferences, preferencesToJson, setPreferencesCookie } from "@/lib/preferences";
+import { getPreferences, MAX_FAVORITE_MOODS, parsePreferences, preferencesToJson, setPreferencesCookie, type Preferences } from "@/lib/preferences";
 import { createClient } from "@/lib/supabase/server";
 
 export async function savePreferences(_: FormState, formData: FormData): Promise<FormState> {
@@ -22,6 +22,19 @@ export async function savePreferences(_: FormState, formData: FormData): Promise
         favoriteMoods,
     });
 
+    return persist(preferences);
+}
+
+// Just the favorite moods, from the quick picker on other pages. Other settings are kept.
+export async function saveFavoriteMoods(_: FormState, formData: FormData): Promise<FormState> {
+    const favoriteMoods = formData.getAll("favoriteMoods");
+    if (favoriteMoods.length > MAX_FAVORITE_MOODS) {
+        return { error: `Pick up to ${MAX_FAVORITE_MOODS} favorite moods.` };
+    }
+    return persist(parsePreferences({ ...(await getPreferences()), favoriteMoods }), "Favorite moods saved.");
+}
+
+async function persist(preferences: Preferences, message?: string): Promise<FormState> {
     await setPreferencesCookie(preferences);
 
     const user = await getCurrentUser();
@@ -36,5 +49,5 @@ export async function savePreferences(_: FormState, formData: FormData): Promise
     }
 
     revalidatePath("/", "layout");
-    return { message: user ? "Preferences saved to your account." : "Preferences saved on this device." };
+    return { message: message ?? (user ? "Preferences saved to your account." : "Preferences saved on this device.") };
 }
