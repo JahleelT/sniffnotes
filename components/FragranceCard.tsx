@@ -1,16 +1,20 @@
 import Link from "next/link";
 import BottleImage from "@/components/BottleImage";
 import type { Fragrance } from "@/data/fragrances";
-import { getTheme, themeMap } from "@/utils/themeMap";
+import { getTheme, themeMap, type Mood } from "@/utils/themeMap";
 
 type FragranceCardProps = {
     fragrance: Fragrance;
     // Why it's shown, e.g. for recommendations.
     reason?: string;
     compact?: boolean;
+    // Moods to bold because they're shared with whatever this card is being compared to.
+    highlightMoods?: Mood[];
+    // Mood match with the fragrance being viewed, 0–100.
+    match?: number;
 };
 
-export default function FragranceCard({ fragrance, reason, compact = false }: FragranceCardProps) {
+export default function FragranceCard({ fragrance, reason, compact = false, highlightMoods = [], match }: FragranceCardProps) {
     const theme = getTheme(fragrance.tags[0]);
 
     return (
@@ -30,8 +34,17 @@ export default function FragranceCard({ fragrance, reason, compact = false }: Fr
                 <p className={`${compact ? "text-base" : "text-lg"} text-foreground/80`}>{fragrance.brand}</p>
             </div>
 
-            <p className={`text-sm ${theme.accent}`}>
-                {fragrance.tags.map((tag) => themeMap[tag].label).join(" • ")}
+            {match !== undefined && (
+                <p className="px-3 py-0.5 rounded-full border border-foreground/40 text-sm font-semibold">{match}% mood match</p>
+            )}
+
+            <p className={`text-sm text-center ${theme.accent}`}>
+                {fragrance.tags.map((tag, i) => (
+                    <span key={tag}>
+                        {i > 0 && " • "}
+                        {highlightMoods.includes(tag) ? <strong className="font-bold">{themeMap[tag].label}</strong> : themeMap[tag].label}
+                    </span>
+                ))}
             </p>
 
             {reason && <p className="mt-auto text-sm text-center italic text-foreground/80">{reason}</p>}

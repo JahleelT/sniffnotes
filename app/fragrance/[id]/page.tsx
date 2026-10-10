@@ -83,6 +83,14 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
                     />
                 </div>
 
+                {similar.length > 0 && (
+                    <section aria-labelledby="similar-heading" className="mt-10">
+                        <h2 id="similar-heading" className={`text-2xl font-semibold ${theme.accent}`}>Similar fragrances</h2>
+                        <p className="mb-4 text-foreground/80">Matched by mood. Moods in <strong>bold</strong> are shared with {fragrance.name}.</p>
+                        <RecommendationGrid recommendations={similar} compact/>
+                    </section>
+                )}
+
                 <ReviewSection
                     fragranceId={fragrance.id}
                     fragranceName={fragrance.name}
@@ -97,13 +105,6 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
                     <section aria-labelledby="fragrance-news-heading" className="mt-10">
                         <h2 id="fragrance-news-heading" className={`text-2xl font-semibold mb-4 ${theme.accent}`}>In the news</h2>
                         <NewsList items={news} cardClass={`${theme.card} ${theme.border}`} compact/>
-                    </section>
-                )}
-
-                {similar.length > 0 && (
-                    <section aria-labelledby="similar-heading" className="mt-10">
-                        <h2 id="similar-heading" className={`text-2xl font-semibold mb-4 ${theme.accent}`}>You might also like</h2>
-                        <RecommendationGrid recommendations={similar} compact/>
                     </section>
                 )}
             </main>

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import type { Fragrance } from "../data/fragrances.ts";
-import { buildIndex, recommendFor, similarTo, topMoods } from "../lib/recommend.ts";
+import { buildIndex, moodMatch, recommendFor, similarByMood, similarTo, topMoods } from "../lib/recommend.ts";
 
 const make = (id: string, tags: string[], top: string[], mid: string[], base: string[]) =>
     ({ id, name: id, brand: "B", tags, description: "", notes: { top, mid, base } }) as unknown as Fragrance;
@@ -37,4 +37,17 @@ test("favorite moods drive picks before anything is saved", () => {
 
 test("top moods are weighted by collection", () => {
     assert.deepEqual(topMoods(index, [{ fragranceId: "rose-oud", weight: 1 }, { fragranceId: "vanilla", weight: 0.4 }]), ["dark", "gourmand"]);
+});
+
+test("mood match: same moods score 100, none score 0, and the first mood counts extra", () => {
+    assert.equal(moodMatch(["floral", "dark"], ["dark", "floral"]), 100);
+    assert.equal(moodMatch(["floral"], ["woodsy"]), 0);
+    assert.ok(moodMatch(["floral", "dark"], ["floral", "fruity"]) > moodMatch(["dark", "floral"], ["floral", "fruity"]));
+});
+
+test("similar by mood ranks shared moods first and skips fragrances with none", () => {
+    const similar = similarByMood(index, "rose-oud");
+    assert.equal(similar[0].fragrance.id, "rose-oud-2");
+    assert.equal(similar[0].moodMatch, 100);
+    assert.ok(similar.every((r) => r.moodMatch! > 0));
 });

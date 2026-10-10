@@ -16,6 +16,8 @@ export type Recommendation = {
     sharedMoods: Mood[];
     // For personal picks: the saved fragrance this one is most like.
     because?: Fragrance;
+    // For "similar fragrances": how closely the moods line up, 0–100.
+    moodMatch?: number;
 };
 
 const TIER_WEIGHT = { top: 0.7, mid: 1, base: 1.2 };
@@ -133,6 +135,42 @@ function rank(index: RecommendationIndex, source: Vector, exclude: Set<string>, 
 export function similarTo(index: RecommendationIndex, fragranceId: string, limit = 4): Recommendation[] {
     const source = index.vectors.get(fragranceId);
     return source ? rank(index, source, new Set([fragranceId]), limit) : [];
+}
+
+// How much two mood lists overlap, 0–100. Each fragrance's first (defining) mood counts extra,
+// so Floral • Dark vs. Floral • Fruity scores higher than Dark • Floral vs. Floral • Fruity.
+export function moodMatch(a: Mood[], b: Mood[]) {
+    const weight = (i: number) => (i === 0 ? FIRST_MOOD_BONUS : 1);
+    const total = (moods: Mood[]) => moods.reduce((sum, _, i) => sum + weight(i), 0);
+    let shared = 0;
+    a.forEach((mood, i) => {
+        const j = b.indexOf(mood);
+        if (j !== -1) shared += weight(i) + weight(j);
+    });
+    const denominator = total(a) + total(b);
+    return denominator ? Math.round((100 * shared) / denominator) : 0;
+}
+
+// Fragrances whose moods match the one being viewed, best match first; notes break ties.
+export function similarByMood(index: RecommendationIndex, fragranceId: string, limit = 8): Recommendation[] {
+    const source = index.fragrances.find((f) => f.id === fragranceId);
+    const sourceVector = index.vectors.get(fragranceId);
+    if (!source || !sourceVector) return [];
+
+    return index.fragrances
+        .filter((fragrance) => fragrance.id !== fragranceId)
+        .map((fragrance) => {
+            const vector = index.vectors.get(fragrance.id)!;
+            return {
+                fragrance,
+                score: cosine(sourceVector, vector),
+                moodMatch: moodMatch(source.tags, fragrance.tags),
+                ...explain(sourceVector, fragrance, vector),
+            };
+        })
+        .filter((r) => r.moodMatch > 0)
+        .sort((a, b) => b.moodMatch - a.moodMatch || b.score - a.score)
+        .slice(0, limit);
 }
 
 export type TasteSignal = {

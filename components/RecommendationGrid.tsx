@@ -16,6 +16,8 @@ export default function RecommendationGrid({ recommendations, compact = false }:
                         fragrance={recommendation.fragrance}
                         reason={describeRecommendation(recommendation)}
                         compact={compact}
+                        highlightMoods={recommendation.sharedMoods}
+                        match={recommendation.moodMatch}
                     />
                 </li>
             ))}
