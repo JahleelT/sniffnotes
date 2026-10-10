@@ -4,7 +4,7 @@ import ActionForm from "@/components/ActionForm";
 import BottleImage from "@/components/BottleImage";
 import Field from "@/components/Field";
 import PageShell from "@/components/PageShell";
-import { requireUser } from "@/lib/auth";
+import { getCurrentUser } from "@/lib/auth";
 import { getCollections } from "@/lib/collections";
 import { getFragranceById } from "@/lib/fragrances";
 import { defaultTheme } from "@/utils/themeMap";
@@ -18,12 +18,22 @@ export const metadata: Metadata = {
 const card = `border rounded-xl backdrop-blur-sm ${defaultTheme.card} ${defaultTheme.border}`;
 
 export default async function CollectionsPage() {
-    await requireUser("/collections");
-    const collections = await getCollections();
+    // Guests see what they've saved on this device.
+    const [user, collections] = await Promise.all([getCurrentUser(), getCollections()]);
 
     return (
         <PageShell>
-            <h1 className="text-4xl font-semibold mb-8">Your collections</h1>
+            <h1 className="text-4xl font-semibold mb-2">Your collections</h1>
+            <p className="mb-8 text-foreground/80">
+                {user ? "Use the Save button on any fragrance to add it here." : (
+                    <>
+                        Saved on this device.{" "}
+                        <Link href="/sign-up?next=/collections" className="underline">Create an account</Link> or{" "}
+                        <Link href="/sign-in?next=/collections" className="underline">sign in</Link> to keep them on any device and make your own collections.
+                        Anything here moves into your account.
+                    </>
+                )}
+            </p>
 
             <ul className="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] gap-6 mb-10">
                 {collections.map((collection) => {
@@ -60,12 +70,12 @@ export default async function CollectionsPage() {
                 })}
             </ul>
 
-            <section aria-labelledby="new-collection-heading" className={`max-w-md p-6 ${card}`}>
+            {user && <section aria-labelledby="new-collection-heading" className={`max-w-md p-6 ${card}`}>
                 <h2 id="new-collection-heading" className="text-2xl font-semibold mb-4">New collection</h2>
                 <ActionForm action={createCollection} submitLabel="Create collection" pendingLabel="Creating..." resetOnSuccess>
                     <Field label="Name" name="name" maxLength={40} placeholder="e.g. Summer rotation" required/>
                 </ActionForm>
-            </section>
+            </section>}
         </PageShell>
     );
 }

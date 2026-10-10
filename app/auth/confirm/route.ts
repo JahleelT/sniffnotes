@@ -1,6 +1,7 @@
 import type { EmailOtpType } from "@supabase/supabase-js";
 import { NextResponse, type NextRequest } from "next/server";
 import { safeNext } from "@/lib/auth";
+import { mergeGuestSaves } from "@/lib/guest-collections";
 import { syncPreferencesOnSignIn } from "@/lib/preferences";
 import { createClient } from "@/lib/supabase/server";
 
@@ -24,6 +25,7 @@ export async function GET(request: NextRequest) {
 
     if (userId) {
         await syncPreferencesOnSignIn(supabase, userId);
+        await mergeGuestSaves(supabase, userId);
         return NextResponse.redirect(new URL(next, origin));
     }
 

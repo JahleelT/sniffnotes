@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useId, useRef, useState, useTransition } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import ActionForm from "@/components/ActionForm";
 import { createCollection, setFragranceSaved } from "@/app/collections/actions";
@@ -11,11 +13,14 @@ type SaveMenuProps = {
     fragranceName: string;
     collections: { id: string; name: string; saved: boolean }[];
     theme: Theme;
+    // Guests save to this device's preset collections and can't make custom ones.
+    signedIn: boolean;
 };
 
 const pill = "inline-flex items-center gap-2 px-6 py-3 rounded-full border border-foreground/60 backdrop-blur-sm hover:bg-foreground/15 transition-all duration-200 cursor-pointer";
 
-export default function SaveMenu({ fragranceId, fragranceName, collections, theme }: SaveMenuProps) {
+export default function SaveMenu({ fragranceId, fragranceName, collections, theme, signedIn }: SaveMenuProps) {
+    const pathname = usePathname();
     const [open, setOpen] = useState(false);
     // Optimistic choices layered over the server's answer until the page re-renders.
     const [overrides, setOverrides] = useState<Record<string, boolean>>({});
@@ -102,7 +107,7 @@ export default function SaveMenu({ fragranceId, fragranceName, collections, them
 
                     {failed && <p role="alert" className="mb-3 text-danger">That didn&apos;t save. Try again.</p>}
 
-                    <ActionForm
+                    {signedIn ? <ActionForm
                         action={createCollection}
                         submitLabel="Create & save"
                         pendingLabel="Creating..."
@@ -120,7 +125,13 @@ export default function SaveMenu({ fragranceId, fragranceName, collections, them
                                 className="px-3 py-2 rounded-lg border border-foreground/30 bg-background/40"
                             />
                         </label>
-                    </ActionForm>
+                    </ActionForm> : (
+                        <p className="pt-4 border-t border-foreground/20 text-sm text-foreground/80">
+                            Saved on this device.{" "}
+                            <Link href={`/sign-up?next=${encodeURIComponent(pathname)}`} className="underline">Create an account</Link>
+                            {" "}to keep your saves on any device and make your own collections.
+                        </p>
+                    )}
                 </div>
             )}
         </div>

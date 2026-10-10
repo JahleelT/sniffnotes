@@ -36,9 +36,8 @@ export default async function DailyPage() {
     const theme = pickTheme(fragrance.tags[0]);
     const card = `border rounded-xl backdrop-blur-sm ${theme.card} ${theme.border}`;
 
-    const collections = user
-        ? (await getCollections()).map((c) => ({ id: c.id, name: c.name, saved: c.fragranceIds.includes(fragrance.id) }))
-        : [];
+    // Guests get this device's collections.
+    const collections = (await getCollections()).map((c) => ({ id: c.id, name: c.name, saved: c.fragranceIds.includes(fragrance.id) }));
 
     return (
         <PageShell theme={theme}>
@@ -73,9 +72,7 @@ export default async function DailyPage() {
                         >
                             See notes &amp; full profile
                         </Link>
-                        {user && (
-                            <SaveMenu fragranceId={fragrance.id} fragranceName={fragrance.name} collections={collections} theme={theme}/>
-                        )}
+                        <SaveMenu fragranceId={fragrance.id} fragranceName={fragrance.name} collections={collections} theme={theme} signedIn={Boolean(user)}/>
                     </div>
                 </div>
             </article>

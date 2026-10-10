@@ -1,5 +1,4 @@
 import { cache } from "react";
-import { getCurrentUser } from "@/lib/auth";
 import { getCollections, type CollectionKind } from "@/lib/collections";
 import { getAllFragrances } from "@/lib/fragrances";
 import { getPreferences } from "@/lib/preferences";
@@ -23,9 +22,8 @@ export function getSimilarFragrances(fragranceId: string, limit = 8) {
 }
 
 // One signal per saved fragrance, using its strongest collection.
+// Works for guests too, from what they've saved on this device.
 const getTasteSignals = cache(async (): Promise<TasteSignal[]> => {
-    if (!(await getCurrentUser())) return [];
-
     const weights = new Map<string, number>();
     for (const collection of await getCollections()) {
         for (const fragranceId of collection.fragranceIds) {

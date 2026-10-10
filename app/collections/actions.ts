@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import { cleanCollectionName } from "@/lib/collections";
 import { getFragranceById } from "@/lib/fragrances";
+import { isGuestCollectionId, setGuestSaved } from "@/lib/guest-collections";
 import type { FormState } from "@/lib/forms";
 import { createClient } from "@/lib/supabase/server";
 
@@ -18,7 +19,14 @@ function refresh(fragranceId?: string) {
 // Adds or removes one fragrance from one collection. Returns whether it ended up saved.
 export async function setFragranceSaved(collectionId: string, fragranceId: string, saved: boolean) {
     const user = await getCurrentUser();
-    if (!user || !getFragranceById(fragranceId)) return { ok: false };
+    if (!getFragranceById(fragranceId)) return { ok: false };
+
+    // Without an account, saves go to this device's guest collections.
+    if (!user) {
+        const ok = isGuestCollectionId(collectionId) && (await setGuestSaved(collectionId, fragranceId, saved));
+        if (ok) refresh(fragranceId);
+        return { ok };
+    }
 
     const supabase = await createClient();
     const { error } = saved

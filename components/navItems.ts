@@ -20,7 +20,7 @@ export const discoverItems: NavItem[] = [
 
 // Your own things (the account menu).
 export const youItems: NavItem[] = [
-    { href: "/collections", label: "Collections", icon: Bookmark, signedIn: true },
+    { href: "/collections", label: "Collections", icon: Bookmark },
     { href: "/friends", label: "Friends", icon: Users, signedIn: true },
     { href: "/settings", label: "Settings", icon: Settings },
 ];

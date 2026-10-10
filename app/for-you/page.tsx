@@ -3,7 +3,6 @@ import Link from "next/link";
 import MoodPicker from "@/components/MoodPicker";
 import PageShell from "@/components/PageShell";
 import RecommendationGrid from "@/components/RecommendationGrid";
-import { getCurrentUser } from "@/lib/auth";
 import { MAX_FAVORITE_MOODS } from "@/lib/preferences";
 import { getPersonalRecommendations } from "@/lib/recommendations";
 import { defaultTheme, themeMap } from "@/utils/themeMap";
@@ -15,10 +14,7 @@ export const metadata: Metadata = {
 const card = `p-6 sm:p-8 border rounded-xl backdrop-blur-sm ${defaultTheme.card} ${defaultTheme.border}`;
 
 export default async function ForYouPage() {
-    const [user, { picks, savedCount, favoriteMoods }] = await Promise.all([
-        getCurrentUser(),
-        getPersonalRecommendations(12),
-    ]);
+    const { picks, savedCount, favoriteMoods } = await getPersonalRecommendations(12);
 
     const basis = [
         savedCount ? `${savedCount} saved ${savedCount === 1 ? "fragrance" : "fragrances"}` : "",
@@ -51,11 +47,6 @@ export default async function ForYouPage() {
                             : "Recommendations come from the fragrances you save and the moods you love."}
                     </p>
                     <div className="flex flex-wrap gap-3">
-                        {!user && (
-                            <Link href="/sign-in?next=/for-you" className="px-6 py-3 rounded-full border border-foreground/60 hover:bg-foreground/15 transition-all duration-200">
-                                Sign in to save fragrances
-                            </Link>
-                        )}
                         <MoodPicker
                             selected={favoriteMoods}
                             max={MAX_FAVORITE_MOODS}

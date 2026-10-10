@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import Backdrop from "@/components/Backdrop";
 import FragranceHeader from "@/components/FragranceHeader";
@@ -51,20 +50,14 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
     ]);
     const news = await getNews({ fragranceId: fragrance.id, limit: 3 });
 
-    const saveAction = user ? (
+    const saveAction = (
         <SaveMenu
             fragranceId={fragrance.id}
             fragranceName={fragrance.name}
             collections={(await getCollections()).map((c) => ({ id: c.id, name: c.name, saved: c.fragranceIds.includes(fragrance.id) }))}
             theme={theme}
+            signedIn={Boolean(user)}
         />
-    ) : (
-        <Link
-            href={`/sign-in?next=/fragrance/${fragrance.id}`}
-            className="px-6 py-3 rounded-full border border-foreground/60 backdrop-blur-sm hover:bg-foreground/15 transition-all duration-200"
-        >
-            Sign in to save
-        </Link>
     );
 
     return (

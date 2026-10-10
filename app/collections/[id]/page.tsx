@@ -5,8 +5,11 @@ import ActionForm from "@/components/ActionForm";
 import Field from "@/components/Field";
 import FragranceCard from "@/components/FragranceCard";
 import PageShell from "@/components/PageShell";
-import { requireUser } from "@/lib/auth";
-import { getCollection } from "@/lib/collections";
+import { getCurrentUser, requireUser } from "@/lib/auth";
+import { getCollection, getCollections } from "@/lib/collections";
+import { getFragranceById } from "@/lib/fragrances";
+import { isGuestCollectionId } from "@/lib/guest-collections";
+import type { Fragrance } from "@/data/fragrances";
 import { getPublicProfiles } from "@/lib/friends";
 import { defaultTheme } from "@/utils/themeMap";
 import { deleteCollection, removeFromCollection, renameCollection, setCollectionShared } from "../actions";
@@ -20,6 +23,7 @@ const pill = "px-5 py-2 rounded-full border border-foreground/60 hover:bg-foregr
 
 export default async function CollectionPage(props: PageProps<"/collections/[id]">) {
     const { id } = await props.params;
+    if (isGuestCollectionId(id) && !(await getCurrentUser())) return <GuestCollectionPage id={id}/>;
     const user = await requireUser(`/collections/${id}`);
 
     // Row-level security returns your own collections and friends' shared ones; anything else is "not found".
@@ -96,6 +100,45 @@ export default async function CollectionPage(props: PageProps<"/collections/[id]
                         </form>
                     </details>}
                 </section>
+            )}
+        </PageShell>
+    );
+}
+
+// A collection saved on this device by someone without an account.
+async function GuestCollectionPage({ id }: { id: string }) {
+    const collection = (await getCollections()).find((c) => c.id === id);
+    if (!collection) notFound();
+    const fragrances = collection.fragranceIds.map(getFragranceById).filter((f): f is Fragrance => Boolean(f));
+
+    return (
+        <PageShell>
+            <Link href="/collections" className="underline text-foreground/80">← All collections</Link>
+            <h1 className="text-4xl font-semibold mt-4">{collection.name}</h1>
+            <p className="mb-8 text-foreground/80">
+                {fragrances.length} {fragrances.length === 1 ? "fragrance" : "fragrances"}, saved on this device.{" "}
+                <Link href={`/sign-up?next=/collections`} className="underline">Create an account</Link> to keep them anywhere.
+            </p>
+
+            {fragrances.length > 0 ? (
+                <ul className="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] gap-6 mb-10">
+                    {fragrances.map((fragrance) => (
+                        <li key={fragrance.id} className="flex flex-col gap-3">
+                            <FragranceCard fragrance={fragrance}/>
+                            <form action={removeFromCollection} className="flex justify-center">
+                                <input type="hidden" name="collectionId" value={collection.id}/>
+                                <input type="hidden" name="fragranceId" value={fragrance.id}/>
+                                <button type="submit" className={`${pill} backdrop-blur-sm`} aria-label={`Remove ${fragrance.name} from ${collection.name}`}>
+                                    Remove
+                                </button>
+                            </form>
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <p className="mb-10 text-lg">
+                    Nothing saved here yet. <Link href="/search" className="underline">Browse fragrances</Link> and use the Save button on any fragrance page.
+                </p>
             )}
         </PageShell>
     );

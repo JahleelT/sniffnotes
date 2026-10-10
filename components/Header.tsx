@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { House, LogIn, MessageCircle, Newspaper, Search, Settings } from "lucide-react";
+import { Bookmark, House, LogIn, MessageCircle, Newspaper, Search, Settings } from "lucide-react";
 import { AccountMenu, DiscoverMenu, PhoneMenu } from "@/components/HeaderMenus";
 import HeaderTitle from "@/components/HeaderTitle";
 import NavLink from "@/components/NavLink";
@@ -52,6 +52,9 @@ export default async function Header() {
                     <div className="hidden md:block"><AccountMenu displayName={user.displayName}/></div>
                 ) : (
                     <>
+                        <NavLink href="/collections" label="Collections" className={`${navItem} hidden md:block`}>
+                            <Bookmark aria-hidden className={icon}/>
+                        </NavLink>
                         <NavLink href="/settings" label="Settings" className={`${navItem} hidden md:block`}>
                             <Settings aria-hidden className={icon}/>
                         </NavLink>

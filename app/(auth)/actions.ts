@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { safeNext } from "@/lib/auth";
 import type { FormState } from "@/lib/forms";
+import { mergeGuestSaves } from "@/lib/guest-collections";
 import { syncPreferencesOnSignIn } from "@/lib/preferences";
 import { createClient } from "@/lib/supabase/server";
 
@@ -31,6 +32,7 @@ export async function signIn(_: FormState, formData: FormData): Promise<FormStat
     if (error) return { error: "That email and password don't match." };
 
     await syncPreferencesOnSignIn(supabase, data.user.id);
+    await mergeGuestSaves(supabase, data.user.id);
     redirect(safeNext(formData.get("next")));
 }
 
@@ -64,6 +66,7 @@ export async function signUp(_: FormState, formData: FormData): Promise<FormStat
     // With email confirmation off, Supabase signs the user in right away.
     if (data.session && data.user) {
         await syncPreferencesOnSignIn(supabase, data.user.id);
+        await mergeGuestSaves(supabase, data.user.id);
         redirect(next);
     }
 

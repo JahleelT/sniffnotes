@@ -1,5 +1,6 @@
 import { getCurrentUser } from "@/lib/auth";
 import { getFragranceById } from "@/lib/fragrances";
+import { getGuestCollections } from "@/lib/guest-collections";
 import type { Database } from "@/lib/supabase/database.types";
 import { createClient } from "@/lib/supabase/server";
 import type { Fragrance } from "@/data/fragrances";
@@ -37,10 +38,11 @@ const COLLECTION_COLUMNS = "id, user_id, kind, name, shared_with_friends, create
 
 // Someone's collections: your own by default, or a friend's (row-level security only returns
 // a friend's collections they've shared). Filtering by owner matters, because the signed-in
-// user can also read their friends' shared collections.
+// user can also read their friends' shared collections. Without an account, your own are the
+// guest collections saved on this device.
 export async function getCollections(ownerId?: string): Promise<CollectionSummary[]> {
     const userId = ownerId ?? (await getCurrentUser())?.id;
-    if (!userId) return [];
+    if (!userId) return ownerId ? [] : getGuestCollections();
 
     const supabase = await createClient();
     const { data } = await supabase.from("collections").select(COLLECTION_COLUMNS).eq("user_id", userId);
