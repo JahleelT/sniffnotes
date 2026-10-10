@@ -65,7 +65,7 @@ export default async function FragrancePage(props: PageProps<"/fragrance/[id]">)
             <FragranceHeader fragrance={fragrance} theme={theme} actions={saveAction}/>
 
             <main id="main" className="p-4 sm:p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.9fr_1fr] gap-6 lg:gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.9fr_1fr] lg:items-start gap-6 lg:gap-8">
                     <BreakdownNTags fragrance={fragrance} theme={theme}/>
                     <FragrancePhoto fragrance={fragrance} theme={theme}/>
                     <Description

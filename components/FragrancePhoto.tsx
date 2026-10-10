@@ -8,8 +8,7 @@ type FragrancePhotoProps = {
     theme: Theme;
 };
 
-// The photo fills its card edge to edge. On large screens the card stretches to the height of the
-// notes and description beside it; stacked on smaller screens it keeps a portrait shape.
+// The photo fills the width of its card at its own proportions; the card is as tall as the photo.
 export default function FragrancePhoto({ fragrance, theme }: FragrancePhotoProps) {
     const card = `order-first lg:order-none relative overflow-hidden border rounded-xl backdrop-blur-sm ${theme.card} ${theme.border}`;
 
@@ -22,14 +21,15 @@ export default function FragrancePhoto({ fragrance, theme }: FragrancePhotoProps
     }
 
     return (
-        <div className={`${card} aspect-[4/5] max-h-[70vh] w-full max-w-md mx-auto lg:max-w-none lg:max-h-none lg:aspect-auto lg:min-h-[28rem]`}>
+        <div className={`${card} w-full max-w-md mx-auto lg:max-w-none`}>
             <Image
                 src={fragrance.image}
                 alt={`${fragrance.brand} ${fragrance.name} bottle`}
-                fill
+                width={800}
+                height={1200}
                 priority
                 sizes="(min-width: 1024px) 30vw, (min-width: 448px) 28rem, 100vw"
-                className="object-cover"
+                className="block w-full h-auto"
             />
         </div>
     );
