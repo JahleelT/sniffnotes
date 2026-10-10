@@ -115,10 +115,14 @@ The importer checks every row, prints each problem with its row number, and only
 | `name` | yes | |
 | `brand` | yes | |
 | `collection` | no | |
-| `tags` | yes | Moods separated by `;`. The first themed one sets the page theme. At least one must be themed: Tea, Fruity, Dark, Smoky, Woody, Boozy, Tropical, Floral, Spicy, Clean, Solar |
+| `tags` | yes | Moods separated by `;`. The first themed one sets the page theme. At least one must be themed: Tea, Fruity, Dark, Smoky, Woody, Boozy, Tropical, Floral, Spicy, Clean, Solar, Green, Aquatic, Gourmand, Resinous, Ancient (common synonyms like Citrus or Vanilla also work) |
 | `top`, `mid`, `base` | at least one | Notes separated by `;` |
 | `image` | no | Defaults to `/fragrances/<id>.jpg` |
 | `description` | yes | Wrap in double quotes if it contains commas |
+| `source_url` | no | Where the data came from (filled in by PerfumAPI imports) |
+| `price` | no | `$` to `$$$$`. Leave blank to use the brand's usual tier from `BRAND_PRICE` in `lib/price.ts` |
+
+Price tiers are a rough guide to a full bottle (about 100 ml) at US retail: `$` under $75, `$$` $75–$150, `$$$` $150–$300, `$$$$` over $300. Set `price` only for lines priced differently from the rest of their brand (e.g. Guerlain's L'Art & La Matière). The importer warns about any fragrance it can't price; add the brand to `BRAND_PRICE` or fill in the column.
 
 A JSON array with the same fields also works: `npm run import:fragrances -- path/to/file.json`.
 
@@ -128,7 +132,8 @@ With a [PerfumAPI](https://perfumapi-frontend.onrender.com/) server running and 
 
 1. `npm run fetch:perfumapi` appends every perfume not already in the CSV, downloads bottle photos to `public/fragrances/`, and suggests up to 3 moods from each perfume's notes and fragrance family.
 2. Review the suggested `tags` (the first one sets the page theme).
-3. `npm run import:fragrances`.
+3. `npm run import:fragrances`, then give any brand it warns has no price tier an entry in `BRAND_PRICE` (`lib/price.ts`) and import again.
+4. `npm test` checks the result; similar fragrances and recommendations pick up new entries automatically.
 
 Rows from PerfumAPI keep their Fragrantica link in `source_url`, which is also how re-runs skip perfumes that were already fetched.
 
