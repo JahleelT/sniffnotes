@@ -62,13 +62,9 @@ export function getSearchFacets() {
         .map(({ value, count }) => ({ brand: value, count }))
         .sort((a, b) => byName(a.brand, b.brand));
 
-    const lines = count(fragrances.filter((f) => f.collection), (f) => fold(f.collection!))
-        .map(({ value, count }) => ({ line: value.collection!, brand: value.brand, count }))
-        .sort((a, b) => byName(a.brand, b.brand) || byName(a.line, b.line));
-
     const notes = count(fragrances.flatMap(allNotes), fold)
         .map(({ value, count }) => ({ note: value, count }))
         .sort((a, b) => byName(a.note, b.note));
 
-    return { brands, lines, notes };
+    return { brands, notes };
 }

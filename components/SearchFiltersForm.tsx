@@ -57,16 +57,18 @@ export function ActiveFilterChips({ filters }: { filters: SearchFilters }) {
 
 // A plain GET form, so filtering works without JavaScript and every result page has a shareable URL.
 export default function SearchFiltersForm({ filters, cardClass }: SearchFiltersFormProps) {
-    const { brands, lines, notes } = getSearchFacets();
-    const open = Boolean(filters.brand || filters.line || filters.note || filters.price || filters.longevity || filters.sillage || filters.season);
+    const { brands, notes } = getSearchFacets();
+    const open = Boolean(filters.brand || filters.note || filters.price || filters.longevity || filters.sillage || filters.season);
 
     return (
         <details open={open} className={`p-4 sm:p-6 border rounded-xl backdrop-blur-sm ${cardClass}`}>
-            <summary className="cursor-pointer font-semibold">Refine by brand, line, note, price, performance, or season</summary>
+            <summary className="cursor-pointer font-semibold">Refine by brand, note, price, performance, or season</summary>
 
             <form action="/search" method="get" className="mt-4 grid gap-4 sm:grid-cols-3">
                 {filters.query && <input type="hidden" name="q" value={filters.query}/>}
                 {filters.mood && <input type="hidden" name="mood" value={filters.mood}/>}
+                {/* Lines are reached from a fragrance's page; keep one that's already applied. */}
+                {filters.line && <input type="hidden" name="line" value={filters.line}/>}
 
                 <label className="flex flex-col gap-1">
                     <span className="font-medium">Brand</span>
@@ -74,16 +76,6 @@ export default function SearchFiltersForm({ filters, cardClass }: SearchFiltersF
                         <option value="">Any brand</option>
                         {brands.map(({ brand, count }) => (
                             <option key={brand} value={brand}>{brand} ({count})</option>
-                        ))}
-                    </select>
-                </label>
-
-                <label className="flex flex-col gap-1">
-                    <span className="font-medium">Line</span>
-                    <select name="line" defaultValue={filters.line ?? ""} className={control}>
-                        <option value="">Any line</option>
-                        {lines.map(({ line, brand, count }) => (
-                            <option key={`${brand}-${line}`} value={line}>{brand} · {line} ({count})</option>
                         ))}
                     </select>
                 </label>
