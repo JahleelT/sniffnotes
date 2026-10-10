@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogIn, MessageCircle, Newspaper, Search, Settings } from "lucide-react";
+import { House, LogIn, MessageCircle, Newspaper, Search, Settings } from "lucide-react";
 import { AccountMenu, DiscoverMenu, PhoneMenu } from "@/components/HeaderMenus";
 import HeaderTitle from "@/components/HeaderTitle";
 import NavLink from "@/components/NavLink";
@@ -9,7 +9,7 @@ import { getUnreadMessageCount } from "@/lib/messages";
 const navItem = "relative after:absolute after:left-1/2 after:-bottom-1 after:h-0.5 after:w-0 after:-translate-x-1/2 after:bg-current after:transition-all after:duration-300 hover:after:w-full";
 const icon = "size-5 sm:size-6";
 
-// Search, News, and Messages sit directly in the header. From md up, the rest is grouped into the
+// Home, Search, News, and Messages sit directly in the header. From md up, the rest is grouped into the
 // Discover and account menus; below md, a single menu holds everything.
 export default async function Header() {
     const user = await getCurrentUser();
@@ -19,6 +19,12 @@ export default async function Header() {
         <header className="flex justify-between items-center gap-4 cursor-pointer max-w-full p-4 sm:p-6">
             <HeaderTitle/>
             <nav aria-label="Main" className="flex gap-4 sm:gap-5 md:gap-7 items-center">
+
+                {/* The title links home too, but not everyone expects that. */}
+                <NavLink href="/" label="Home" className={`${navItem} md:text-lg md:font-medium`}>
+                    <House aria-hidden className={`${icon} md:hidden`}/>
+                    <span aria-hidden className="hidden md:inline">Home</span>
+                </NavLink>
 
                 <NavLink href="/search" label="Search" className={navItem}>
                     <Search aria-hidden className={icon}/>

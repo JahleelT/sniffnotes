@@ -8,7 +8,7 @@ export type NavItem = {
     signedIn?: boolean;
 };
 
-// Search, News, and Messages sit directly in the header; everything else is grouped.
+// Home, Search, News, and Messages sit directly in the header; everything else is grouped.
 
 // Ways to find fragrances you don't know yet.
 export const discoverItems: NavItem[] = [
