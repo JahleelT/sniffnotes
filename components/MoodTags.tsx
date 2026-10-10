@@ -25,7 +25,7 @@ export default function MoodTags({ moods, active, filters = {}, className = "mt-
                 <Link
                     key={mood}
                     href={hrefFor(mood)}
-                    className={`${compact ? `px-3 py-1.5 text-sm sm:text-base ${i >= PHONE_LIMIT ? "hidden sm:inline-block" : ""}` : "px-4 py-2"} sm:px-6 sm:py-3 rounded-full border border-foreground/60 backdrop-blur-sm hover:bg-foreground/15 hover:scale-105 transition-all duration-200 cursor-pointer ${mood === active ? "bg-foreground/20" : ""}`}
+                    className={`${compact ? `px-3 py-1.5 text-sm sm:text-base ${i >= PHONE_LIMIT ? "hidden sm:inline-block" : ""}` : "px-4 py-2"} sm:px-6 sm:py-3 short:px-4 short:py-1.5 rounded-full border border-foreground/60 backdrop-blur-sm hover:bg-foreground/15 hover:scale-105 transition-all duration-200 cursor-pointer ${mood === active ? "bg-foreground/20" : ""}`}
                 >
                     {themeMap[mood].label}
                 </Link>
@@ -33,7 +33,7 @@ export default function MoodTags({ moods, active, filters = {}, className = "mt-
             {compact && (
                 <Link
                     href="/search"
-                    className="px-3 py-1.5 text-sm sm:text-base sm:px-6 sm:py-3 rounded-full underline underline-offset-4 text-foreground/80 hover:text-foreground transition-all duration-200"
+                    className="px-3 py-1.5 text-sm sm:text-base sm:px-6 sm:py-3 short:py-1.5 rounded-full underline underline-offset-4 text-foreground/80 hover:text-foreground transition-all duration-200"
                 >
                     More moods →
                 </Link>

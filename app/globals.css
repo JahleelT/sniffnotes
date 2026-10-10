@@ -17,6 +17,10 @@
   }
 }
 
+/* `short:` utilities apply on short screens: a desktop browser zoomed in (Ctrl/⌘ +) or a phone held
+   sideways. They tighten spacing so key panels still fit without scrolling. */
+@custom-variant short (@media (max-height: 560px));
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

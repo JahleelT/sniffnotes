@@ -16,7 +16,7 @@ export default async function Header() {
     const unread = await getUnreadMessageCount();
 
     return (
-        <header className="flex justify-between items-center gap-4 cursor-pointer max-w-full p-4 sm:p-6">
+        <header className="flex justify-between items-center gap-4 cursor-pointer max-w-full p-4 sm:p-6 short:py-2">
             <HeaderTitle/>
             <nav aria-label="Main" className="flex gap-4 sm:gap-5 md:gap-7 items-center">
 

@@ -11,7 +11,7 @@ export default function HeaderTitle() {
     return (
         <Link
             href="/"
-            className={`text-2xl sm:text-4xl font-semibold transition-colors duration-[1800ms] ease-in-out ${palette?.accent ?? ""}`}
+            className={`text-2xl sm:text-4xl short:text-2xl font-semibold transition-colors duration-[1800ms] ease-in-out ${palette?.accent ?? ""}`}
         >
             SniffNotes
         </Link>

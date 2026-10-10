@@ -65,7 +65,7 @@ export default async function Home() {
           <Header/>
         </HeaderBar>
 
-        <main id="main" className="flex justify-center px-4 pt-6 sm:pt-24 pb-20">
+        <main id="main" className="flex justify-center px-4 pt-6 sm:pt-24 short:pt-4 pb-20 short:pb-6">
 
           {/* Recommendations live on /for-you; the home page only links there, to keep it calm. */}
           <HeroSection moods={homeMoods} hasPicks={picks.length > 0}/>

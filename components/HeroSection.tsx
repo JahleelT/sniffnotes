@@ -20,7 +20,7 @@ export default function HeroSection({ moods, hasPicks = false }: HeroSectionProp
             <div className="w-full">
                 <SearchBar/>
 
-                <MoodTags moods={moods} compact className="mt-4 sm:mt-6"/>
+                <MoodTags moods={moods} compact className="mt-4 sm:mt-6 short:mt-3"/>
             </div>
 
             {hasPicks && (
