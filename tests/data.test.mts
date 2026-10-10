@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { test } from "node:test";
 import { NEIGHBORHOODS, STORE_TYPES, friendlyNeighborhood } from "../lib/guide-areas.ts";
+import { isPriceTier, parsePriceTier } from "../lib/price.ts";
 import { allPhotos, isMood, moodFromTag, moods, themeMap } from "../utils/themeMap.ts";
 
 const read = (path: string) => JSON.parse(readFileSync(new URL(`../${path}`, import.meta.url), "utf8"));
@@ -28,7 +29,15 @@ test("fragrances have unique ids, valid moods, notes, and existing photos", () =
         assert.ok(f.tags.length > 0 && f.tags.every(isMood), `${f.id}: tags`);
         assert.ok(f.notes.top.length + f.notes.mid.length + f.notes.base.length > 0, `${f.id}: notes`);
         if (f.image) assert.ok(publicFile(f.image), `${f.id}: ${f.image}`);
+        if (f.price !== undefined) assert.ok(isPriceTier(f.price), `${f.id}: price`);
     }
+});
+
+test("price tiers parse from symbols or numbers", () => {
+    assert.equal(parsePriceTier("$$"), 2);
+    assert.equal(parsePriceTier("4"), 4);
+    assert.equal(parsePriceTier("$$$$$"), undefined);
+    assert.equal(parsePriceTier(""), undefined);
 });
 
 test("guide stores use real neighborhoods and types", () => {

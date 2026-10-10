@@ -24,7 +24,7 @@ type Perfume = {
 };
 
 const PAGE_SIZE = 100;
-const COLUMNS = ["id", "name", "brand", "collection", "tags", "top", "mid", "base", "image", "description", "source_url"];
+const COLUMNS = ["id", "name", "brand", "collection", "tags", "top", "mid", "base", "image", "description", "source_url", "price"];
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const csvPath = join(root, "data/import/fragrances.csv");
@@ -102,11 +102,12 @@ const takenIds = new Set(existing.map((row) => row.id || slugify(row.name)));
 // Reuse the CSV's spelling of a brand that's already there ("WIDIAN" → "Widian").
 const brandSpelling = new Map(existing.map((row) => [row.brand.toLowerCase(), row.brand]));
 
-// Add the source_url column to older CSVs before appending rows that use it.
+// Add newer columns to older CSVs before appending rows that use them. Rows without them read as blank.
 const header = csvText.split(/\r?\n/, 1)[0].split(",").map((c) => c.trim().toLowerCase());
-if (!header.includes("source_url")) {
+const missingColumns = COLUMNS.filter((column) => !header.includes(column));
+if (missingColumns.length) {
     const [first, ...rest] = csvText.split(/\r?\n/);
-    writeFileSync(csvPath, [`${first},source_url`, ...rest].join("\n"));
+    writeFileSync(csvPath, [[first, ...missingColumns].join(","), ...rest].join("\n"));
 }
 
 const perfumes = await fetchAllPerfumes();
@@ -165,6 +166,8 @@ for (const perfume of perfumes) {
         image,
         description,
         source_url: source,
+        // Blank: the importer uses the brand's usual tier from lib/price.ts.
+        price: "",
     };
     rows.push(COLUMNS.map((column) => csvField(record[column])).join(","));
 }

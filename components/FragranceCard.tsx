@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BottleImage from "@/components/BottleImage";
+import PriceTag from "@/components/PriceTag";
 import type { Fragrance } from "@/data/fragrances";
 import { getTheme, themeMap, type Mood } from "@/utils/themeMap";
 
@@ -32,6 +33,7 @@ export default function FragranceCard({ fragrance, reason, compact = false, high
             <div className="text-center">
                 <h3 className={`${compact ? "text-xl" : "text-2xl"} font-semibold text-foreground`}>{fragrance.name}</h3>
                 <p className={`${compact ? "text-base" : "text-lg"} text-foreground/80`}>{fragrance.brand}</p>
+                <PriceTag tier={fragrance.price} className="text-sm text-foreground/80"/>
             </div>
 
             {match !== undefined && (

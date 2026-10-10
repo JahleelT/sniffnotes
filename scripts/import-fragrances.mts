@@ -7,6 +7,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, extname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { moodFromTag, moods, themeMap, type Mood } from "../utils/themeMap.ts";
+import { BRAND_PRICE, parsePriceTier, type PriceTier } from "../lib/price.ts";
 import { readCsvRecords, slugify } from "./csv.mts";
 
 type RawEntry = Record<string, unknown>;
@@ -17,6 +18,7 @@ type Fragrance = {
     brand: string;
     collection?: string;
     image?: string;
+    price?: PriceTier;
     tags: Mood[];
     description: string;
     notes: { top: string[]; mid: string[]; base: string[] };
@@ -96,8 +98,14 @@ entries.forEach((entry, index) => {
         image = undefined;
     }
 
+    // The row's own price tier ("$$" or 2), else the brand's usual one.
+    const ownPrice = text(entry.price);
+    const price = parsePriceTier(ownPrice) ?? BRAND_PRICE[brand.toLowerCase()];
+    if (ownPrice && !parsePriceTier(ownPrice)) fail(`price "${ownPrice}" should be $ to $$$$`);
+    else if (!price) warnings.push(`${where}: no price tier; add one to the price column or BRAND_PRICE in lib/price.ts`);
+
     const collection = text(entry.collection);
-    fragrances.push({ id, name, brand, ...(collection && { collection }), ...(image && { image }), tags, description, notes });
+    fragrances.push({ id, name, brand, ...(collection && { collection }), ...(image && { image }), ...(price && { price }), tags, description, notes });
 });
 
 if (errors.length) {

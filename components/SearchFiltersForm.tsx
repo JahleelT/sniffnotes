@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { X } from "lucide-react";
 import { getSearchFacets } from "@/lib/fragrances";
+import { PRICE_TIERS, priceTiers } from "@/lib/price";
 import { LONGEVITY_LEVELS, SEASONS, SILLAGE_LEVELS } from "@/lib/review-scales";
 import { searchHref, type SearchFilters } from "@/lib/search-params";
 import { themeMap } from "@/utils/themeMap";
@@ -20,6 +21,7 @@ function activeFilters(filters: SearchFilters) {
         filters.brand && { label: `Brand: ${filters.brand}`, without: { ...filters, brand: undefined } },
         filters.line && { label: `Line: ${filters.line}`, without: { ...filters, line: undefined } },
         filters.note && { label: `Note: ${filters.note}`, without: { ...filters, note: undefined } },
+        filters.price && { label: `Up to ${PRICE_TIERS[filters.price].symbol}`, without: { ...filters, price: undefined } },
         filters.longevity && { label: `Longevity: ${LONGEVITY_LEVELS[filters.longevity].label}`, without: { ...filters, longevity: undefined } },
         filters.sillage && { label: `Sillage: ${SILLAGE_LEVELS[filters.sillage].label}`, without: { ...filters, sillage: undefined } },
         filters.season && { label: `Season: ${SEASONS.find((s) => s.value === filters.season)!.label}`, without: { ...filters, season: undefined } },
@@ -56,11 +58,11 @@ export function ActiveFilterChips({ filters }: { filters: SearchFilters }) {
 // A plain GET form, so filtering works without JavaScript and every result page has a shareable URL.
 export default function SearchFiltersForm({ filters, cardClass }: SearchFiltersFormProps) {
     const { brands, lines, notes } = getSearchFacets();
-    const open = Boolean(filters.brand || filters.line || filters.note || filters.longevity || filters.sillage || filters.season);
+    const open = Boolean(filters.brand || filters.line || filters.note || filters.price || filters.longevity || filters.sillage || filters.season);
 
     return (
         <details open={open} className={`p-4 sm:p-6 border rounded-xl backdrop-blur-sm ${cardClass}`}>
-            <summary className="cursor-pointer font-semibold">Refine by brand, line, note, performance, or season</summary>
+            <summary className="cursor-pointer font-semibold">Refine by brand, line, note, price, performance, or season</summary>
 
             <form action="/search" method="get" className="mt-4 grid gap-4 sm:grid-cols-3">
                 {filters.query && <input type="hidden" name="q" value={filters.query}/>}
@@ -98,6 +100,19 @@ export default function SearchFiltersForm({ filters, cardClass }: SearchFiltersF
                     <datalist id="note-options">
                         {notes.map(({ note }) => <option key={note} value={note}/>)}
                     </datalist>
+                </label>
+
+                <label className="flex flex-col gap-1">
+                    <span className="font-medium">Price</span>
+                    <select name="price" defaultValue={filters.price ?? ""} className={control}>
+                        <option value="">Any price</option>
+                        {priceTiers.map((tier) => (
+                            <option key={tier} value={tier}>
+                                Up to {PRICE_TIERS[tier].symbol} ({tier === 4 ? "anything" : PRICE_TIERS[tier].range.replace(/^\$\d+–/, "under ")})
+                            </option>
+                        ))}
+                    </select>
+                    <span className="text-sm text-foreground/70">Typical price for a full bottle.</span>
                 </label>
 
                 <fieldset className="sm:col-span-3 grid gap-4 sm:grid-cols-3">

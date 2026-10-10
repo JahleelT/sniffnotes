@@ -1,3 +1,4 @@
+import type { PriceTier } from "@/lib/price";
 import type { Mood } from "@/utils/themeMap";
 import data from "./fragrances.json";
 
@@ -9,6 +10,9 @@ export type Fragrance = {
 
     // Missing until a photo exists at public/fragrances/<id>.jpg.
     image?: string;
+
+    // Typical full-bottle price, $ to $$$$ (see lib/price.ts).
+    price?: PriceTier;
 
     // The first tag sets the fragrance page theme.
     tags: Mood[];

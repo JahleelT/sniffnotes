@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import PriceTag from "@/components/PriceTag";
 import { brandSlug } from "@/lib/brands";
 import { searchHref } from "@/lib/search-params";
 import type { Fragrance } from "@/data/fragrances";
@@ -33,6 +34,9 @@ export default function FragranceHeader({ fragrance, theme, actions }: Fragrance
                         </>
                     )}
                 </h2>
+                <p className="mt-2 text-center text-foreground/90">
+                    <PriceTag tier={fragrance.price} detailed/>
+                </p>
                 {actions && <div className="mt-4 flex justify-center">{actions}</div>}
             </div>
 

@@ -32,6 +32,7 @@ export function searchFragrances(filters: Partial<SearchFilters>) {
         if (brand && fold(fragrance.brand) !== brand) return false;
         if (line && fold(fragrance.collection ?? "") !== line) return false;
         if (note && !allNotes(fragrance).some((n) => fold(n).includes(note))) return false;
+        if (filters.price && (!fragrance.price || fragrance.price > filters.price)) return false;
 
         const searchable = fold([
             fragrance.name,
